@@ -1,0 +1,35 @@
+/* * {
+    margin: 0;
+    padding: 0;
+} */
+
+h1 {
+    /* text-align: center; */
+    font-size: 40px;
+}
+
+p {
+    /* text-align: center; */
+    font-size: 25px;
+}
+
+.choice-button {    
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #4caf4f;
+    color: white;
+    border-radius: 8px;
+}
+
+.choice-button:hover {
+    background-color: #4ca049;
+}
+
+.choice-button:active {
+    background-color: red;
+}
+
+#result,
+#score {
+    font-size: 25px;
+}

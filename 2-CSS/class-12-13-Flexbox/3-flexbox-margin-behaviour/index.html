@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flexbox margin behaviour</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #heading {text-align: center;}
+        
+        .box {
+            height: 200px;
+            width: 200px;
+            border: 3px solid black;
+            background-color: #84b0e0;
+            margin: 20px;
+        }
+
+        #container {
+            border: 3px solid black;
+            background-color: #37537d;
+            margin: auto;
+            padding: 10px;
+            height: 300px;
+            width: 800px;
+
+            display: flex;  
+        }
+
+    /* Flexbox Margin Behavior:
+
+        - **Flexbox** does not collapse margins between items:
+            - In Flexbox, if two flex items have margins, the margins are **added together**.
+            - For example, if two adjacent flex items each have a margin of 20px, the space between them will be **40px** (not 20px).
+            - This behavior happens regardless of the `flex-direction` property.
+
+        - **Block-Level Layouts** (Non-Flexbox):
+            - In block-level elements, **margins collapse** when two adjacent elements both have vertical margins.
+            - In this case, the space between them is equal to the **larger of the two margins** (not the sum of both).
+            - For example, if two block elements have 20px and 30px vertical margins, the space between them will be **30px**, not 50px.
+
+        Key Point:
+        - Flexbox layout does **not** collapse margins, unlike block layout.
+        - In Flexbox, adjacent flex items **add their margins**, leading to larger spacing.
+
+        Margins on Inline-Level Elements:
+
+            - **Horizontal Margins**:
+                - Margins on the left and right of inline-level elements (e.g., <span>, <a>) **do not collapse**.
+                - They will be added together and create space between inline elements as expected.
+                - Example: 
+                <span style="margin-left: 10px;">Item 1</span>
+                <span style="margin-right: 20px;">Item 2</span>
+                - The space between Item 1 and Item 2 will be **10px + 20px** = **30px**.
+
+            - **Vertical Margins**:
+                - Vertical margins (top and bottom) **collapse** between adjacent inline-level elements, similar to block elements.
+                - Only the **larger** of the vertical margins is applied, not the sum of both.
+                - Example: 
+                <span style="margin-top: 10px;">Item 1</span>
+                <span style="margin-top: 20px;">Item 2</span>
+                - The space between Item 1 and Item 2 will be **20px** (the larger margin).
+
+            Key Point:
+            - **Horizontal margins** add together and do not collapse.
+            - **Vertical margins** collapse and take the larger of the two values when adjacent inline-level elements are involved.
+*/
+    </style>
+</head>
+<body>
+    <h1 id="heading">Flexbox Container</h1>
+    <div id="container">
+        <div id="box1" class="box">Flex Item 1</div>
+        <div id="box2" class="box">Flex Item 2</div>
+    </div>
+</body>
+</html>

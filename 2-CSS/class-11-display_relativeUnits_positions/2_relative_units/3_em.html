@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Relative Unit (em)</title>
+    <style>
+        #parent-div {
+            border: 1px solid black;
+            background-color: cyan;
+            height: 200px;
+            width: 200px;
+
+            font-size: 25px;
+        }
+
+        #child-div {
+            border: 1px solid black;
+            background-color: royalblue;
+            width: 70%;
+            height: 50%;
+
+            font-size: 2em;     /* 2 times the parent's font size */
+            /* If the parent font size is 25px, 2em equals 50px. */
+        }
+    </style>
+</head>
+<body>
+    Body
+    <div id="parent-div">
+        first
+        <div id="child-div">second</div>
+    </div>
+
+    <!--(em)
+        Definition: Relative to the font size of the element's parent.
+        Use Case: Commonly used for font sizes, spacing, and padding. -->
+</body>
+</html>

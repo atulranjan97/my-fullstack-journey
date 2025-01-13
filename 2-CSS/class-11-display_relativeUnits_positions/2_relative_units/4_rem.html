@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Relative Unit (REM)</title>
+    <style>
+        html {  /*root element*/
+            font-size: 16px;    /*base size*/
+        }
+
+        #parent-div {
+            border: 1px solid black;
+            background-color: bisque;
+            height: 500px;
+            width: 500px;
+
+            font-size: 25px;
+        }
+
+        #child-div {
+            border: 1px solid black;
+            background-color: rgb(244, 167, 112);
+            width: 70%; 
+            height: 60%;
+            margin: auto;
+
+            font-size: 2rem;        /* 16px x 2 = 32px */
+        }
+    </style>
+</head>
+<body>
+    <div id="parent-div">
+        first
+        <div id="child-div">second</div>
+    </div>
+
+    <!-- rem stands for "root em" and is a relative CSS unit used for sizing. It is based on the font size of the root element (<html>). Unlike em, which is relative to the font size of its parent element, rem is consistent across the entire document because it always refers to the root element. -->
+
+    <!--     
+    How rem Works
+        1. Root Element (<html>):
+            -> The font size of the root element is set using the font-size property, usually in pixels.
+            -> By default, most browsers set the root font size to 16px (this can vary depending on user settings). 
+    -->
+
+</body>
+</html>

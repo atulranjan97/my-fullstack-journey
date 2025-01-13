@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>flex-wrap</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #heading {text-align: center;}
+        
+        .box {
+            height: 100px;
+            width: 100px;
+            border: 3px solid black;
+            background-color: #84b0e0;
+
+            margin: 5px;
+            padding: 20px;
+        }
+
+        #container {
+            border: 3px solid black;
+            background-color: #37537d;
+            margin: 10px;
+            padding: 20px;
+
+            display: flex;  
+
+            /* flex-wrap: nowrap; */
+            flex-wrap: wrap;
+            /* flex-wrap: wrap-reverse ; */
+
+            /* to see the property effect, lower down window size(both horizonally and vertically) on which this page is open (which is browser window), then increase/decrease the window width manually through mouse to see the overflowed/wrapped items */
+
+             
+        /*`flex-wrap` in Flexbox:
+
+            The 'flex-wrap' property controls whether the flex container's items 
+            should wrap onto multiple lines or stay on a single line. 
+
+            Syntax:
+            flex-wrap: nowrap | wrap | wrap-reverse;
+
+            Values:
+            1. nowrap (default):
+                - All flex items will be in a single line, even if it overflows the container.
+
+            2. wrap:
+                - Flex items will wrap onto multiple lines, maintaining the normal flow.
+
+            3. wrap-reverse:
+                - Flex items will wrap onto multiple lines, but in reverse order (bottom-to-top or right-to-left, depending on the flex direction).
+
+            Tips:
+            - Use with 'flex-direction' to customize the direction of wrapping.
+            - Helpful for creating responsive layouts when combined with 'media queries'.
+        */
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Flexbox Container</h1>
+    <div id="container">
+        <div class="box">Flex Item 1</div>
+        <div class="box">Flex Item 2</div>
+        <div class="box">Flex Item 3</div>
+        <div class="box">Flex Item 4</div>
+        <div class="box">Flex Item 5</div>
+        <div class="box">Flex Item 6</div>
+        <div class="box">Flex Item 7</div>
+        <div class="box">Flex Item 8</div>
+        <div class="box">Flex Item 9</div>
+    </div>
+</body>
+</html>

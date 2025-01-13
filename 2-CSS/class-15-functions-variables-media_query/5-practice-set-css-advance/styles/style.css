@@ -1,0 +1,60 @@
+/* 1. Overflow Property */
+/* Ensure that the .post-content divs have a maximum height of 100px and set the overflow to auto to handle any overflowing content */
+.post-content {
+    max-height: 100px;
+    overflow: auto;
+}
+
+
+/* 2. Min-Max Height and Width */
+/* Set the header to have a minimum height of 80px and a maximum height of 150px. */
+header {
+    min-height: 80px;
+    max-height: 150px;
+}
+
+/* Ensure the section.content has a minimum width of 300px and a maximum width of 800px */
+.content{
+    min-width: 300px;
+    max-width: 800px;
+}
+
+
+/* 3. Box-Shadow Property: */
+
+/* Apply a box shadow to the .post elements with the following properties: horizontal offset 5px, vertical offset 5px, blur radius 10px, spread radius 0, and color rgba(0, 0, 0, 0.1) */
+.post {
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+/* 4. CSS Functions: */
+
+/* Use the calc function to set the padding of the .post-content divs to calc(10px + 2%) */
+.post-content {
+    padding: calc(10px + 2%);
+}
+/* Combines fixed (10px) and responsive (2% of parent width) padding for consistent spacing across different screen sizes */
+
+
+/* 5. CSS Variables: */
+
+/* Declare a CSS variable --main-bg-color with the value #f0f0f0. */
+
+/* Apply this variable to the background color of the body. */
+
+/* Declare another CSS variable --header-color with the value #333. */
+
+/* Use this variable to set the color of the h1 in the header */
+html {
+    --main-bg-color: #f0f0f0;
+    --header-color: #333;
+}
+
+body {
+    background-color: var(--main-bg-color);
+}
+
+header > h1 {
+    color: var(--header-color);
+}

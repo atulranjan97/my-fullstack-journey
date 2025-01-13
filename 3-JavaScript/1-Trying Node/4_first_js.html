@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Manipulating HTML element through JS</title>
+</head>
+
+<body>
+    <h1>Welcome to JS world</h1>
+    <p id="my-para">This is a demo paragraph</p>
+
+    <button onclick="
+            document.getElementById('my-para').innerHTML = 'This paragraph has been changed using JS code written inside `onclick` attribute of the button';
+    ">Change Me</button>
+
+    <button onclick="document.getElementById('my-para').style.color = 'red';">Style Me</button>
+    <!-- querySelector: finds the first element that matches a CSS selector -->
+</body>
+
+</html>

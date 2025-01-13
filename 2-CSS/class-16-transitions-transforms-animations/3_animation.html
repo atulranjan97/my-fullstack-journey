@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS Transform</title>
+    <style>
+        .box {
+            background-color: steelblue;
+            color: white;
+            font-family: sans-serif;
+            margin: 200px;
+            height: 200px;
+            width: 200px;
+            border: 1px solid black;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            position: absolute;
+
+            animation-name: animation-1;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            /* animation-delay: 500ms; */
+
+            /* animation-iteration-count: 3; */
+            /* indicate the number of times animation should repeat */
+
+            /* animation-direction: alternate; */
+        }
+
+        /* defining animation */
+        /* @keyframes animation-1 {
+            from {
+                left: 0;
+            }
+            to {
+                left: 400px;
+            }
+        } */
+        
+        @keyframes animation-1 {
+            0% {
+                left: 0;
+                top: 0;
+            }
+            50% {
+                top: 100px;
+            }
+            100% {
+                top: -100px ;
+                left: 600px;
+            }
+        } 
+       
+        /* we can also define multiple frames */
+
+        
+    </style>
+</head>
+<body>
+    <div class="box">My Box</div>
+</body>
+</html>

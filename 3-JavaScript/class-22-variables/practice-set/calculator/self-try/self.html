@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator project self</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <h1 class="heading" style="
+            text-align: center; 
+            color: red; 
+            font-family: cursive;
+        ">Atul's Calculator</h1>
+
+    <div class="calc-container">
+        <div class="calc-display"> </div>
+
+        <div class="buttons-container">
+
+            <button class="calc-button" onclick="
+                displayText = '0';
+                document.querySelector('.calc-display').innerText = displayText;
+            ">C</button>
+
+            <button class="calc-button" onclick="
+                if(displayText == '0')
+                    displayText = '1';
+                else
+                    displayText +='1';
+                document.querySelector('.calc-display').innerText = displayText; 
+            ">1</button>
+            
+            
+            <button class="calc-button" onclick="
+                if(displayText == '0')
+                    displayText = '2';
+                else
+                    displayText += '2';
+
+                document.querySelector('.calc-display').innerText =displayText;
+            ">2</button>
+            
+            
+            <button class="calc-button" onclick="
+                    displayText += '+';
+
+                document.querySelector('.calc-display').innerText = displayText;
+            ">+</button>
+            
+            
+            <button class="calc-button" onclick="
+                if(displayText == '0')
+                    displayText = '3';
+                else
+                    displayText = displayText + '3';
+                document.querySelector('.calc-display').innerText =displayText;
+            ">3</button>
+            
+            
+            <button class="calc-button" onclick="
+                if(displayText == '0')
+                    displayText = '4';
+                else
+                    displayText = displayText + '4';
+                document.querySelector('.calc-display').innerText = displayText;
+            ">4</button>
+            
+            
+            <button class="calc-button" onclick="
+                displayText += '-';
+            
+                document.querySelector('.calc-display').innerText = displayText;
+            ">-</button>
+            
+            
+            <button class="calc-button" onclick="
+                if(displayText == '0')
+                    displayText = '5';
+                else
+                    displayText = displayText + '5';
+                document.querySelector('.calc-display').innerText =displayText;
+            ">5</button>
+            
+            
+            <button class="calc-button" onclick="
+                if(displayText == '0')
+                    displayText = '6';
+                else
+                    displayText = displayText + '6';
+                document.querySelector('.calc-display').innerText =displayText;
+            ">6</button>
+            
+            
+            <button class="calc-button" onclick="
+                displayText += '*';
+                document.querySelector('.calc-display').innerText = displayText;
+            ">*</button>
+            
+            
+            <button class="calc-button" onclick="
+                if(displayText == '0')
+                    displayText = '7';
+                else
+                    displayText = displayText + '7';
+                document.querySelector('.calc-display').innerText = displayText;
+            ">7</button>
+            
+            
+            <button class="calc-button" onclick="
+                if(displayText == '0')
+                    displayText = '8';
+                else
+                    displayText += '8';
+                document.querySelector('.calc-display').innerText = displayText;
+            ">8</button>
+            
+            
+            <button class="calc-button" onclick="
+                displayText += '/';
+                document.querySelector('.calc-display').innerText = displayText;
+            ">/</button>
+            
+            <!-- = -->
+            <button class="calc-button" onclick="
+                if(displayText != '0') {
+                    displayText = eval(displayText);
+                    document.querySelector('.calc-display').innerText = displayText;
+                }
+            ">=</button>
+            
+            
+            <button class="calc-button" onclick="
+                if(displayText == '0')
+                    displayText = '9';
+                else
+                    displayText += '9';
+
+                    document.querySelector('.calc-display').innerText = displayText;
+            ">9</button>
+            
+            
+            <button class="calc-button" onclick="
+                if(displayText != '0'){
+                    displayText += '0';
+                    document.querySelector('.calc-display').innerText = displayText;
+                }    
+            ">0</button>
+            
+            
+            <button class="calc-button" onclick="
+                displayText += '.';
+                document.querySelector('.calc-display').innerText = displayText;
+            ">.</button>
+        </div>
+
+        <!-- <button class="button">10</button> -->
+    </div>
+
+    <script>
+        let displayText = '2546';
+        document.querySelector('.calc-display').innerText = displayText;
+
+
+
+    </script>
+</body>
+</html>

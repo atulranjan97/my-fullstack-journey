@@ -1,0 +1,9 @@
+/* This is first practice set for css */
+
+#heading {
+    border-radius: 9px;
+}
+
+#first, #second {
+    color: dimgray;
+}

@@ -1,0 +1,33 @@
+CSS Pseudo-Classes (Source ChatGpt)
+A pseudo-class in CSS is a keyword added to selectors that defines the special state of an element. It allows you to style elements dynamically based on their state, position, or user interaction without needing to modify the HTML.
+
+
+Syntax:
+    (css code)
+    selector:pseudo-class {
+        property: value;
+    }
+
+
+Common Pseudo-Classes and Their Use Cases
+1. User Interaction States:
+    1. :hover - Styles an element when the user hovers over it.
+    2. :focus - Styles an element when it gains focus (e.g., input fields).
+    3. :active - Styles an element when it is being clicked.
+
+2. Element Position:
+    1. :first-child - Targets the first child of its parent.
+    2. :last-child - Targets the last child of its parent.
+    3. :nth-child(n) - Targets the nth child of its parent based on a formula.
+    4. :only-child - Targets an element if it is the only child of its parent.
+
+3. Form States:
+    1. :checked - Targets a checkbox or radio button that is checked.
+    2. :disabled - Styles a disabled form element.
+    3. :required - Targets form fields with the required attribute.
+
+4. Other States:
+    1. :empty - Targets elements with no children.
+    2. :not(selector) - Excludes elements that match the given selector.
+    3. :link - Styles unvisited links.
+    4. :visited - Styles links that have been visited.

@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.calc-container {
+    border: 2px solid rgb(171, 171, 171);
+    padding: 20px;
+    width: fit-content;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+.calc-display {
+    height: 80px;
+    border: 2px solid rgb(110, 110, 110);
+    margin-bottom: 20px;
+    width: 400px;
+    border-radius: 5px;
+
+    font-size: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+/* .buttons-container {
+
+    border: 2px solid red; 
+
+    display: grid;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px;
+    grid-template-columns: 100px 100px 100px;
+
+    gap: 5px 10px;
+    width: fit-content;
+    margin: auto;
+    
+} */
+
+.buttons-container {
+    /* border: 2px solid red; */
+    
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center ;
+}
+
+.calc-button {
+    border: 2px solid rgb(171, 171, 171);
+    
+    font-size: 30px;
+    border-radius: 5px;
+
+    /* delete when not work */
+    width: 100px;
+    height: 100px;
+    
+    /* gap: 3px 8px; */
+    /* use gap when applying grid instead of flex */
+    
+    margin: 3px 8px;
+
+}
+
+.button-zero {
+    justify-self: center;
+    width: auto;
+}
+
+

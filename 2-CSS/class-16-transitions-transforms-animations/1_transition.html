@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS Transition</title>
+    <style>
+        .box {
+            background-color: steelblue;
+            color: white;
+            font-family: sans-serif;
+            margin: 30px;
+            height: 200px;
+            width: 200px;
+            border: 1px solid black;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+
+            transition-property: all;
+            /* transition-property: Specifies which property or properties to transition.
+                - 'all': Applies to all animatable properties.
+                - Comma-separated list: Applies only to specified properties (e.g., background-color, width). */
+
+            transition-duration: 0.3s;
+            /* transition-duration: Specifies the duration of the transition.
+                - Time values: 's' for seconds, 'ms' for milliseconds (e.g., 0.5s, 300ms).
+                - Default is 0s (no transition). */
+
+
+            transition-timing-function: linear ;
+            /* Controls the speed curve of the transition effect. Options:
+                - ease: Default, starts slow, speeds up, then slows down.
+                - linear: Constant speed throughout.
+                - ease-in: Starts slow, accelerates.
+                - ease-out: Starts fast, slows down.
+                - ease-in-out: Starts and ends slow, accelerates in the middle.
+                - steps(n, start/end): Creates a step-wise transition with 'n' steps.
+                - cubic-bezier(x1, y1, x2, y2): Custom timing curve for advanced control.
+            */
+
+
+            /* transition-delay: 0.3s; */
+            /* transition-delay: Specifies the delay before the transition starts.
+                - Time values: 's' for seconds, 'ms' for milliseconds (e.g., 1s, 500ms).
+                - Default is 0s (no delay). */
+
+
+            /* Shorthand Syntax */
+            /* transition: transition-property transition-duration transition-timing-function(optional) transition-delay(optional) */
+            /* transition: all 1s ease-out; */
+
+        }
+
+        .box:hover {
+            height: 450px;
+            width: 450px;
+            background-color: royalblue;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">My Box</div>
+</body>
+</html>

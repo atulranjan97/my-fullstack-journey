@@ -1,0 +1,15 @@
+/* Syntax 
+
+    selector1, selector2, selector3 {
+        property1: value;
+        property2: value;
+        property3: value;
+    }
+
+    here selector1, selector2 and selector 3 can be of different type, like one could be `class` while other could be `id` and `element` selector.
+*/
+
+/* if we just want to set green color to heading and para 2 then we have to do the following*/
+h1, #par2 {
+    color: green;
+}

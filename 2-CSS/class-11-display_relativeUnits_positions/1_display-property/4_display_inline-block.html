@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Block and Inline element behaviour</title>
+    <style>
+        .div-box {
+            height: 100px;
+            width: 100px;
+            border: 2px solid black;
+            background-color: cadetblue;
+            margin: 10px;
+            text-align: center;
+            line-height: 100px;
+
+            display: inline-block;
+            /* ab ye sabhi elements ek line me flow karenge jo pehle possible nahi tha being a block element by default */
+
+            /* This CSS property allows an element to behave like both an inline and a block element. It flows inline with other elements (like display: inline), but you can apply block-level properties like width, height, and margins. It's often used for creating layouts where elements need to be inline but styled like blocks.*/
+        }
+
+        .span-box {
+            border: 1px solid black;
+            background-color: forestgreen;
+            height: 50px;   
+            width: 50px;    
+            margin: 5px;    
+            padding: 5px;   
+
+            display: inline-block;
+            /* ab in sabhi inline elements ka size set kar sakte hai hight and width property ki help se jo ki pehle possible nahi tha as being an inline element*/
+            /* now margin ka top and bottom pr bhi effect show hoga jo ki inline elements me nahi hota tha */
+        }
+    </style>
+</head>
+<body>
+    <!-- by default block elements -->
+    <div id="div1" class="div-box">box1</div>
+    <div id="div2" class="div-box">box2</div>
+    <div id="div3" class="div-box">box3</div>
+    
+    <br><hr><br>
+
+    <!-- inline elements -->
+    <span id="span1" class="span-box">box4</span>
+    <span id="span2" class="span-box">box5</span>
+    <span id="span3" class="span-box">box6</span>
+</body>
+</html>

@@ -1,0 +1,5 @@
+1. Create a new project with index.html
+2. Generate boilerplate code using Emmet
+3. Write "I am learning with Prashant Sir"
+4. Use comments
+5. Also use Case insensitive tags

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>flex-direction</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #heading {text-align: center;}
+        
+        .box {
+            height: 100px;
+            width: 100px;
+            border: 3px solid black;
+            background-color: #84b0e0;
+
+            margin: 5px;
+        }
+
+        #container {
+            border: 3px solid black;
+            background-color: #37537d;
+            margin: 10px;
+            padding: 10px;
+
+            display: flex;  
+            /* flex-direction: row; */
+            /* flex-direction: row-reverse; */
+            /* flex-direction: column; */
+            /* flex-direction: column-reverse; */
+        }
+
+        /* In Flexbox, the direction of the main axis can be changed using the flex-direction property. 
+        The `flex-direction` property determines the main axis direction, which directly affects how items are arranged within the flex container.
+
+        Flex item will always be arranged in main axis direction
+
+        Main Axis:
+        - By default (`flex-direction: row`), the main axis runs horizontally (left to right) therefore flex items will be arranged horizontally from left to right fashion 
+        - When you set `flex-direction: column`, the main axis runs vertically (top to bottom) therefore flex items will be arranged vertically from top to bottom fashion
+        - When you set `flex-direction: row-reverse`, the main axis runs horizontally (right to left) therefore flex items will be arranges horizontally from right to left fashion
+        - When you set `flex-direction: column-reverse`, the main axis runs vertically (bottom to top), therefore flex items will be arranged from bottom to top fashion
+
+        Cross Axis:
+        - The cross axis is always perpendicular to the main axis.
+        - For `flex-direction: row` or `row-reverse`, the cross axis is vertical (top to bottom).
+        - For `flex-direction: column` or `column-reverse`, the cross axis is horizontal (left to right). 
+        */
+    </style>
+</head>
+<body>
+    <h1 id="heading">Flexbox Container</h1>
+    <div id="container">
+        <div class="box">Flex Item 1</div>
+        <div class="box">Flex Item 2</div>
+        <div class="box">Flex Item 3</div>
+        <div class="box">Flex Item 4</div>
+        <div class="box">Flex Item 5</div>
+        <div class="box">Flex Item 6</div>
+    </div>
+</body>
+</html>

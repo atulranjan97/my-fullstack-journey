@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="./styles/rock-paper-scissors.css">
+</head>
+<body>
+    <h1>Rock Paper Scissors Game</h1>
+    <p>Choose one of the following to play the game</p>
+
+    <button class="choice-button" onclick="
+        let computerChoice = Math.floor(Math.random() * 3 + 1);
+        // - Math.random(): Generates a number between 0 (inclusive) and 1 (exclusive)
+        // - Multiply by 3: Scales it to 0 (inclusive) to 3 (exclusive)
+        // - Add 1: Shifts the range to 1, 2, or 3
+        // - Math.floor(): Rounds down to nearest integer (0, 1, or 2)
+            //Math.floor(2.98) becomes 2, because Math.floor rounds it down.
+
+        // Math.floor(2.98) → 2
+        // Math.round(2.98) → 3
+
+        if(computerChoice === 1) {
+            computerChoice = `👊 Rock`;
+        } else if (computerChoice === 2) {
+            computerChoice = `✋ Paper`;
+        } else {
+            computerChoice = `✌️ Scissors`;
+        }
+        // random number ko choice ke sath map kar rahein hai 
+        
+        let result;
+        if(computerChoice == `👊 Rock`) {
+            result = 'Tie';
+        } else if (computerChoice == `✋ Paper`) {
+            result = 'Computer Won!'
+        } else {
+            result = 'You won!';
+        }
+        // then final result calculate kar rahein hai
+
+        document.querySelector('#result').innerHTML = 
+            `You chose 👊 Rock <br>
+            Computer chose ${computerChoice} <br>
+            Result: ${result}`;
+    ">👊 Rock</button>
+
+
+
+    <button class="choice-button" onclick="
+        computerChoice = Math.floor(Math.random() * 3 + 1);
+        
+        if(computerChoice === 1) {
+            computerChoice = `👊 Rock`;
+            result = 'You Won!';
+        } else if (computerChoice === 2) {
+            computerChoice = `✋ Paper`;
+            result = 'Tie';
+        } else {
+            computerChoice = `✌️ Scissors`;
+            result = 'Computer Won';
+        }
+
+        document.querySelector('#result').innerHTML = 
+            `You chose ✋ Paper <br>
+            Computer chose ${computerChoice} <br>
+            Result: ${result}`;
+    ">✋ Paper</button>
+
+
+
+    <button class="choice-button" onclick="
+        computerChoice = Math.floor(Math.random() * 3 + 1);
+
+        if(computerChoice === 1) {
+            computerChoice = `👊 Rock`;
+        } else if (computerChoice === 2) {
+            computerChoice = `✋ Paper`;
+        } else {
+            computerChoice = `✌️ Scissors`;
+        }
+
+        document.querySelector('#result').innerHTML = 
+            `You chose ✌️ Scissors <br>
+            Computer chose ${computerChoice} <br>
+            Result: ${result}`;
+    ">✌️ Scissors</button>
+    <!-- 👊✌️✋ ,search rock paper scissor emoji on google-->
+
+    <h4 id="result"></h4>
+
+    <script>
+        'use strict';
+    </script>
+</body>
+</html>

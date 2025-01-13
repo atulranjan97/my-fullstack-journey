@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>align-self</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #heading {text-align: center;}
+        
+        .box {
+            height: 100px;
+            width: 100px;
+            border: 3px solid black;
+            background-color: #84b0e0;
+
+            margin: 5px;
+        }
+
+        #container {
+            border: 3px solid black;
+            background-color: #37537d;
+            margin: auto;
+            padding: 10px;
+            height: 800px;
+            width: 600px;
+
+            display: flex;  
+            /* `flex-direction` is set to `row` by default, we don't to have to write it explicitely */
+            /* flex-direction: column; */
+
+            flex-wrap: wrap;
+            /* Needed for multiple rows */
+
+        }
+
+        #box4 {
+            /* align-self: flex-start; */
+            /* align-self: flex-end; */
+            align-self: center;
+        }
+
+/* 
+   CSS `align-self` Property :
+
+   Purpose:
+   - Allows individual flex items to override the container's `align-items` property, aligning them differently along the cross-axis.
+
+   Syntax:
+   align-self: auto | flex-start | flex-end | center | baseline | stretch;
+
+   Values:
+   1. `auto` (default):
+      - Inherits the alignment from the container's `align-items` property.
+
+   2. `flex-start`:
+      - Aligns the item at the start of the cross axis (top if row direction).
+
+   3. `flex-end`:
+      - Aligns the item at the end of the cross axis (bottom if row direction).
+
+   4. `center`:
+      - Aligns the item in the center of the cross axis.
+
+   5. `baseline`:
+      - Aligns the item based on its text baseline.
+
+   6. `stretch`:
+      - Stretches the item to fill the container along the cross axis (default for most items).
+
+*/
+
+    </style>
+</head>
+<body>
+    <h1 id="heading">Flexbox Container</h1>
+    <div id="container">
+        <div id="box1" class="box">Flex Item 1</div>
+        <div id="box2" class="box">Flex Item 2</div>
+        <div id="box3" class="box">Flex Item 3</div>
+        <div id="box4" class="box">Flex Item 4</div>
+        <div id="box5" class="box">Flex Item 5</div>
+    </div>
+</body>
+</html>

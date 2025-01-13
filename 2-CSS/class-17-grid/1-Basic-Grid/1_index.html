@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>First Grid</title>
+    <style>
+        .container {
+            background-color: aquamarine;
+
+            display: grid;
+
+            /* grid-template-rows: height_of_row1   height_of_row2   height_of_row3 ...; */
+            grid-template-rows: 50px 75px;
+
+            /* grid-template-columns: width_of_column1   width_of_column2   width_of_column3 ...; */
+            grid-template-columns: 100px 150px 100px;
+
+            /* grid-gap: 15px; */
+            /* gap: 15px; */
+            /* both are used for setting the gaps(spaces) between rows and columns in a grid layout */
+
+            /* row-gap: 5px; */
+            /* column-gap: 2px; */
+            /* Shorthand:  gap: row-gap column-gap; */
+        }
+
+        .cell {
+            background-color: teal;
+            padding: 5px;
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid tomato;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cell">1</div>
+        <div class="cell">2</div>
+        <div class="cell">3</div>
+        <div class="cell">4</div>
+        <div class="cell">5</div>
+        <div class="cell">6</div>
+    </div>
+</body>
+</html>

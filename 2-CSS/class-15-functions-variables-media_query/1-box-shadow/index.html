@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Box Shadow</title>
+    <style>
+        .container {
+            border: 2px solid black;
+            height: 700px;
+            background-color: rgb(198, 239, 241);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #3498db;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+
+            /* box-shadow: h-offset v-offset blur(optional) spread(optional) color ; */
+            box-shadow: 30px 30px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* -----------box-shadow property-----------
+        The box-shadow property in CSS adds shadow effects to an element's box, including the padding and border. It's used to create depth and highlight elements visually.
+        
+        Syntax:
+            box-shadow: offset-x offset-y blur-radius(optional) spread-radius(optional) color(optional) inset(optional) ; 
+
+        Parameters:
+            Offset-X: Horizontal shadow position (positive = right, negative = left).
+            Offset-Y: Vertical shadow position (positive = down, negative = up).
+            Blur-Radius (optional): Controls the softness of the shadow edges (higher value = softer shadow).
+            Spread-Radius (optional): Expands or shrinks the shadow size (positive = expands, negative = shrinks).
+            Color (optional): Sets the color of the shadow (e.g., rgba(0, 0, 0, 0.5) for semi-transparent shadows).
+            Inset (optional keyword): Changes the shadow from outside the box (default) to inside the box.
+
+        */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">This box has a shadow</div>
+    </div>
+</body>
+</html>

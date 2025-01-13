@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Layering with z-index</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-rows: 100px 100px 100px;
+            grid-template-columns: 100px 100px 100px;
+
+            gap: 10px;
+        }
+
+        .grid-item {
+            background-color: goldenrod;
+            border: 1px solid #000;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .item1 {
+            /* spans from row 1 to 3 and column 1 to 3 */
+            grid-area: 1 / 1 / 3 / 3 ;
+
+            /* To render this item1 on top of item2, we have to increase it's z-index value by atleast one higher than the z-index value of item2 */
+            z-index: 1;
+            /* z-index: 0 will have the same effect as z-index: 1 in this cotext */
+
+
+            /* By default, the z-index of all elements, including grid items, is auto, unless explicitly specified. This means that their stacking context is determined by the document flow and their order in the DOM. */
+            /* Elements with the same z-index (auto in this case) are stacked based on their order in the DOM, with later elements in the DOM appearing on top of earlier ones in the absence of other styling (such as positioning or z-index changes). */
+            /* The grid item with z-index: 0 will appear on top of all the other items that have z-index: auto within the same stacking context, regardless of DOM order. */
+
+        }
+        
+        .item2 {
+            /* spans from row 2 to 4 and column 2 to 4*/
+            grid-area: 2 / 2 / 4 / 4;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item item1">1</div>
+        <div class="grid-item item2">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+</body>
+</html>

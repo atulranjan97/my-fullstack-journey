@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Adjacent Sibling Selector</title>
+    <style>
+        /* It targets the elements that comes directly after the specified elements */
+        /* Using adjacent sibling selector to style the immediate next sibling (but not immediate previous sibling) */
+        h1 + p {
+            color: red;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        h2 + p {
+            color: green;
+        }
+        /* this styling won't apply because there is no immediate sibling p element of h2 */
+    </style>
+</head>
+<body>
+    <p>This paragraph will not be styled even being the immediate sibling of h1 because adjacent sibling selector doesn't target immediate previous sibling.</p>
+    <h1>Adjacent Sibling Selector</h1>
+    <p>This paragraph will be red, bold and larger because it is immediately after the h1.</p>
+    <p>This paragraph will not be styled because it is not immediately after the h1.</p>
+
+    <br>
+
+    <h2>This is second heading</h2>
+    <input type="text" placeholder="username">
+    <p>This paragraph will not be styled because it is not immediately after h2</p>
+</body>
+</html>

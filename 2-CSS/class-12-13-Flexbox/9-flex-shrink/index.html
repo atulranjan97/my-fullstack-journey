@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>flex-shrink</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #heading {text-align: center;}
+        
+        .box {
+            height: 100px;
+            width: 100px;
+            border: 3px solid black;
+            background-color: #84b0e0;
+
+            margin: 5px;
+        }
+
+        #container {
+            border: 3px solid black;
+            background-color: #37537d;
+            margin: 10px;
+            padding: 10px;
+
+            display: flex;
+        }
+
+        #box3 {
+            /* flex-shrink: 0;  */
+            /* Prevent shrinking */
+
+            flex-shrink: 1; 
+            /* Default shrink, all flex items will shrink equally */
+
+            flex-shrink: 4;
+            /* shrinks more (flex items will shrink 4 times more compared to others) */
+        }
+
+        /*
+            CSS `flex-shrink` Property:
+
+            Purpose:
+            - Controls how much a flex item can shrink relative to the other items in the container when there is not enough space.
+
+            Syntax:
+            flex-shrink: <number>;
+
+            Default value: `1` (items can shrink)
+
+            Values:
+            1. `flex-shrink: 0`:
+                - The item will not shrink, regardless of the container's space.
+                - Useful when you want an item to maintain its size even when space is limited.
+
+            2. `flex-shrink: 1` (default):
+                - The item can shrink, and will do so in proportion to the other items.
+                - All items shrink at the same rate if their `flex-shrink` values are the same.
+
+            3. `flex-shrink: <value greater than 1>`:
+                - Items will shrink more aggressively compared to other items with lower or default `flex-shrink` values.
+                - This can be used to give priority to some items shrinking more than others.
+        */
+
+    </style>
+</head>
+<body>
+    <h1 id="heading">Flexbox Container</h1>
+    <div id="container">
+        <div id="box1" class="box">Flex Item 1</div>
+        <div id="box2" class="box">Flex Item 2</div>
+        <div id="box3" class="box">Flex Item 3</div>
+        <div id="box4" class="box">Flex Item 4</div>
+        <div id="box5" class="box">Flex Item 5</div>
+        <div id="box6" class="box">Flex Item 6</div>
+    </div>
+</body>
+</html>

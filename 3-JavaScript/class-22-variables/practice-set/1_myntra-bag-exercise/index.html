@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Myntra bag exercise</title>
+    <!-- This exercise is done in class, and doesn't include concept(like JS function etc) that hasn't covered till this point of time -->
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .bag-summary {
+            text-align: center;
+        }
+
+        .add-to-bag,
+        .add-sale-item {
+            background-color: #90ee90;
+            border: none;
+            padding: 4px 18px;
+            border-radius: 8px;
+        }
+
+        .my-wishlist {
+            text-transform: uppercase;
+            padding: 4px 35px;
+            border-radius: 8px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button class="add-to-bag" onclick="
+            itemsInBag++;
+            document.querySelector('.bag-summary').innerHTML = 'Your bag has ' + itemsInBag + ' items';
+            ">
+            Add to Bag
+        </button>
+
+        <button class="my-wishlist" onclick="
+            itemsInBag--;
+            document.querySelector('.bag-summary').innerHTML = 'Your bag has ' + itemsInBag + ' items';
+        ">
+            move to wishlist
+        </button>
+
+        <button class="add-sale-item" onclick="
+            itemsInBag += 2;
+            document.querySelector('.bag-summary').innerHTML = 'Your bag has ' + itemsInBag + ' items';
+        ">
+            Add 1+1 sale item
+        </button>
+    </div>
+    <h1 class="bag-summary">Your bag has 0 items</h1>
+
+    <script>
+        let itemsInBag = 0;
+    </script>
+</body>
+
+</html>

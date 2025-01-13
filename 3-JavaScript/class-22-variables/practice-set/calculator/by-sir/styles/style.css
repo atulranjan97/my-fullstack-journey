@@ -1,0 +1,31 @@
+.calc-container {
+    border: 1px solid rgb(172, 172, 172);
+    padding: 30px;
+    border-radius: 5px;
+    width: 390px;
+    display: flex;  
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.calc-display {
+    border: 1px solid rgb(119, 119, 119);
+    width: 400px;
+    height: 80px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: right;
+    font-size: 55px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.calc-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    border: 1px solid rgb(119, 119, 119);
+    font-size: 30px;
+    margin: 10px;
+}

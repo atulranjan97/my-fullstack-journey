@@ -1,0 +1,1 @@
+This repository contains all the code and projects I will be practicing as part of my Full Stack Development learning journey.

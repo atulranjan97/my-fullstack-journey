@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Relative Unit (percentage)</title>
+    <style>
+        #parent-div {
+            border: 1px solid black;
+            background-color: aquamarine;
+            height: 200px;
+            width: 200px;
+            font-size: 25px;
+        }
+
+        #child-div {
+            border: 1px solid black;
+            background-color: aqua;
+            width: 50%;     /* Half the parent's width */
+            height: 30%;    /* 30% of the parent's height*/
+        }
+    </style>
+</head>
+<body>
+    <div id="parent-div">
+        first
+        <div id="child-div">second</div>
+    </div>
+    
+<!-- 
+    (%)
+    Definition: Relative to the size of the parent element. Its meaning changes depending on the property.
+        -> For width, height, padding, and margin: Based on the parent's dimensions.
+        -> For font-size: Relative to the parent's font size.
+    Use Case: Used for percentage-based layouts or responsive design.
+-->
+
+</body>
+</html>

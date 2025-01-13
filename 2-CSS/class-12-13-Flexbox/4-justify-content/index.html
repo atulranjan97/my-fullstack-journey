@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>justify-content</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #heading {text-align: center;}
+        
+        .box {
+            height: 100px;
+            width: 100px;
+            border: 3px solid black;
+            background-color: #84b0e0;
+
+            margin: 5px;
+        }
+
+        #container {
+            border: 3px solid black;
+            background-color: #37537d;
+            margin: 10px;
+            padding: 10px;
+            height: 900px;
+
+
+            display: flex;  
+            /* flex-direction: column; */
+            
+            /* justify-content: flex-start; */
+            /* justify-content: center; */
+            /* justify-content: flex-end; */
+            /* justify-content: space-between; */
+            /* justify-content: space-around; */
+            /* justify-content: space-evenly; */
+            /* justify-content: baseline; */
+        }
+
+        /* `justify-content` in Flexbox:
+
+            - Aligns flex items **along the main axis** (horizontal or vertical based on `flex-direction`).
+            - Used to distribute space between items or align them within the container.
+
+            **Values**:
+            - `flex-start`: Aligns items to the **start** of the main axis (default).
+            - `flex-end`: Aligns items to the **end** of the main axis.
+            - `center`: Aligns items in the **center** of the main axis.
+            - `space-between`: Distributes items with **equal space** between them.
+            - `space-around`: Distributes items with **equal space** around them.
+            - `space-evenly`: Distributes items with **equal space** between and around them.
+
+            Example: 
+            - `justify-content: center;` will center all items along the main axis.
+         */
+    </style>
+</head>
+<body>
+    <h1 id="heading">Flexbox Container</h1>
+    <div id="container">
+        <div class="box">Flex Item 1</div>
+        <div class="box">Flex Item 2</div>
+        <div class="box">Flex Item 3</div>
+        <div class="box">Flex Item 4</div>
+        <div class="box">Flex Item 5</div>
+    </div>
+</body>
+</html>

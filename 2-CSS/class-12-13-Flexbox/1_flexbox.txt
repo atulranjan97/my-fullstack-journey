@@ -1,0 +1,508 @@
+
+/* 
+   CSS `display: flex` Property:
+
+   Purpose:
+   - The `display: flex` property is used to create a flex container, which allows you to arrange its child elements (flex items) in a flexible layout.
+
+   Syntax:
+   display: flex | inline-flex;
+
+   Values:
+   1. `display: flex`:
+      - **Block-level container**: The container takes up the full width of its parent by default and aligns the child items according to flexbox rules.
+      - The child items inside the container are flex items and can be aligned and distributed using various flexbox properties (`justify-content`, `align-items`, etc.).
+
+   2. `display: inline-flex`:
+      - **Inline container**: The container behaves like an inline element, meaning it will only take as much width as needed by its content, but its children will still follow flexbox rules.
+      - The flex container will align its items like `display: flex`, but it will not occupy the full width of the parent, like inline elements.
+
+   Usage:
+   .container {
+       display: flex; /* Makes the container a flex container */
+   }
+
+   .container {
+       display: inline-flex; /* Makes the container behave like an inline element but with flex properties */
+   }
+
+   Example (with `display: flex`):
+   .container {
+       display: flex;
+       justify-content: space-between; /* Space between items */
+   }
+   .item {
+       width: 100px;
+   }
+   Result:
+   - Flex items inside the container will be aligned and distributed according to the defined flex properties.
+*/
+
+display: flex;
+/* A property which align items inside a container in one dimension */
+/* Is container ke items main axis ke along left to right arrange ho jayenge */
+/* Once you set this property to container element the items inside it will known as flex items and they will no longer occupy the whole width 
+    of this container but only occupy the space they needed*/
+
+
+
+
+/* Key Points to Remember:
+In Flexbox, the direction of the main axis can be changed using the flex-direction property. 
+The `flex-direction` property determines the main axis direction, which directly affects how items are arranged within the flex container.
+
+   Main Axis:
+   - By default (`flex-direction: row`), the main axis runs horizontally (left to right).
+   - When you set `flex-direction: column`, the main axis runs vertically (top to bottom).
+   - When you set `flex-direction: row-reverse`, the main axis runs horizontally (right to left).
+   - When you set `flex-direction: column-reverse`, the main axis runs vertically (bottom to top).
+
+   Cross Axis:
+   - The cross axis is always perpendicular to the main axis.
+   - For `flex-direction: row` or `row-reverse`, the cross axis is vertical (top to bottom).
+   - For `flex-direction: column` or `column-reverse`, the cross axis is horizontal (left to right).
+
+   How to Use:
+   - `justify-content` aligns items along the main axis.
+   - `align-items` aligns items along the cross axis.
+*/
+
+
+
+
+
+/* Flexbox Margin Behavior:
+
+   - **Flexbox** does not collapse margins between items:
+     - In Flexbox, if two flex items have margins, the margins are **added together**.
+     - For example, if two adjacent flex items each have a margin of 20px, the space between them will be **40px** (not 20px).
+     - This behavior happens regardless of the `flex-direction` property.
+
+   - **Block-Level Layouts** (Non-Flexbox):
+     - In block-level elements, **margins collapse** when two adjacent elements both have vertical margins.
+     - In this case, the space between them is equal to the **larger of the two margins** (not the sum of both).
+     - For example, if two block elements have 20px and 30px vertical margins, the space between them will be **30px**, not 50px.
+
+   Key Point:
+   - Flexbox layout does **not** collapse margins, unlike block layout.
+   - In Flexbox, adjacent flex items **add their margins**, leading to larger spacing.
+
+ Margins on Inline-Level Elements:
+
+   - **Horizontal Margins**:
+     - Margins on the left and right of inline-level elements (e.g., <span>, <a>) **do not collapse**.
+     - They will be added together and create space between inline elements as expected.
+     - Example: 
+       <span style="margin-left: 10px;">Item 1</span>
+       <span style="margin-right: 20px;">Item 2</span>
+     - The space between Item 1 and Item 2 will be **10px + 20px** = **30px**.
+
+   - **Vertical Margins**:
+     - Vertical margins (top and bottom) **collapse** between adjacent inline-level elements, similar to block elements.
+     - Only the **larger** of the vertical margins is applied, not the sum of both.
+     - Example: 
+       <span style="margin-top: 10px;">Item 1</span>
+       <span style="margin-top: 20px;">Item 2</span>
+     - The space between Item 1 and Item 2 will be **20px** (the larger margin).
+
+   Key Point:
+   - **Horizontal margins** add together and do not collapse.
+   - **Vertical margins** collapse and take the larger of the two values when adjacent inline-level elements are involved.
+*/
+
+
+
+
+
+/* `justify-content` in Flexbox:
+
+   - Aligns flex items **along the main axis** (horizontal or vertical based on `flex-direction`).
+   - Used to distribute space between items or align them within the container.
+
+   **Values**:
+   - `flex-start`: Aligns items to the **start** of the main axis (default).
+   - `flex-end`: Aligns items to the **end** of the main axis.
+   - `center`: Aligns items in the **center** of the main axis.
+   - `space-between`: Distributes items with **equal space** between them.
+   - `space-around`: Distributes items with **equal space** around them.
+   - `space-evenly`: Distributes items with **equal space** between and around them.
+
+   Example: 
+   - `justify-content: center;` will center all items along the main axis.
+*/
+
+
+
+
+
+/* 
+   Flexbox Overflow behavior:
+
+   1. `flex-wrap: nowrap` (default):
+      - Items are forced onto a single line, even if they exceed the container's size.
+      - Overflow occurs when the total width (or height, in column direction) of all items 
+        is greater than the container's size.
+      - Use this for layouts where you don't want items to wrap, but beware of overflow.
+
+   2. Fixed Sizes:
+      - Items with fixed `width`, `flex-basis`, or `min-width` properties can cause overflow 
+        if their total size plus margins or gaps exceeds the container.
+      - Flexbox allows items to shrink (`flex-shrink`), but they cannot shrink below their 
+        `min-width` or `min-height` values, which may lead to overflow.
+
+   3. Content Overflow:
+      - If a flex item contains long unbreakable text, large images, or other non-wrapping 
+        content, the item may exceed the available space and cause overflow.
+      - This is common when using `nowrap` on text or not setting a maximum size for images.
+
+   4. Margins/Gaps:
+      - Extra `margin`, `gap`, or `padding` on items adds additional space, which can 
+        cause the combined size of items to exceed the container's dimensions.
+      - These spaces are not automatically adjusted by Flexbox unless wrapping is allowed.
+
+   Solutions:
+   - Use `flex-wrap: wrap` to allow items to break onto multiple lines.
+   - Adjust `flex-shrink` to let items shrink more, or set `max-width` to prevent items 
+     from becoming too large.
+   - Use `overflow: auto` or `overflow: hidden` on the container to handle overflow gracefully.
+   - Ensure content inside flex items can wrap (e.g., use `word-wrap: break-word` for text).
+*/
+
+
+
+
+
+/* `flex-wrap` in Flexbox:
+
+   The 'flex-wrap' property controls whether the flex container's items 
+   should wrap onto multiple lines or stay on a single line. 
+
+   Syntax:
+   flex-wrap: nowrap | wrap | wrap-reverse;
+
+   Values:
+   1. nowrap (default):
+      - All flex items will be in a single line, even if it overflows the container.
+
+   2. wrap:
+      - Flex items will wrap onto multiple lines, maintaining the normal flow.
+
+   3. wrap-reverse:
+      - Flex items will wrap onto multiple lines, but in reverse order (bottom-to-top or right-to-left, depending on the flex direction).
+
+   Tips:
+   - Use with 'flex-direction' to customize the direction of wrapping.
+   - Helpful for creating responsive layouts when combined with 'media queries'.
+
+*/
+
+
+
+
+
+/* 
+   CSS `align-items` Property :
+
+   Purpose:
+   - Aligns flex items along the cross axis (perpendicular to `flex-direction`).
+
+   Syntax:
+   align-items: stretch | flex-start | flex-end | center | baseline;
+
+   Values:
+   1. `stretch` (default):
+      - Items stretch to fill the container along the cross axis.
+
+   2. `flex-start`:
+      - Items align at the start of the cross axis.
+
+   3. `flex-end`:
+      - Items align at the end of the cross axis.
+
+   4. `center`:
+      - Items align at the center of the cross axis.
+
+   5. `baseline`:
+      - Items align their text baselines.
+
+   Usage:
+   .container {
+       display: flex;
+       align-items: center;
+   }
+*/
+
+
+
+
+
+/* 
+   CSS `align-content` Property (Explanation 1):
+
+   Purpose:
+   - Aligns flex lines (in a multi-line flex container) along the cross axis.
+
+   Syntax:
+   align-content: stretch | flex-start | flex-end | center | space-between | space-around;
+
+   Values:
+   1. `stretch` (default):
+      - Lines stretch to fill the container along the cross axis.
+
+   2. `flex-start`:
+      - Lines align at the start of the cross axis.
+
+   3. `flex-end`:
+      - Lines align at the end of the cross axis.
+
+   4. `center`:
+      - Lines align at the center of the cross axis.
+
+   5. `space-between`:
+      - Lines are evenly distributed, with no space at the edges.
+
+   6. `space-around`:
+      - Lines are evenly distributed, with equal space around them.
+
+   Usage:
+   .container {
+       display: flex;
+       flex-wrap: wrap; /* Must be multi-line */
+       align-content: space-between;
+   }
+*/
+
+
+/* 
+   CSS `align-content` Property (Explanation 2):
+
+   Purpose:
+   - Aligns rows of items in a flex container when there are multiple rows (flex-wrap: wrap).
+
+   Syntax:
+   align-content: stretch | flex-start | flex-end | center | space-between | space-around | space-evenly;
+
+   Values:
+   1. `stretch` (default):
+      - Rows stretch to fill the container's space vertically.
+
+   2. `flex-start`:
+      - Rows are packed at the top of the container.
+
+   3. `flex-end`:
+      - Rows are packed at the bottom of the container.
+
+   4. `center`:
+      - Rows are packed in the middle of the container.
+
+   5. `space-between`:
+      - Rows are evenly spaced, with no extra space at the top or bottom.
+
+   6. `space-around`:
+      - Rows are evenly spaced, with equal space above and below each row.
+
+   7. `space-evenly`:
+      - Rows are evenly spaced, with equal space distributed between, above, and below all rows.
+
+   Usage:
+   .container {
+       display: flex;
+       flex-wrap: wrap; /* Needed for multiple rows */
+       align-content: space-evenly;
+   }
+*/
+
+
+
+
+
+/* 
+   CSS `align-self` Property :
+
+   Purpose:
+   - Allows individual flex items to override the `align-items` alignment for that item.
+
+   Syntax:
+   align-self: auto | flex-start | flex-end | center | baseline | stretch;
+
+   Values:
+   1. `auto` (default):
+      - Inherits the alignment from the container's `align-items` property.
+
+   2. `flex-start`:
+      - Aligns the item at the start of the cross axis (top if row direction).
+
+   3. `flex-end`:
+      - Aligns the item at the end of the cross axis (bottom if row direction).
+
+   4. `center`:
+      - Aligns the item in the center of the cross axis.
+
+   5. `baseline`:
+      - Aligns the item based on its text baseline.
+
+   6. `stretch`:
+      - Stretches the item to fill the container along the cross axis (default for most items).
+
+   Usage:
+   .container {
+       display: flex;
+   }
+   .item {
+       align-self: center; /* Override align-items for this item */
+   }
+*/
+
+
+
+
+
+/* 
+   CSS `flex-shrink` Property:
+
+   Purpose:
+   - Controls how much a flex item can shrink relative to the other items in the container when there is not enough space.
+
+   Syntax:
+   flex-shrink: <number>;
+
+   Default value: `1` (items can shrink)
+
+   Values:
+   1. `flex-shrink: 0`:
+      - The item will not shrink, regardless of the container's space.
+      - Useful when you want an item to maintain its size even when space is limited.
+
+   2. `flex-shrink: 1` (default):
+      - The item can shrink, and will do so in proportion to the other items.
+      - All items shrink at the same rate if their `flex-shrink` values are the same.
+
+   3. `flex-shrink: <value greater than 1>`:
+      - Items will shrink more aggressively compared to other items with lower or default `flex-shrink` values.
+      - This can be used to give priority to some items shrinking more than others.
+
+   Usage:
+   .container {
+       display: flex;
+   }
+   .item {
+       flex-shrink: 0; /* Prevent shrinking */
+   }
+
+   Example:
+   .container {
+       display: flex;
+   }
+   .item1 {
+       flex-shrink: 1; /* Default shrink */
+   }
+   .item2 {
+       flex-shrink: 2; /* Shrinks more */
+   }
+*/
+
+
+
+
+
+
+/* 
+   CSS `flex-grow` Property :
+
+   Purpose:
+   - Controls how much a flex item will grow relative to the other items in the container when there is extra space.
+
+   Syntax:
+   flex-grow: <number>;
+
+   Default value: `0` (items do not grow by default)
+
+   Values:
+   1. `flex-grow: 0` (default):
+      - The item will not grow and will only take up its initial size (based on `flex-basis` or `width`).
+      - Useful when you want the item to maintain its size and not expand.
+
+   2. `flex-grow: 1`:
+      - The item can grow to take up available space equally with other items that have `flex-grow: 1`.
+      - All items with the same `flex-grow` value grow at the same rate.
+
+   3. `flex-grow: <value greater than 1>`:
+      - The item will grow more aggressively than other items with a smaller `flex-grow` value.
+      - For example, `flex-grow: 2` means the item will take twice as much available space as an item with `flex-grow: 1`.
+
+   4. `flex-grow: <value less than 1>`:
+      - The item will grow, but at a slower rate compared to other items with larger `flex-grow` values.
+
+   Usage:
+   .container {
+       display: flex;
+   }
+   .item {
+       flex-grow: 1; /* Equal growth with other items */
+   }
+
+   Example:
+   .container {
+       display: flex;
+   }
+   .item1 {
+       flex-grow: 1; /* Grow equally */
+   }
+   .item2 {
+       flex-grow: 2; /* Grow twice as much */
+   }
+*/
+
+
+
+
+
+
+/* 
+   CSS `order` Property Cheat Sheet:
+
+   Purpose:
+   - The `order` property controls the order of flex items along the main axis (horizontal or vertical).
+   - By default, all flex items have an `order` value of `0`, which means they are displayed in the order they appear in the HTML.
+
+   Syntax:
+   order: <integer>;
+
+   Default value: `0` (items appear in the order they are defined in the HTML)
+
+   Values:
+   1. `order: 0` (default):
+      - Items appear in the order they are written in the HTML, starting from the first item.
+      - **No changes to item positioning** unless `order` is explicitly modified.
+
+   2. `order: <positive integer>`:
+      - Items with a **higher `order` value** will appear **later** in the container, after items with a lower or default `order` value.
+      - Example: `order: 2` will appear after `order: 1` or `order: 0` items.
+
+   3. `order: <negative integer>`:
+      - Items with a **negative `order` value** will appear **earlier** in the container, before items with a `0` or positive `order` value.
+      - Example: `order: -1` will appear before any item with `order: 0` or higher.
+
+   4. `order: 1, 2, 3, ...` (increasing positive numbers):
+      - The higher the number, the later the item will appear.
+      - **Use for creating custom item orders** regardless of the source order in the HTML.
+
+   Usage:
+   .container {
+       display: flex;
+   }
+   .item1 {
+       order: 2; /* This item will be placed last */
+   }
+   .item2 {
+       order: 1; /* This item will come before item1 */
+   }
+   .item3 {
+       order: -1; /* This item will come first */
+   }
+
+   Result:
+   - Items will be displayed in the order: item3, item2, item1.
+   - **Even though `item1` appears last in HTML**, its `order: 2` will position it after `item2`.
+*/
+

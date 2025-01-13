@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Selectors</title>
+    <style>
+                                                            /* Attribute Selectors */
+
+        /* Attribute selectors are used to select elements based on attribute or attribute values */
+        /* generally iska use bahut kam hota hai */
+
+        /* ------------------------------------------------ Basic Attribute: [attribure] -----------------------------------------------------------*/
+
+        [type] {
+            margin: 10px;
+        }
+        /* `type` naam ka attribute jis bhi element mein define hua hai vo select ho jayega for given styling */
+
+
+        [placeholder] {
+            background-color: bisque;
+        }
+        /* jis bhi element pr `placeholder` naam ka attribute define hua hai uska background color `bisque` ho jayega */
+
+
+
+
+        /*------------------------------------------------- Exact Match: [attribute:"value"] ------------------------------------------------------- */
+
+        [placeholder="Username"] {
+            font-size: 20px;
+        }
+        /* jis bhi element ke `placeholder` attribute ki value `Username` hai uske liye font size `20px` define ho jayega */
+
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="Username" class="my-input username">
+    <br>
+    <input type="password" placeholder="Password" class="my-input password">
+    <br>
+    <input type="submit" value="Login">
+</body>
+</html>

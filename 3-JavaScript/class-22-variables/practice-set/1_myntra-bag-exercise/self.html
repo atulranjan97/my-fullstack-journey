@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Myntra bag exercise</title>
+    <!-- This is done by my self -->
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .bag-summary {
+            text-align: center;
+        }
+
+        .add-to-bag,
+        .add-sale-item {
+            background-color: #90ee90;
+            border: none;
+            padding: 4px 18px;
+            border-radius: 8px;
+            margin: 0 5px;
+        }
+
+        .my-wishlist {
+            text-transform: uppercase;
+            padding: 4px 35px;
+            border-radius: 8px;
+            margin: 0 5px;
+        }
+
+        /* .my-button {
+            font-size: 1px;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <button class="add-to-bag" onclick="addOneItem()">Add to Bag</button>
+        <button class="my-wishlist" onclick="removeItem()">move to wishlist</button>
+        <button class="add-sale-item" onclick="addTwoItem()">Add 1+1 sale item</button>
+
+    </div>
+    <h1 class="bag-summary"></h1>
+
+    <script>
+        let itemsInBag = 0;
+        document.querySelector('.my-wishlist').style.display = 'none';
+        // document.querySelector('.my-wishlist').style.display = 'none';
+        
+        function addOneItem() {
+            itemsInBag++;
+
+            if (itemsInBag > 1)
+                document.querySelector('.bag-summary').innerHTML = 'Your bag has ' + itemsInBag + ' items';
+            else{
+                    document.querySelector('.bag-summary').innerHTML = 'Your bag has ' + itemsInBag + ' item';
+                    document.querySelector('.my-wishlist').style.display = 'inline';
+                    // To display this element again, you can change its display property back to its original value which is `inline` because button is an `inline` element
+                }
+        }
+
+        function removeItem() {
+            if (itemsInBag > 0)
+                itemsInBag--;
+
+            if (itemsInBag > 1)
+                document.querySelector('.bag-summary').innerHTML = 'Your bag has ' + itemsInBag + ' items';
+            else if (itemsInBag == 1)
+                document.querySelector('.bag-summary').innerHTML = 'Your bag has ' + itemsInBag + ' item';
+            else{
+                    document.querySelector('.bag-summary').innerHTML = 'Your bag is empty';
+                    document.querySelector('.my-wishlist').style.display = 'none';
+                }
+        }
+
+        function addTwoItem() {
+            if(itemsInBag == 0)
+                document.querySelector('.my-wishlist').style.display = 'inline';
+
+            itemsInBag += 2;
+            document.querySelector('.bag-summary').innerHTML = 'Your bag has ' + itemsInBag + ' items';
+        }
+    </script>
+</body>
+
+</html>

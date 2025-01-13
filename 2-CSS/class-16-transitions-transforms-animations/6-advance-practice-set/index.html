@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Interactive card</title>
+    <style>
+        .card {
+            width: 200px;
+            height: 300px;
+
+            margin: auto;
+            perspective: 1000px;    /*Enables 3D effect*/
+            position: relative;
+            top: 200px;
+
+            /* CSS Transition: Apply the transition to the .card to smoothly transform the card when hovered. Use transform 0.6s ease-in-out. */
+            transition: transform 0.6s ease-in-out;
+
+        }
+        
+        .card-front, 
+        .card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;    /* hide the back side when flipped*/
+            transform-style: preserve-3d;
+        }
+        
+        .card-front {
+            background-color: #fff;
+            color: #000;
+        }
+        
+        .card-back {
+            background-color: #000;
+            color: #fff;
+            /* transform: rotateY(180deg); */
+        }
+        
+        /* CSS Transform (Rotate): Rotate the .card by 180 degrees when hovered */
+        .card:hover {
+            transform: rotateY(180deg);
+        }
+        
+        /* CSS Transform (Scale): Scale the .card to 1.1 times its original size when hovered */
+        /* .card:hover {
+            transform: scale(1.1);
+        } */
+        
+        /* CSS Transform (Translate): Translate the .card 10px to the right and 20px down when hovered */
+        /* .card:hover {
+            transform: translate(-10px, 20px);
+        } */
+        
+        /* CSS Transform (Skew): Skew the .card by 10 degrees along the X-axis and 5 degrees along the Y-axis when hovered. */
+        /* .card:hover {
+            transform: skew(10deg, 5deg);
+        } */
+        
+        
+        
+        /* CSS Animation: Create a keyframe animation named flip that rotates the .card from 0 degrees to 180 degrees. */
+        @keyframes flip {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(180deg);
+            }
+        }
+        
+        /* Animation Properties; Apply the flip animation to the .card with a duration of 2 seconds, an ease-in timing function, a delay of 0.5 seconds, 3 iterations, and alternate direction */
+        /* .card {
+            animation: flip 2s ease-in 0.5s 3 alternate;
+        } */
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-front">
+            <h2>Front Side</h2>
+        </div>
+        <div class="card-back">
+            <h2>Back Side</h2>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="./styles/rock-paper-scissors.css">
+</head>
+<body>
+    <h1>Rock Paper Scissors Game</h1>
+    <h4 id="score">No games played yet</h4>
+    <p>Choose one of the following to play the game</p>
+
+    <button class="choice-button" onclick="rockClicked()">👊 Rock</button>
+    <button class="choice-button" onclick="paperClicked()">✋ Paper</button>
+    <button class="choice-button" onclick="scissorClicked()">✌️ Scissors</button>
+    <!-- 👊✌️✋ ,search rock paper scissor emoji on google-->
+
+    <button class="reset" onclick="resetScore()">Reset</button>
+
+    <h4 id="result"></h4>
+
+    <script src="./script/rock-paper-scissors.js"></script>
+</body>
+</html>

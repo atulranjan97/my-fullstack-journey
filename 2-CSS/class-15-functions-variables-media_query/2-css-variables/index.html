@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS Variables</title>
+
+    <style>
+        html {
+            /* html is the root element and is the parent element of all the other elements */
+            /* variable name must be preceded by two hyphens (Eg: --variableName) */
+
+            --main-bg-color: #ff0000;
+            /* --main-box-color: #00ff00; */
+            --main-text-color: #0000ff;
+            --border-color: #000000;
+
+            /* in varibles ko is root element me define karna zaruri nahi hai, hum chahe toh in variables ko jaha use karna hai uske kisi ancestor element me bhi define kar sakte hai, lekin agar hum poori app me use karna chah rahe hai to uske liye sabse achi jagah root element(ie, <html>) me define karna hai */
+
+        }
+
+        .container {
+            background-color: var(--main-bg-color);
+            display: flex;
+            padding: 10px;
+            border: 2px solid var(--border-color);
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 2px solid var(--border-color);
+            margin: 5px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: var(--main-text-color);
+            background-color: var(--main-box-color, #ffff00);   /*secondary argument (ie, #ffff00 is a fallback value)*/
+            /* In case `--main-box-color` defined nahi hai toh fallback value(ie, #ffff00) use hogi  */
+            /* agar `--main-box-color` defined hai, toh yahi apply hoga*/
+            /* Industry mein practically fallback use nahi hota, agar `--main-box-color` defined nahi hai to hum chahenge ki error show ho jaye taki hum use fix karle instead ki fallback chale, kyuki agar fallback chala aur future me again kabhi color change karna pada toh hume is fallback ko apne code me dhoondna padega  */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+        <div class="box">Box 4</div>
+    </div>
+</body>
+</html>

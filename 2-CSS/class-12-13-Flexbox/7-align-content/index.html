@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>align-content</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #heading {text-align: center;}
+        
+        .box {
+            height: 100px;
+            width: 100px;
+            border: 3px solid black;
+            background-color: #84b0e0;
+
+            margin: 5px;
+        }
+
+        #container {
+            border: 3px solid black;
+            background-color: #37537d;
+            margin: auto;
+            padding: 10px;
+            height: 800px;
+            width: 600px;
+
+            display: flex;  
+
+            /* flex-direction: column; */
+
+            flex-wrap: wrap;
+            /* Needed for multiple rows */
+
+            /* align-content: flex-start; */
+            /* align-content: flex-end; */
+            /* align-content: center; */
+            /* align-content: space-between; */
+            /* align-content: space-around; */
+            align-content: space-evenly;
+        }
+
+        /* 
+        CSS `align-content` Property :
+
+        Purpose:
+        - Aligns flex lines (in a multi-line flex container) along the cross axis.
+        OR
+        - Aligns rows of items in a flex container when there are multiple rows (flex-wrap: wrap).
+
+        Syntax:
+        align-content: stretch | flex-start | flex-end | center | space-between | space-around | space-evenly;
+
+        Values:
+        1. `stretch` (default):
+            - Lines stretch to fill the container along the cross axis.
+                OR
+            - Rows stretch to fill the container's space vertically.
+
+        2. `flex-start`:
+            - Lines align at the start of the cross axis.
+            OR
+            - Rows are packed at the top of the container.
+
+        3. `flex-end`:
+            - Lines align at the end of the cross axis.
+            OR
+            - Rows are packed at the bottom of the container.
+
+        4. `center`:
+            - Lines align at the center of the cross axis.
+            OR
+            - Rows are packed in the middle of the container.
+
+        5. `space-between`:
+            - Lines are evenly distributed, with no space at the edges.
+            OR
+            - Rows are evenly spaced, with no extra space at the top or bottom.
+
+        6. `space-around`:
+            - Lines are evenly distributed, with equal space around them.
+            OR
+            - Rows are evenly spaced, with equal space above and below each row.
+
+        7. `space-evenly`:
+            - Lines are evenly spaced, with equal space distributed between, above, and below all rows
+            - Rows are evenly spaced, with equal space distributed between, above, and below all rows.
+        */
+    </style>
+</head>
+<body>
+    <h1 id="heading">Flexbox Container</h1>
+    <div id="container">
+        <div class="box">Flex Item 1</div>
+        <div class="box">Flex Item 2</div>
+        <div class="box">Flex Item 3</div>
+        <div class="box">Flex Item 4</div>
+        <div class="box">Flex Item 5</div>
+        <div class="box">Flex Item 6</div>
+        <div class="box">Flex Item 7</div>
+        <div class="box">Flex Item 8</div>
+    </div>
+</body>
+</html>

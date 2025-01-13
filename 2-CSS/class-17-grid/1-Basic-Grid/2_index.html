@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Grid row / Grid column</title>
+    <style>
+        .container {
+            display: grid;
+
+            grid-template-rows: 50px 50px 50px;
+            grid-template-columns: 100px 100px 100px;
+
+            gap: 2px;
+        }
+
+        .cell {
+            background-color: teal;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid tomato;
+            border-radius: 5px;
+        }
+
+        .item1 {
+            /* --------------------------------------------------------------------------------- */
+            /* agar `grid-row-start: n` hai toh `grid-row-end: n+1` ho jata hai by default agar humne `grid-row-end` ki koi specific value define nahi kari hai, same behaviour applies on `grid-column-start/end` */
+            /* grid-row-start: 2;  */
+            
+            /* grid-row-end: 4;
+            
+            grid-column-start: 2;
+            grid-column-end: 4; */
+            /* writing `grid-column-end: 4` is as same as writing `grid-column-end: -1` as both signifies last grid column line */
+            /* --------------------------------------------------------------------------------- */
+
+
+
+            /* --------------------------------------------------------------------------------- */
+            
+            /* Shorthand 
+            grid-row: grid-row-start / grid-row-end;
+            grid-column: grid-column-start / grid-column-end;
+            */
+            
+            /* grid-row: 2 / 4;
+            grid-column: 2 /4; */
+            /* --------------------------------------------------------------------------------- */
+
+
+
+            /* --------------------------------------------------------------------------------- */
+            
+            /* alternate way */
+            /* grid-row: 2 / span2; */
+            /* Start at row 2 and span 2 rows. 
+            "Start at row 2": The 2 indicates the starting grid line.
+            "Span 2 rows": The span 2 tells the element to occupy two rows in the grid. */
+            
+            /* grid-column: 2 / span2; */
+            /* --------------------------------------------------------------------------------- */
+
+            
+            /* --------------------------------------------------------------------------------- */
+            /* Syntax: grid-area: <row-start> / <column-start> / <row-end> / <column-end> */
+                grid-area: 2 / 2 / 4 / 4;
+            /* --------------------------------------------------------------------------------- */
+
+            /* item1 and item7 overlap kar rahein hai, but item7 item1 ke upar sirf isiliye hai kyunki item7 html me item1 ke baad define hua hai. */
+            z-index: 1;
+            /* by default sabka z-index: 0 hota hai toh agar item1 ke z-index: 1 kiya toh yeh item7 ke upar aa jayega  */
+
+        }
+
+        .item7 {
+            /* grid-row-start: 3;
+            grid-column-start: 1;
+            grid-column-end: -1; */
+            /* starts overlapping item1 */
+
+            /* Shorthand */
+            grid-row: 3 / 4;
+            grid-column: 1 / -1;
+
+            grid-area: 3 / 1 / 4 / -1 ;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cell item1">1</div>
+        <div class="cell">2</div>
+        <div class="cell">3</div>
+        <div class="cell">4</div>
+        <div class="cell">5</div>
+        <div class="cell">6</div>
+        <div class="cell item7">7</div>
+        <div class="cell">8</div>
+    </div>
+</body>
+</html>

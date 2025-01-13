@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pseudo Classes</title>
+    <style>
+
+        a {
+            font-size: 30px;    
+            text-decoration: none;
+
+            /* position: absolute;
+            top: 25%;
+            left: 39%; */
+
+            color: blue;
+            display: inline-flex;
+             
+            margin-left: 5px;
+            
+        }
+        
+        .letter {
+            /* border: 1px solid white; */
+            gap: 0;
+        }
+        
+        a:hover span:nth-child(1) {
+            color: #1374e9;
+            
+        }
+        a:hover span:nth-child(2) {
+            color: #df3325;
+            
+        }
+        a:hover span:nth-child(3) {
+            color: #fbc009;
+            
+        }
+        a:hover span:nth-child(4) {
+            color: #1374e9;
+            
+        }
+        a:hover span:nth-child(5) {
+            color: #239b45;
+            
+        }
+        a:hover span:nth-child(6) {
+            color: #df3325;
+            
+        }
+
+        /* :hover pseudo-class: This applies a style when the user hovers over the <a> with the class container. */
+        /* span:nth-child(n): This targets only the specific nth <span> element inside the <a>. */
+        /* The styles (color: #fbc009;) will only be applied to the third <span> while the mouse is hovering over the <a>. */
+
+
+
+    </style>
+</head>
+<body>
+    <p class="first" style="font-size: 25px;">For more information visit  
+        <a href="https://www.google.com">
+            <span class="letter">G</span>
+            <span class="letter">o</span>
+            <span class="letter">o</span>
+            <span class="letter">g</span>
+            <span class="letter">l</span>
+            <span class="letter">e</span>
+        </a>
+    </p>
+</body>
+</html>

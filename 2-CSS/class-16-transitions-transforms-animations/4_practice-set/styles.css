@@ -1,0 +1,63 @@
+/* General Styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+}
+
+/* Container for the Progress Bar */
+.container {
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Progress Bar Styles */
+.progress-bar {
+    width: 100%;
+    height: 30px;
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* The Fill of the Progress Bar */
+.fill {
+    width: 0;
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 15px 0 0 15px;
+    animation: fillProgress 5s ease-in-out forwards, bounce 0.6s ease-out 5s forwards;
+    transform-origin: right; /* Bounce happens at the end of the bar */
+}
+
+/* Keyframes for Filling Progress Bar */
+@keyframes fillProgress {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* Keyframes for Bounce Effect */
+@keyframes bounce {
+    0% {
+        transform: scaleX(1);
+    }
+    30% {
+        transform: scaleX(1.15); /* More pronounced stretch */
+    }
+    50% {
+        transform: scaleX(0.95); /* Slight recoil */
+    }
+    100% {
+        transform: scaleX(1); /* Return to normal */
+    }
+}

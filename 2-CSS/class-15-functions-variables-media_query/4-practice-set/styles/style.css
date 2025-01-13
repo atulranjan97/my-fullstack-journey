@@ -1,0 +1,50 @@
+                                                        /* Attribute selector: */
+/* Style all div.product elements with a border: 1px solid gray */
+[class="product"] {
+    border: 1px solid gray;
+}
+
+/* Highlight products where the data-category attribute contains "electronics" with a background-color:lightblue; */
+[data-category="electronics"] {
+    background-color: lightblue;
+}
+
+
+                                                        /* Child selector */
+/* Style direct children li elements of ul.main-nav with color: darkblue; */
+.main-nav > li {
+    color: darkblue;
+}
+
+/* Increase the left margin for the nested ul inside li.Products to 20px */
+.main-nav > li > ul {
+    margin-left: 20px;
+}
+
+
+                                                        /* Adjacent sibling selector */
+/* Style the paragraph immediately following the h2 tag in the section with font-weight: bold; */
+h2 + div > p {
+    font-weight: bold;
+}
+
+
+                                                        /* General sibling selector */
+/* Apply a font-size: 12px; to all paragraphs that are siblings of an img element within div.product. */
+img ~ p {
+    font-size: 12px;
+}
+
+
+                                                        /* Pseudo-classes */
+/* Style the button when hovered over with background-color: green; color: white; */
+button:hover {
+    background-color: green;
+    color: white;
+}
+
+
+/* Style the first li in ul.main-nav to be font-weight: bold; */
+.main-nav > li:first-child {
+    font-weight: bold;
+}

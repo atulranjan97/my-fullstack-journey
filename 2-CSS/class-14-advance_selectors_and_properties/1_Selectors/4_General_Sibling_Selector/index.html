@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>General Sibling Selector</title>
+    <style>
+        /* Using general sibling selector to style all the following siblings */
+        h1 ~ p {
+            color: blue;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <p>This paragraph will not be blued and italic because it is a previous sibling of the h1. `General sibling selector` doesn't target previous sibling</p>
+    <h1>General Sibling Selector</h1>
+    <p>This paragraph will be blue and italic because it is a sibling of the h1.</p>
+    <input type="text" placeholder="Username">
+    <p>This paragraph will also be blue and italic because it is a sibling of the h1.</p>
+</body>
+</html>

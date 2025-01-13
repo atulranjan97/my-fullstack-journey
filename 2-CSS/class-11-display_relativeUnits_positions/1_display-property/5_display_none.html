@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>display: none</title>
+    <style>
+        .div-box {
+            height: 100px;
+            width: 100px;
+            border: 2px solid black;
+            background-color: cadetblue;
+            margin: 10px;
+            text-align: center;
+            line-height: 100px;
+
+            display: none;
+            /* This CSS property hides an element entirely from the page. The element will not occupy any space in the layout, as if it doesn’t exist. It differs from visibility: hidden;, which hides the element but still reserves its space in the layout. */
+
+            /* When display: none; is applied, the element is still present in the DOM (Document Object Model), but it is not rendered on the page and takes up no space in the layout. This is different from removing the element entirely using JavaScript, which would remove it from the DOM as well. */
+
+        }
+
+        .span-box {
+            border: 1px solid black;
+            background-color: forestgreen;
+            height: 50px;   
+            width: 50px;    
+            margin: 5px;    
+            padding: 5px;   
+
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- by default block elements -->
+    <div id="div1" class="div-box">box1</div>
+    <div id="div2" class="div-box">box2</div>
+    <div id="div3" class="div-box">box3</div>
+    
+    <br><hr><br>
+
+    <!-- inline elements -->
+    <span id="span1" class="span-box">box4</span>
+    <span id="span2" class="span-box">box5</span>
+    <span id="span3" class="span-box">box6</span>
+    
+</body>
+</html>

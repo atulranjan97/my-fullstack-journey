@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>align-items</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #heading {text-align: center;}
+        
+        .box {
+            height: 100px;
+            width: 100px;
+            border: 3px solid black;
+            background-color: #84b0e0;
+
+            margin: 5px;
+        }
+
+        #container {
+            border: 3px solid black;
+            background-color: #37537d;
+            margin: 10px;
+            padding: 10px;
+            height: 800px;
+
+            display: flex;  
+            /* flex-direction: column; */
+            
+            /* align-items: flex-start; */
+            /* align-items: flex-end; */
+            align-items: center;
+        }
+
+        /*
+        CSS `align-items` Property :
+
+        Purpose:
+        - Aligns flex items along the cross axis (perpendicular to `flex-direction`).
+
+        Syntax:
+        align-items: stretch | flex-start | flex-end | center | baseline;
+
+        Values:
+        1. `stretch` (default):
+            - Items stretch to fill the container along the cross axis.
+
+        2. `flex-start`:
+            - Items align at the start of the cross axis.
+
+        3. `flex-end`:
+            - Items align at the end of the cross axis.
+
+        4. `center`:
+            - Items align at the center of the cross axis.
+
+        5. `baseline`:
+            - Items align their text baselines.
+
+        */
+
+    </style>
+</head>
+<body>
+    <h1 id="heading">Flexbox Container</h1>
+    <div id="container">
+        <div class="box">Flex Item 1</div>
+        <div class="box">Flex Item 2</div>
+        <div class="box">Flex Item 3</div>
+        <div class="box">Flex Item 4</div>
+        <div class="box">Flex Item 5</div>
+        <div class="box">Flex Item 6</div>
+    </div>
+</body>
+</html>

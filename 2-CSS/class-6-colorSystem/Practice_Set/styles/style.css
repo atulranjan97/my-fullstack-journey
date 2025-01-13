@@ -1,0 +1,18 @@
+.first_div {
+    background-color: rgba(45, 125, 212, 0.3);
+    color: darkblue;
+}
+
+.second_div {
+    height: 500px;
+    width: 500px;
+    
+    background: #19826a url(../images/codm.png) no-repeat 40% 0% ;
+    
+    
+    
+    /* background-color: #19826a; */
+    /* background-image: url(../images/codm.png) ;
+    background-size: contain;
+    background-repeat: no-repeat; */
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Media Query</title>
+    <style>
+        .box {
+            background-color: burlywood;
+            height: 100px;
+            width: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            
+        }
+
+        @media (min-width: 1200px) {
+            .box {
+                height: 200px;
+                width: 200px;
+            }
+        }
+        /* css will only be apply when the condition (ie, min-width: 300px) is met */
+        /* ye css sirf tab apply hogi jab viewport/screen width 1200px se badi hogi */
+
+        @media (max-width: 600px) {
+            .box {
+                height: 50px;
+                width: 50px;
+            }
+        }
+        /* css sirf tabtak apply hogi jabtak screen ki width 400px se chhoti hai, yani width agar 400px se jaise hi upar ho gyi toh condition false ho jayegi and css apply nahi hogi*/
+
+
+        /* Media Query (combination) */
+        @media (min-width: 500px) and (max-width: 600px) {
+            .box {
+                border: 2px solid black;
+            }
+        }
+
+        /* Media Query (different media types) */
+
+
+
+        /* jab tak dono condition true hai tabhi tak css apply hogi because of `and` operator */
+        /* css tabhi apply hogi jab tak width 500px se badi and 600px se chhoti hogi */
+
+        /* 
+        Use Case of media query: 
+        1. Setting Different Images for Different Screen Sizes
+                Purpose: Serve low-quality images for small screens to save bandwidth and high-quality images for larger screens for better visual fidelity.
+                Benefit: Enhances performance and user experience by optimizing images for different devices.
+
+        2. Hiding or Showing Elements
+                Purpose: Display only relevant content based on the screen size.
+                Use Case: Hide a navigation sidebar on mobile and show it on larger screens.
+                Benefit: Keeps the interface uncluttered on smaller devices while leveraging space on larger ones.
+
+        3. Switching Navigation Styles
+                Purpose: Optimize navigation for different screen sizes.
+                Use Case: Use a hamburger menu for mobile and a horizontal menu for desktops.
+                Benefit: Enhances navigation usability.     
+        etc...
+        */
+    </style>
+</head>
+<body>
+    <div class="box">My Box</div>
+</body>
+</html>

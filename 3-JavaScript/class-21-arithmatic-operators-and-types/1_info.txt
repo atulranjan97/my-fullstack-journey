@@ -1,0 +1,45 @@
+Refer class notes for revision
+
+
+                                                                Practice Set (Numbers & Strings)
+REPL screen (open with `node` command on VS terminal and exit with (ctrl + c) two times)
+
+> 1 * 100 + 2 * 10 + 1 * 30
+150
+
+> (18 / 100) * (79990 + (2 * 24990))
+23394.6
+
+> Math.round(23394.6)
+< 23395
+
+> 'This string is defined with the help of single quotes'
+< 'This string is defined with the help of single quotes'
+
+> "This string is defined in double quotes"
+< 'This string is defined in double quotes'
+
+> `This string is defined with the help of back ticks`
+< 'This string is defined with the help of back ticks'
+
+> 'Atul' + 'Ranjan'
+< 'AtulRanjan'
+
+> 'Atul' + ' ' + 'Ranjan'
+< 'Atul Ranjan'
+
+> 'atul' + 9313
+< 'atul9313'
+
+> 9313 + 'atul'
+< '9313atul'
+
+> 3 + 4 + 'atul'
+< '7atul'
+
+> 'atul' + 3 + 4
+< 'atul34'
+
+Pending questions: (will be doing in next practice set)
+5. Create order summary sting for our myntra cart   
+6. Display order summary in a popup

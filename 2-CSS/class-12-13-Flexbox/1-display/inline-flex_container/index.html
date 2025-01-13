@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>display: flex (inline container)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #heading {text-align: center;}
+        
+        .box {
+            height: 100px;
+            width: 100px; 
+            border: 3px solid black;
+            background-color: #84b0e0;
+
+            margin: 5px;
+        }
+
+        #container1,
+        #container2 {
+            border: 3px solid black;
+            background-color: #37537d;
+            margin: 10px;
+            padding: 10px;
+
+            display: inline-flex;  
+            /* Makes the container behave like an inline element but with flex properties */
+            /* Makes the container a flex container, the child elements inside the container are now flex items and they will no longer occupy the whole width of the container) */
+            /* All flex items will be aligned horizontally from left to right */
+        }
+        
+        /* `display: inline-flex`:
+          - **Inline container**: The container behaves like an inline element, meaning it will only take as much width as needed by its content, but its children will still follow flexbox rules.
+          - The flex container will align its items like `display: flex`, but it will not occupy the full width of the parent, like inline elements. */
+
+        </style>
+</head>
+<body>
+    <h1 id="heading">Flexbox Container</h1>
+    <div id="container1">
+        <div class="box">Flex Item 1</div>
+        <div class="box">Flex Item 2</div>
+        <div class="box">Flex Item 3</div>
+        <div class="box">Flex Item 4</div>
+        <div class="box">Flex Item 5</div>
+        <div class="box">Flex Item 6</div>
+    </div>
+
+    <div id="container2">
+        <div class="box">Flex Item 1</div>
+        <div class="box">Flex Item 2</div>
+        <div class="box">Flex Item 3</div>
+        <div class="box">Flex Item 4</div>
+        <div class="box">Flex Item 5</div>
+        <div class="box">Flex Item 6</div>
+    </div>
+
+</body>
+</html>

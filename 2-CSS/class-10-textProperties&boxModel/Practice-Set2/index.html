@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Practice Set (Box model) </title>
+
+    <style>
+        .first {
+            height: 200px;
+            width: 200px;
+            background-color: bisque;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            margin: 100px;
+            /* border-style: dotted;
+            border-color: red; */
+            border: 2px dotted red;
+            border-radius: 20px;
+        }
+
+        .box {
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            background-color: cornflowerblue;
+        }
+
+        #box1 {
+            box-sizing: border-box;
+        }
+
+        #box2 {
+            box-sizing: content-box;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="first"></div>
+
+    <button class="btn">Subscribe</button>
+
+    <div id="box1" class="box"></div>
+    <div id="box2" class="box"></div>
+</body>
+</html>

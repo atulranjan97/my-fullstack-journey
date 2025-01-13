@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS Transform</title>
+    <style>
+        .box {
+            background-color: steelblue;
+            color: white;
+            font-family: sans-serif;
+            margin: 200px;
+            height: 200px;
+            width: 200px;
+            border: 1px solid black;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+
+            /* Shorthand Syntax */
+            /* transition: transition-property transition-duration transition-timing-function(optional) transition-delay(optional) */
+            transition: all 1s ease-out;
+        }
+
+        .box:hover {
+            background-color: royalblue;
+            font-size: 30px;
+
+            /*CSS Transform (Rotate)*/
+            /* transform: rotate(360deg); */
+            /* rotate around z-axis */
+            
+            /* transform: rotateX(90deg);     */
+            /* rotate around x-axis*/
+            
+            /* transform: rotateY(90deg);     */
+            /* rotate around y-axis*/
+            
+            /*CSS Transform (Scale)*/
+            /* transform: scale(2); */
+            /* Scales the element to 2 times its original size.
+            - Use with transition for smooth scaling effects.*/
+            
+            /* transform: scaleX(2);    */
+            /* Scales the element horizontally by 2 times its original width. Not widely used*/ 
+            
+            /* transform: scaleY(2);      */
+            /* Scales the element vertically by 2 times its original width. Not widely used*/
+            
+            /*CSS Transform (Translate)*/
+            /* transform: translate(100px, 100px); */
+            /* Moves the element 100px to the right and 100px down from its original position.
+                - Use with transition for smooth movement effects. */
+
+            /* transform: translateX(50px); */
+            /* Not widely used way, alternate and widely used way to write this is transform: translate(50px, 0) */
+            /* transform: translateY(50px); */
+            /* Not widely used way, alternate and widely used way to write this is transform: translate(0, 50px) */
+
+            /* CSS Transform (Skew) */
+            /* transform: skew(45deg); */
+
+            /* Use above transforms with transition to animate visual changes like scaling, rotating, or translating smoothly over time. */
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">My Box</div>
+</body>
+</html>

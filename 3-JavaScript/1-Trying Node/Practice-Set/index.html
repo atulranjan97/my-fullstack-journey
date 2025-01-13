@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 6. Change page title -->
+    <title>Practice Set</title>
+    <!--  you can change it during revision and verify if this change reflects on the webpage's title -->
+
+    <style>
+        /* 4. Add colors to two buttons  */
+        .my-button {
+            background-color: burlywood;
+        }
+
+        #add-item-button {
+            background-color: #90ee90;
+            border-radius: 10px;
+            border: none;
+            padding: 4px 20px;
+        }
+
+        #wishlist-button {
+            text-transform: uppercase;
+            border-radius: 8px ;
+            padding: 4px 35px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 5. Add a proper HTML structure -->
+    <main>
+        <!-- 1. Create a button with text click -->
+        <button>click</button>
+        <!-- <input type="button" value="click"> -->
+        <!--we can create a button either way, both are correct. In modern html, we prefer using <button> tag to create a button element  -->
+
+        <!-- 2. Create two buttons with class and id -->
+        <button id="first-button" class="my-button">First</button>
+        <button id="Second-button" class="my-button">Second</button>
+
+        <!-- 3. Create a paragraph -->
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet laboriosam, ipsum tempora neque debitis voluptatum, aliquam a temporibus voluptates dolore, at dicta commodi excepturi numquam?</p>
+
+        <!-- 7. Try to copy the given design on the bottom -->
+        <div class="container">
+            <button id="add-item-button" onclick="addToBag()">Add to Bag</button>
+            <button id="wishlist-button" onclick="addToWishlist()">❤️ wishlist</button>
+        </div>
+    </main> 
+
+    <script>
+        alert('Welcome to practice exercise');
+
+        function addToBag() {
+            alert('Items added to bag');
+        }
+
+        function addToWishlist() {
+            alert('Items added to your wishlist');
+        }
+    </script>
+</body>
+</html>

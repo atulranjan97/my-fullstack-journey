@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Child Selector</title>
+    <style>
+        /* descendant selector*/
+        .container p {      
+            font-family: cursive;
+        }
+        /* `.container` ke ander jo jo paragraph hai sabka color red ho jayega */
+        /* The descendant selector denoted by the ` ` (space) symbol selects all descendants regardless of their depth in the hierarchy */
+
+
+        /* child selector */
+        .container > p {
+            color: red;
+        }
+        /* `.container` ke direct children pr hi styling apply hogi */
+        /* denoted by > symbol */
+        /* targets direct children elements, not grandchildren or other descendants. */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>This element is the immediate child of div element with class container</p>
+        
+        <div class="inner">
+            <p>This element is not the immediate child of div element with class container, but this is the grandchild.</p>
+        </div>
+        
+        <p>This element is also the immediate child of div element with class container</p>
+    </div>
+</body>
+</html>
