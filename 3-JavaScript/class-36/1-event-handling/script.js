@@ -1,11 +1,9 @@
 let clickHandler = () => {
-    console.log('Button clicked');
+    console.log('clickHandler executed');
 }
 
 let clickHandler2 = () => {
-    for(let i = 1; i < 5; i++ ){
-        console.log(i);
-    }
+    console.log('clickHandler2 executed');
 }
 
 clickHandler();
@@ -17,7 +15,7 @@ let button2 = document.getElementById('myButton');
 // Method 1: Using Event Handler
 // button2.onclick = clickHandler;     // Assigns the clickHandler function to the button’s onclick event.
 // button2.onclick = clickHandler2;    // Overwrites the previous assignment. Now, only `clickHandler2` is attached to the `onclick` event.
-// When the button is clicked, only `clickHandler2` is executed, logging the numbers 1, 2, 3, and 4 to the console.
+// When the button is clicked, only `clickHandler2` is executed, logging `clickHandler2 executed` to the console.
 
 // Disadvantage: The `onclick` property allows only one event handler at a time. To attach multiple event handlers, you need to use the `addEventListener` method instead.
 
@@ -33,28 +31,32 @@ button2.addEventListener('click', clickHandler2);
 // button2.removeEventListener('click', clickHandler2);
 
 
-/* event driven architecture?
-What is Event-Driven Architecture?
-- Events: Actions or occurrences recognized by the program (e.g., a user clicks a button, data is received from a server, or a timer fires).
-- Emitters: Objects or components that generate (emit) events when certain actions occur.
-- Listeners/Handlers: Functions that respond to specific events by executing some code.
-In an event-driven architecture, the system reacts to events as they occur, rather than following a pre-defined sequence of operations.
+/* What is Event-Driven Architecture?
 
-Analogy:
-Think of event-driven architecture like this:
-Imagine you’re in a restaurant.
+    - Events: Actions or occurrences recognized by the program (e.g., a user clicks a button, data is received from a server, or a timer fires).
+    - Emitters: Objects or components that generate (emit) events when certain actions occur.
+    - Listeners/Handlers: Functions that respond to specific events by executing some code.
+    In an event-driven architecture, the system reacts to events as they occur, rather than following a pre-defined sequence of operations.
 
-1. You (the customer): Ask for food (this is an event).
-2. Waiter: Listens to your request and tells the chef (event listener).
-3. Chef: Cooks your food (response to the event).
-4. Waiter: Brings the food back to you (result of the event).
-In event-driven architecture, the system waits for something to happen (like your request) and then reacts to it.
+    Analogy:
+    Think of event-driven architecture like this:
+    Imagine you’re in a restaurant.
+
+    1. You (the customer): Ask for food (this is an event).
+    2. Waiter: Listens to your request and tells the chef (event listener).
+    3. Chef: Cooks your food (response to the event).
+    4. Waiter: Brings the food back to you (result of the event).
+
+    In event-driven architecture, the system waits for something to happen (like your request) and then reacts to it.
 
 */
 
 
+
 // When you use addEventListener, the same function attached to the same event is not duplicated. If you call addEventListener multiple times with the same function for the same event, it will only register the listener once.
 // button2.addEventListener('click', clickHandler);
-// button2.addEventListener('click', clickHandler);
+// button2.addEventListener('click', clickHandler);     // can't assign duplicate handler to this `click` event
 // button2.addEventListener('click', clickHandler2);
-// internally, `click` event ke liye JS ne handlers ki ek list banake rakhi hui hai ki jab bhi `click` event call hoga ye puri list hai jisme mujhe handlers ko call karna hai, agar hum koi bhi duplicate handler(same reference) us list me add karne ki koshish karenge toh vo us duplicate ko add nahi karne dega , vo ye bolega ki aap ye wala jo handler register karna chah rahe hai ye to is event ke liye already yaha par register hai.
+
+// internally, for button2, JS ne `click` event ke liye handlers ki ek list banake rakhi hai, toh jab bhi `click` event occur hoga then is list ke saare handlers execute honge. 
+// agar hum kisi aise handler ko is list me add karna chah rahein hai jo already exist karta hai toh aise handler ko JS is list me register nahi karega.

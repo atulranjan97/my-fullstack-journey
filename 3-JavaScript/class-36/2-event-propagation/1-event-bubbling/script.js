@@ -22,4 +22,4 @@ inner.addEventListener('click', () => {
 // 2. The event starts from the target element and bubbles up to the outer elements.
 // 3. By default, events propagate in the bubbling phase. (yani ye bubbling phase ek default behaviour hota hai, hum chahe toh is behaviour ko change kar sakte hai, but agar humne aur koi alag behaviour define nahi kiya hai toh by default jo event propagation chalta hai vo bubbling phase ke ander chalta hai) 
 
-// suppose there is one parent and multiple childs, `event` does not get propagated to siblings, it will occur to the target element and then propagates to ancestors.  
+// Suppose there is one parent and multiple childs, `event` doesn't propagates to siblings, it will occur to the target element and then propagates to ancestors.  

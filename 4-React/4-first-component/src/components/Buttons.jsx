@@ -12,4 +12,4 @@ export function SuccessButton() {
     );
 }
 
-// ideally both button ke liye alag alag component banane chahiye but to understand `name exporting` we are combining them in single file
+// ideally both button ke liye alag-alag component banane chahiye but to understand `name exporting` we are combining them in single file

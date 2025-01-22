@@ -13,10 +13,11 @@
   <h1 class="text-3xl font-bold underline">
     Tailwind Pre-built component for header UI 
   </h1>
-  <br>
   <!--text-3xl, font-bold, underline are utility classes defined by tailwind, we just have to use it  -->
+  
+  <br>
 
-    <!-- We can build our own tailwind components or we can use tailwind pre-built components for header UI, navbars UI, buttons UI, cards UI etc.. provided by other developers, we can google search `tailwind pre-built components` to get it tailwind pre-built components UI code  -->
+    <!-- We can build our own tailwind components or we can use tailwind pre-built components for header UI, navbars UI, buttons UI, cards UI etc.. provided by other developers, we can google search `tailwind pre-built components` to get tailwind pre-built components UI code  -->
     <!-- Some famous website which provides us some free tailwind pre-built components
             1. https://www.creative-tim.com/twcomponents
             2. https://tailwindflex.com/
@@ -131,7 +132,7 @@
               To check user system preference (On Windows): Go to Settings > Personalization > Colors > Choose your color > Light/Dark.
               To check user browser preference (On brave browser): Go to Settings > Appearance > Brave colors > Light/Dark.
 
-            1. Enable Dark Mode in Tailwind CSS Configuration.
+            Step 1. Enable Dark Mode in Tailwind CSS Configuration.
                 ----------------(tailwind.config.js)----------------
                   module.exports = {
                     darkMode: 'media', // Enable dark mode using the 'media' strategy (add this in you file)
@@ -143,9 +144,10 @@
                   };
                 ----------------------------------------------------
 
-            2. Use `dark:` Prefix in Your HTML:
+            Step 2. Use `dark:` Prefix in Your HTML:
                 Tailwind applies styles with dark: prefix when the system is set to dark mode
-            3. Result:
+
+              Result:
                 Light Mode: bg-white, text-slate-900, text-slate-500
                 Dark Mode: dark:bg-slate-800, dark:text-white, dark:text-slate-400
         -------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -156,7 +158,7 @@
             Configuration: Requires manual toggling of the dark class in your HTML or JavaScript.
             How It Works: The dark class must be added or removed, typically with JavaScript.
 
-            1. Enable Dark Mode in Tailwind CSS Configuration.
+            Step 1. Enable Dark Mode in Tailwind CSS Configuration.
                 ----------------(tailwind.config.js)----------------
                   module.exports = {
                     darkMode: 'class',  // Enables class-based dark mode (Manual toggle with 'dark' class) (add this line )
@@ -168,17 +170,17 @@
                   };
                 ----------------------------------------------------
 
-            2. Apply dark mode by adding the `dark` class to a parent element (usually `html` or `body`).
+            Step 2. Apply dark mode by adding the `dark` class to a parent element (usually `html` or `body`).
               - Apply the dark class globally (on <html> or <body>) for consistent theming.
             
-            3. Add Dark Mode Styles in Your HTML.
+            Step 3. Add Dark Mode Styles in Your HTML.
                 - When the dark class is applied to a parent element (e.g., <html> or <body>), the dark:bg-slate-800, dark:text-white, dark:text-slate-400 styles will activate.
             
-            4. Toggling Dark Mode with JavaScript
+            Step 4. Toggling Dark Mode with JavaScript
                   - To toggle dark mode, you can use JavaScript to add or remove the dark class on the html element.
 
-            5. Result:
-                The `dark` class is added or removed from the `html` element, triggering dark mode styles.
+            Result:
+              The `dark` class is added or removed from the `html` element, triggering dark mode styles.
       -------------------------------------------------------------------------------------------------------------------
 
       - Store the user's preference in localStorage to persist the mode across sessions. -->
@@ -188,7 +190,7 @@
 
 
     <!-- Learning responsive design -->
-      <!-- Refer noted -->
+      <!-- Refer class notes -->
         <!-- There are five breakpoints by default, `sm`, `md`, `lg`, `xl`, `2xl`, Tailwind has set some default minimum width for these breakpoints -->
         <!-- You can set your own minimum width for these breakpoint in your project if you want -->
         <!-- tailwind is widely known for it's customization, you can add your own custom things, even change the existing thing -->
@@ -199,52 +201,149 @@
 
 
 
-    <!-- Spacing -->
-      <!-- Margin -->
-      <h1>Tailwind Margins</h1>
-      <div class="bg-blue-200 m-2">m-2: All Side</div>
-      <div class="bg-green-200 mx-4">mx-4: Horizontal</div>
-      <div class="bg-red-200 my-3">my-3: Vertical</div>
-      <div class="bg-purple-200 mt-4">mt-4: Top only</div>
-      <!-- Refer documentation for all the variation of margin -->
+    <!-- Font-style -->
+      <h2 class="mt-12 text-2xl">Font Style</h2>
+      <!-- Italic Text -->
+      <p class="italic">This text is italic.</p>
+
+      <!-- Non-Italic Text -->
+      <p class="italic not-italic">This text was italic, but now it's non-italic due to the not-italic utility class.</p>
+
+
+    <!-- Widht (fixed width) -->
+     <h1 class="mt-12">Width (fixed width)</h1>
+     <div class="w-96 bg-zinc-600 text-white text-center m-1">w-96</div>
+     <div class="w-80 bg-slate-950 text-white text-center m-1">w-80</div>
+     <div class="w-64 bg-zinc-600 text-white text-center m-1">w-64</div>
+     <div class="w-48 bg-slate-950 text-white text-center m-1">w-48</div>
+     <div class="w-40 bg-zinc-600 text-white text-center m-1">w-40</div>
+     <div class="w-32 bg-slate-950 text-white text-center m-1">w-32</div>
+     <div class="w-24 bg-zinc-600 text-white text-center m-1">w-24</div>
+      <!-- these number in width utility class(w-96, w-80...) are defined in tailwind, you can't just come up with your own number -->
+      <!--refer tailwind docs for more variation of fixed width  -->
+
+
+    <!-- Width (percentage based width) -->
+      <!--now if we change parent width the child width also changes accordingly  -->
+      <!-- Refer class notes or tailwind documentation -->
+     <h1 class="mt-12">Width (percentage based width)</h1>
+      <div class="container bg-slate-300 p-4 ">
+        <div class="w-1/2 bg-slate-950 text-white p-1 m-1">w-1/2 (50%)</div>
+        <div class="w-3/4 bg-zinc-600 text-white p-1 m-1">w-3/4 (75%)</div>
+      </div>
+
+
+    <!-- Min-Width -->
+      <!-- Refer class notes or tailwind documentation -->
+       <h1 class="mt-12">Min-Width</h1>
+      <div class="container bg-slate-300 p-4">
+        <div class="w-48 bg-zinc-600 text-white p-1 m-1">w-48</div>
+        <div class="w-1/2 min-w-48 bg-slate-950 text-white p-1 m-1">w-1/2, min-w-48</div>
+        <div class="w-1/2 bg-zinc-600 text-white p-1 m-1">w-1/2 (50%)</div>
+      </div>
+    
+    
+    <!-- Max-Width -->
+      <!-- Refer class notes or tailwind documentation -->
+      <h1 class="mt-12">Max-Width</h1>
+      <div class="container bg-slate-300 p-4">
+        <div class="w-80 bg-zinc-600 text-white p-1 m-1">w-80</div>
+        <div class="w-1/2 max-w-80 bg-slate-950 text-white p-1 m-1">w-1/2 (50%), max-w-80</div>
+        <div class="w-1/2 bg-zinc-600 text-white p-1 m-1">w-1/2 (50%)</div>
+      </div>
 
 
       <br><br>
 
-
-    <!-- Padding -->
-     <h1>Tailwind Padding</h1>
-     <div class="bg-blue-200 p-2">p-2: All Side</div>
-     <div class="bg-green-200 px-4">px-4: Horizontal</div>
-     <div class="bg-red-200 py-3">py-3: Vertical</div>
-     <div class="bg-purple-200 pt-4">pt-4: Top only</div>
-    <!-- Refer documentation for all the variation of margin -->
-
-
-    <br><br>
-
-
-    <!-- Spacing (Refer notes) -->
-    <h1 class="m-2">Tailwind Space Utilities</h1>
-
-      <h2 class="m-2">Vertical space (space-y-4)</h2>
-      <div class="space-y-4 m-2">       
-        <div class="bg-blue-200 p-2">First Item</div>
-        <div class="bg-blue-200 p-2">Second Item</div>
-        <div class="bg-blue-200 p-2">Third Item</div>
+    <!-- Size (no equivalent css property for this but tailwind provide this to us as an extra feature) -->
+      <!-- Set an element to a fixed width and height at the same time -->
+     <h1 class="mt-8">size-x</h1>
+      <div class="container flex">
+        <div class="size-16 bg-slate-950 text-white m-1">size-16</div>
+        <div class="h-16 w-6 bg-zinc-600 text-white m-1">h-16</div>
       </div>
-      <!-- space-y-4: Adds vertical space (1rem or 16px by default) between child elements -->
+      <div class="w-16  bg-zinc-600 text-white m-1">w-16</div>
 
-      <br><br>
 
-      <h2 class="m-2">Horizontal space (space-x-4)</h2>
-      <div class="space-x-4 m-2">
-        <span class="bg-green-200 p-2">First Item</span>
-        <span class="bg-green-200 p-2">Second Item</span>
-        <span class="bg-green-200 p-2">Third Item</span>
+      <div class="container flex mt-8">
+        <div class="size-20 bg-slate-950 text-white m-1">size-20</div>
+        <div class="h-20 w-6 bg-zinc-600 text-white m-1">h-20</div>
       </div>
-      <!-- space-y-4: Adds horizontal space (1rem or 16px by default) between child elements -->
+      <div class="w-20  bg-zinc-600 text-white m-1">w-20</div>
 
+
+      <div class="container flex mt-8">
+        <div class="size-24  bg-slate-950 text-white m-1">size-24</div>
+        <div class="h-24 w-6 bg-zinc-600 text-white m-1">h-24</div>
+      </div>
+      <div class="w-24  bg-zinc-600 text-white m-1">w-24</div>
+
+
+    <!-- Columns (Adding based on column count)-->
+      <h1 class="mt-16">columns-3</h1>
+      <div class="container columns-3 bg-slate-300 p-4">
+        <div class="bg-zinc-600 text-white p-1 m-1">1</div>
+        <div class="bg-slate-950 text-white p-1 m-1">2</div>
+        <div class="bg-zinc-600 text-white p-1 m-1">3</div>
+        <div class="bg-slate-950 text-white p-1 m-1">4</div>
+        <div class="bg-zinc-600 text-white p-1 m-1">5</div>
+        <div class="bg-slate-950 text-white p-1 m-1">6</div>
+      </div>
+
+    <!-- gap (To specify width between columns, you can use gap-x utilities) -->
+      <h1 class="mt-16">gap-8</h1>
+      <div class="container columns-3 gap-8 bg-slate-300 p-4">
+        <div class="bg-zinc-600 text-white p-1 m-1">1</div>
+        <div class="bg-slate-950 text-white p-1 m-1">2</div>
+        <div class="bg-zinc-600 text-white p-1 m-1">3</div>
+        <div class="bg-slate-950 text-white p-1 m-1">4</div>
+        <div class="bg-zinc-600 text-white p-1 m-1">5</div>
+        <div class="bg-slate-950 text-white p-1 m-1">6</div>
+      </div>
+
+    <!-- Columns (Adding based on column width )-->
+      <!-- Refer class notes or tailwind documentation -->
+
+
+    <!-- Box Sizing -->
+      <!-- box-border: Includes the padding and border within the element's total width and height (content + padding + border). -->
+      <!-- box-content: Excludes the padding and border from the element's total width and height (content only). -->
+      <!-- Refer class notes or tailwind documentation -->
+
+
+    <!-- Position -->
+      <!-- Refer class notes or tailwind documentation -->
+
+
+    <!-- top/right/bottom/left -->
+     <!-- (in bootstrap, hum position toh class se define kar rahe the but baad me jake jo spacing(top, left , bottom, right) define karna tha toh hum alag se CSS me define kar rahe the, but tailwind me spacing(top, right, bottom, left) ko tailwind utility classes se define kar sakte hai) -->
+      <!-- Refer class notes or tailwind documentation -->
+
+
+    <!-- Visibility (utility to hide an element, but still maintain its place in the DOM, affecting the layout of other elements) -->
+      <h2 class="mt-16 pl-1">invisible (visibility: hidden;)</h2>
+      <div class="">
+        <div class="bg-slate-900 text-white m-1 p-1 w-16 text-center">1</div>
+        <div class="invisible bg-slate-900 text-white m-1 p-1 w-16 text-center">2</div>
+        <div class="bg-slate-900 text-white m-1 p-1 w-16 text-center">3</div>
+      </div>
+
+      <h2 class="mt-10 pl-1">hidden (display: none;)</h2>
+      <div class="">
+        <div class="bg-slate-900 text-white m-1 p-1 w-16 text-center">1</div>
+        <div class="hidden bg-slate-900 text-white m-1 p-1 w-16 text-center">2</div>
+        <div class="bg-slate-900 text-white m-1 p-1 w-16 text-center">3</div>
+      </div>
+
+      <!-- `display: none`: Completely removes the element from the document flow, making it invisible and not taking up any space. -->
+      <!-- `visibility: hidden`: Hides the element but keeps it in the document flow, so it still occupies space on the page. -->
+
+    <!-- Flex-Grow -->
+     <!-- flex ke ander ki items tab grow/shrink karengi jab jisne apne aapko flex declare kiya hai vo grow/shrink karega(yani parent element) toh uske ander ki items bhi grow/srink karengi -->
+      <!-- refer tailwind documentation -->
+
+      <!-- Directives -->
+       <!-- In general, tailwind apni jitni bhi styles unko basically 3 layer me devide karne ki koshish karta hai, which are base, component and utilities  -->
 
 
     <!-- Including JS -->

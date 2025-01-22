@@ -3,6 +3,10 @@
 <head>
     <title>CSS Transform</title>
     <style>
+        body {
+            background-color: #212121;
+        }
+
         .box {
             background-color: steelblue;
             color: white;
@@ -10,7 +14,7 @@
             margin: 200px;
             height: 200px;
             width: 200px;
-            border: 1px solid black;
+            border: 1px solid white;
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -23,7 +27,7 @@
             animation-timing-function: ease-in-out;
             /* animation-delay: 500ms; */
 
-            /* animation-iteration-count: 3; */
+            animation-iteration-count: 3;
             /* indicate the number of times animation should repeat */
 
             /* animation-direction: alternate; */
@@ -45,17 +49,16 @@
                 top: 0;
             }
             50% {
-                top: 100px;
+                top: 200px;
             }
             100% {
-                top: -100px ;
-                left: 600px;
+                top: 0;
+                left: 800px;
             }
         } 
        
         /* we can also define multiple frames */
 
-        
     </style>
 </head>
 <body>
