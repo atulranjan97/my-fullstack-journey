@@ -1,4 +1,6 @@
+# Automatically normalize text files to LF
 * text=auto
 
+# Treat image files as binary
 *.jpg binary
 *.png binary
