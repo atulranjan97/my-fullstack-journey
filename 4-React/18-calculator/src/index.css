@@ -1,0 +1,10 @@
+.calc-body {
+    border: 1px solid black;
+    /* width: fit-content; */
+    width: 238px;
+    padding: 10px;
+    margin: auto;
+    border-radius: 10px;
+    position: relative;
+    top: 100px;
+}
