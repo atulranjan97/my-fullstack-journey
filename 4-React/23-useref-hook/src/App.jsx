@@ -7,7 +7,7 @@ import StateVsRef from './components/StateVsRef'
 const App = () => {
   return (
     <>
-      {/* Uncomment only one comment at a time because each component below is a topic in itself */}
+      {/* Uncomment only one component at a time because each one contains a topic in itself */}
         {/* <ElementObject /> */}
         {/* <UseRefHook /> */}
         {/* <InternalWorkingUseRef /> */}

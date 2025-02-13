@@ -4,7 +4,7 @@ import { useState } from "react";
 import styles from './StateVsRef.module.css'
 
 const StateVsRef = () => {
-  console.log("Component re-render");
+  console.log("Component re-rendered");
 
   const [stateClick, setStateClick] = useState(0);
   const refClick = useRef(0); // refVariable -> {current: 0}
@@ -46,7 +46,7 @@ const StateVsRef = () => {
         displayed immediately after the `Ref button` is clicked because the
         component does not re-render. To see the updated ref value, you need to
         trigger a re-render (e.g., by clicking the state button). You won't see
-        Component re-rendered logged in the console when the ref button is
+        `Component re-rendered` logged in the console when the ref button is
         clicked.
       </p>
     </div>
@@ -55,8 +55,8 @@ const StateVsRef = () => {
 
 export default StateVsRef;
 
-/*  Yeh zaroori nahi ki `useRef` ka use hum sirf kisi DOM element ka reference store karne ke liye hi karein. `useRef` ka use hum kisi aise data ko store karne ke liye bhi kar sakte hai jiski value hum chahte hai ki across renders persist kare.
-    Infact `useRef` ka main purpose hi yahi hai ki agar hum kisi value ko persist karna chahte across renders toh hum us value ko `useRef` me store kar sakte hai and vo value vahan preserved rahegi. Its not limited to only store references of DOM elements so we can interact with them.
+/*  Yeh zaroori nahi ki `useRef hook` ka use hum sirf kisi DOM element ka reference store karne ke liye hi karein. `useRef` ka use hum kisi aise data ko store karne ke liye bhi kar sakte hai jiski value hum chahte hai ki across renders persist kare.
+    Infact `useRef` ka main purpose hi yahi hai ki agar hum kisi value ko persist karna chahte hai across renders toh hum us value ko `useRef` me store kar sakte hai and vo value vahan preserved rahegi. Its not limited for storing references of DOM elements only.
     
     On the other hand, useState bhi yahi kaam karta hai, only difference is ki state ki hum jab bhi value change karenge then state har baar component ko re-render bhi kar raha hoga.
 

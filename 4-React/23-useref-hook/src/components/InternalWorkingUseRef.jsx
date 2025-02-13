@@ -17,7 +17,7 @@ function InternalWorkingUseRef() {
 
     // uncomment only one `console.log` at a time and examine the output in browser's console tab
         // console.log(firstName);
-        console.log(firstName.current);
+        // console.log(firstName.current);
         // console.log(firstName.current.value);
   };
 
