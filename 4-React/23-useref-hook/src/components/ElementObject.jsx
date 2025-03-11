@@ -1,9 +1,9 @@
 import React from 'react';
 
 const ElementObject = () => {
-  // Define the input element as a variable outside the JSX
+  // define the input element as a variable outside the JSX
   const inpObj = <input type="text" placeholder="Name" />;
-  console.log(inpObj);
+  console.log('inpObj:', inpObj);
 //   console.log(<input type="text" placeholder="Name" />)
 
   return (

@@ -90,6 +90,8 @@ const complexObject = {
   },
 };
 
+  // Uncommited changes for revisited context api and configuration file 
+
 console.log("Complex Object:");
 console.log(JSON.stringify(complexObject, null, 2));
 
@@ -146,5 +148,6 @@ console.log(transposedMatrix);
 // Hello Vim World.
 
 // atul is here
-// atul appears again
+// atul again appears  
 // this atul is also atul
+<h1></h1>

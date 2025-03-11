@@ -9,7 +9,7 @@ fetch('https://jsonplaceholder.typicode.com/users')     // this is a promise whe
     console.log(res.ok)
     console.log(res.headers['Transfer-Encoding']);
 
-    // Parse JSON from the response body (body is a property of response object which contains json data)
+    // Parse JSON from the response body (`body` is a property of response object which contains json data)
     return res.json()   // res.json() returns a promise as it is a time taking operation
     // Fetch api returns the data which is a stream(Readable stream)
     // what is a stream: it is a chunks of data, instead of passing the entire data over the network it passes the data in chunks in network which increase performance
