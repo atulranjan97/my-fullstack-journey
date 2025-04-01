@@ -50,11 +50,11 @@ const RequestHandler = (req, res) => {
             console.log('bodyJson: ', bodyJson);      // {product: 'pants', budget: '700'}
 
             fs.writeFileSync('buy.txt', JSON.stringify(bodyJson));  
-        })
 
-        res.statusCode = 302;   
-        res.setHeader('Location', '/products');     
-        console.log('Sending Response'); 
+            res.statusCode = 302;   
+            res.setHeader('Location', '/products');     
+            console.log('Sending Response'); 
+        })
 
     } else if (req.url === "/products") {
         console.log('inside /products')
@@ -89,10 +89,25 @@ const RequestHandler = (req, res) => {
 
 module.exports = RequestHandler;    
 
+/*  --------------------- ISSUE --------------------- 
+    You will get "Cannot set headers after they are sent to the client" error because `res.setHeader()` (or `res.write()`) is being called after `res.end()` has already been executed. Here’s why this is happening in your code:
+
+    Issues in Your Code
+        1. Calling `res.end()` Too Early:
+            1. For `/buy-product`, `res.end()` will execute before the `req.on('end')` event completes (as `req.on('end')` is an async operation, which can cause unexpected behavior.
+            2. If `res.end()` is executed outside the `req.on('end')` callback, the response ends before the form data is fully processed.
+            3. Then, when you try to set headers (like `res.setHeader('Location', '/products')`), it fails because the response is already closed.
+
+        2. Handling `/buy-product` Incorrectly:
+            1. The response must not end before `req.on('end')` completes.
+            2. Make sure `res.end()` is inside `req.on('end')` in this route.
+
+        3.  Issue: `fs.writeFileSync` is being used here. It is a synchronous operation, meaning it blocks the event loop.
+            If a lot of requests come in, this could slow down the server. Using an asynchronous `fs.writeFile()` would be better. 
 
 
-// ----------------------------------------------- Shortcut using exports -----------------------------------------------
-// exports.handler = RequestHandler;
-
-// const RequestHandler = require('./RequestHandler');     // you have to import in this way
-// ---------------------------------------------------------------------------------------------------------------------- 
+    How to fix it
+        1. Make sure `res.end()` is only executed inside `req.on('end')` for `/buy-product`.
+        2. Do not call `res.end()` outside of `req.on('end')` in that route.
+        3. Ensure you are not trying to modify headers (`res.setHeader()`) after the response is already sent.
+*/

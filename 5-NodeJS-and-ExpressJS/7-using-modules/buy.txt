@@ -1,1 +1,1 @@
-{"product":"shirts","budget":"700"}
+{"product":"pants","budget":"700"}

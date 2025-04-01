@@ -27,6 +27,9 @@ const RequestHandler = (req, res) => {
             </body>
             </html>
         `);
+        
+        res.end();  
+
     } else if (req.url === "/buy-product") {
         console.log('Form data received');
 
@@ -49,12 +52,15 @@ const RequestHandler = (req, res) => {
             }
             console.log('bodyJson: ', bodyJson);      // {product: 'pants', budget: '700'}
 
-            fs.writeFileSync('buy.txt', JSON.stringify(bodyJson));  
+            // `fs.writeFileSync` is a synchronous operation, meaning it blocks the event loop. If a lot of requests come in, this could slow down the server. Using an asynchronous `fs.writeFile()` would be better. 
+            fs.writeFile('buy.txt', JSON.stringify(bodyJson), (err) => {
+                res.statusCode = 302;   
+                res.setHeader('Location', '/products');     
+                res.end();  
+                console.log('Sending Response'); 
+            });  
+            // jab file write process complete ho jayega tab iske ander ka callback function chalega jisme hum response bhej rahe hai, yani hum file write process ke complete hone par hi response bhej rahe hai jo ki hum previous code lectures me nahi bhej rahe the
         })
-
-        res.statusCode = 302;   
-        res.setHeader('Location', '/products');     
-        console.log('Sending Response'); 
 
     } else if (req.url === "/products") {
         console.log('inside /products')
@@ -69,6 +75,9 @@ const RequestHandler = (req, res) => {
             </body>
             </html>
         `);
+
+        res.end();  
+
     } else {
         res.statusCode = 404;
         res.write(`
@@ -82,17 +91,10 @@ const RequestHandler = (req, res) => {
             </body>
             </html>
         `);
+
+        res.end();  
     }
 
-    res.end();  
 }
 
 module.exports = RequestHandler;    
-
-
-
-// ----------------------------------------------- Shortcut using exports -----------------------------------------------
-// exports.handler = RequestHandler;
-
-// const RequestHandler = require('./RequestHandler');     // you have to import in this way
-// ---------------------------------------------------------------------------------------------------------------------- 
