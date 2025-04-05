@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Humara airbnb</title>
+
+    <!-- including manual css file -->
+    <!-- <link rel="stylesheet" href="./styles/input.css"> -->
+    <!-- notice we didn't set path `../public/styles/input.css`, instead we set `.styles/input.css`-->
+    <!-- `input.css` ek static file hai jo public folder ke ander hai, jab bhi koi static file access karne ki koshish karega toh vo public folder ke ander hai yeh to vo maan kar hi chal raha hai, hum directly root maan kar `input.css` bol sakte hai  -->
+
+    <!-- including tailwindcss -->
+    <link rel="stylesheet" href="./styles/output.css">
+    <!-- The correct way is to use `/styles/output.css` instead of `../public/output.css` when express.static('public') is set already. -->
+</head>
+<body>
+   <h1 class="text-red-600 text-4xl" >Welcome to humara airbnb</h1> 
+   <a href="/host/add-home" class="text-blue-800 underline">Add Home</a>
+</body>
+</html>
