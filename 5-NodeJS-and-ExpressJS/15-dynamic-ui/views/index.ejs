@@ -1,0 +1,43 @@
+<!-- Include partials using EJS(Embedded JavaScript) template syntax -->
+<%- include('partials/meta-tags') %>
+<!-- 
+    `<%- ... %>` is an EJS tag that outputs the unescaped content of the included file.
+    Tells EJS to include the contents of the `meta-tags` file located in the `partials` directory. 
+
+    Expected behavior:
+        -> EJS will look for a file named `meta-tags.ejs` (or similar extension) in a `partials` subdirectory relative to your current template.
+        -> The contents of that file will be inserted exactly as-is (unescaped) into your template.
+-->
+</head>
+<body class="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+    <%- include('partials/nav') %>
+    <!-- Tells EJS to include the contents of the `nav` file located in the `partials` directory.  -->
+    <main>
+        <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-8">
+            <h1 class="text-5xl text-center font-extrabold text-red-600 mb-12 tracking-tight">
+                Welcome to humara airbnb
+            </h1>
+            <ul class="mt-8">
+                <% homes.forEach(home => { %>
+                    <li class="bg-gray-100 p-4 mt-2 text-center rounded-lg shadow hover:shadow-md transition-shadow">
+                        <%= home.houseName %>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>
+
+
+
+
+<!-- 2. Basic Syntax
+            EJS uses special tags to embed JavaScript inside HTML:
+                Tag	                      Usage                                       Example
+                <% %>	          Executes JS code (no output)	                    <% if (user) { %>
+                <%= %>	        Outputs escaped value (safe for HTML)	            <%= user.name %>
+                <%- %>	        Outputs raw (unescaped) HTML	                    <%- include('header') %>
+                %	              Whitespace control (removes newlines)             <%_ user = null _%>
+-->
+
