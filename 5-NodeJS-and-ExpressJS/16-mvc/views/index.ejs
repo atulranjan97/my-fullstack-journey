@@ -1,0 +1,52 @@
+<!-- Include partials using EJS(Embedded JavaScript) template syntax -->
+<%- include('partials/meta-tags') %>
+    <!-- 
+    EJS tag that outputs the unescaped content of the included file.
+    Tells EJS to include the contents of the `meta-tags` file located in the `partials` directory. 
+
+    Expected behavior:
+        -> EJS will look for a file named `meta-tags.ejs` (or similar extension) in a `partials` subdirectory relative to your current template.
+        -> The contents of that file will be inserted exactly as-is (unescaped) into your template.
+-->
+    </head>
+
+    <body class="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+        <%- include('partials/nav') %>
+            <!-- Tells EJS to include the contents of the `nav` file located in the `partials` directory.  -->
+            <main>
+                <div class="max-w-7xl mx-auto bg-white rounded-2xl shadow-lg p-8 mt-8">
+                    <h1 class="text-5xl text-center font-extrabold text-red-600 mb-12 tracking-tight">
+                        Welcome to humara airbnb
+                    </h1>
+                    <!-- <div class="mt-8 flex flex-wrap justify-center gap-x-3 gap-y-4"> -->
+                    <div class="mt-8 grid grid-cols-4 gap-4">
+                        <% homes.forEach(home=> { %>
+                            <ul class="bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                                <li class="mb-4">
+                                    <img src="<%= home.photoUrl %>" alt="home image" class="w-64 h-48 object-cover rounded-lg">
+                                </li>
+                                <li class="py-1 text-gray-800">
+                                    <span class="font-semibold text-gray-600">House Name: </span>
+                                    <%= home.houseName %>
+                                </li>
+                                <li class="py-1 text-gray-800">
+                                    <span class="font-semibold text-gray-600">Price: </span>
+                                    <span class="text-red-500 font-bold">₹<%= home.price %></span>/night
+                                </li>
+                                <li class="py-1 text-gray-800">
+                                    <span class="font-semibold text-gray-600">Location: </span>
+                                    <%= home.location %>
+                                </li>
+                                <li class="py-1 text-gray-800">
+                                    <span class="font-semibold text-gray-600">Rating: </span>
+                                    <span class="text-yellow-500">⭐ <%= home.rating %></span>
+                                </li>
+                            </ul>
+                            <% }); %>
+                    </div>
+                </div>
+            </main>
+    </body>
+
+    </html>
+    <!-- Very important: ejs file ke comments me ejs tag likhne par error aata hai kyunki ejs engine comments me likhe ejs tag ko bhi process karne lagta hai, so don't write ejs tag in comments -->

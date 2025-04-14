@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <!-- `pageTitle` naam ka varible hoga jo hum pass karenge -->
+
+    <!-- including tailwindcss -->
+    <link rel="stylesheet" href="/styles/output.css">
+
+<!-- notice we didn't close head tag, ie. </head>, kyunki ho sakta hai kisi particular file me koi aur css file lagani ho ya head ke ander kuch aur bhi likha ho, agar head humne yaha end kar diya to jo bhi iske user hai unko mauka hi nahi milega ki head me vo kuch add kar payein -->
+
+
+
+<!-- 
+1. <link rel="stylesheet" href="/styles/output.css"> works because:
+    -> The leading / makes it an absolute path from the root of your web server
+
+    -> In your app.js, you have app.use(express.static(path.join(rootDir, 'public'))) which serves the public directory at the root of your web server
+
+    -> So /styles/output.css correctly maps to public/styles/output.css
+
+
+
+<link rel="stylesheet" href="./styles/output.css"> doesn't work because:
+    -> The ./ makes it a relative path
+
+    -> When using EJS templates, the path is relative to the URL path of the current page, not the file system
+
+    -> For example, if you're on /host/add-home, the browser will try to find the CSS at /host/styles/output.css instead of /styles/output.css
+
+    -> This is why relative paths can be problematic in web applications, especially when using a router
+
+
+This is why absolute paths (starting with /) are generally preferred for static assets like CSS, JavaScript, and images in web applications. They ensure the resources are always loaded from the correct location regardless of the current page's URL path.
+-->

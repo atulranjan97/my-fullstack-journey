@@ -54,7 +54,8 @@ app.set('views', 'views');
   -> If you store your `.ejs` files in a different folder (e.g., templates), you would write: app.set('views', 'templates');
 */
 // These two lines are essential for dynamic HTML rendering in Express.js with EJS.
-// kyunki humare folder ka naam `views` hi hai to `app.set('views', 'views')` dena optional hai because iska default value views hi hota hai. Kuch bhi set na karne pr value views hi rahega. Agar humare folder ka naam views na dekar kuch aur hota toh `app.set('views', 'folder-ka-naam')` dena compulsory hota.
+
+// kyunki humare folder ka naam `views` hi hai to `app.set('views', 'views')` dena optional hai because iska default value `views` hi hota hai. Kuch bhi set na karne pr value views hi rahega. Agar humare folder ka naam views na dekar kuch aur diya hota toh `app.set('views', 'folder-ka-naam')` dena compulsory hota.
 // Hum jo apni ejs ka code saara likhne wale hai vo sab `views` folder ke ander hi likhne wale hai. to usse view engine ko ye pata rahega ki jo humari ejs ki template hai vo `views` ke ander padi hui hai aur vahi jakar usko unko process karna hai. Humari ejs template jis bhi folder me hai vahi naam humko yaha par dena padega.
 
 app.use(express.static(path.join(rootDir, 'public')));    

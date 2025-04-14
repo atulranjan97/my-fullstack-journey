@@ -1,0 +1,25 @@
+{
+  "name": "airbnb",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind": "npx @tailwindcss/cli -i ./public/styles/input.css -o ./public/styles/output.css --watch",
+    "start": "nodemon app.js & npm run tailwind"
+  },
+  "author": "Atul Ranjan",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.2",
+    "body-parser": "^2.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mongodb": "^6.15.0",
+    "tailwindcss": "^4.1.2"
+  }
+}

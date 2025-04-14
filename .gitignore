@@ -131,4 +131,4 @@ dist
 
 # Assets (videos and images)
 *.mp4
-*.png
+# *.png

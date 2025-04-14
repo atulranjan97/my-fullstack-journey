@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+screen: {
+    'xs': '400px';
+}

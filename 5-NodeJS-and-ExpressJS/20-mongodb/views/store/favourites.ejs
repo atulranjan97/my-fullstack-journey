@@ -1,0 +1,45 @@
+
+<!-- Include partials using EJS(Embedded JavaScript) template syntax -->
+<%- include('../partials/meta-tags') %>
+    </head>
+    <body class="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+        <%- include('../partials/nav', {isActive: 'favourites'}) %>
+            <!-- Tells EJS to include the contents of the `nav` file located in the `partials` directory.  -->
+            <main class="flex justify-center flex-col">
+                <h1 class="mt-8 text-5xl text-center font-extrabold text-blue-500 mb-12 tracking-tight">
+                    
+                        <% if (homes.length) {%> Here are your favourites <% } else {%> Favourite list is empty <% } %> 
+                </h1>
+                <div class="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:w-350">
+                    <% homes.forEach(home=> { %>
+                    <ul class="bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                        <li class="mb-4">
+                            <img src="<%= home.photoUrl %>" alt="home image" class="w-full h-90 md:h-72 object-cover rounded-lg">
+                        </li>
+                        <li class="text-gray-800 font-bold flex justify-between">
+                            <%= home.houseName %> 
+                            <span class="text-yellow-500">⭐ <%= home.rating %></span>
+                        </li>
+                        <li class="text-gray-500 mt-3"> <%= home.location %> </li>
+
+                        <li class="flex justify-between items-center mt-2">
+                            <span class="text-gray-800">
+                                <span class="underline font-semibold"> ₹<%= home.price %> </span>
+                                for 5 nights 
+                            </span>
+                        </li>
+                        <a href="/homes/<%= home.id %>" 
+                            class="bg-sky-600 hover:bg-sky-800 text-white font-semibold w-fit rounded inline-block px-2 py-1 my-2">
+                        Details
+                        </a>
+                        <form action="/favourites/delete/<%= home.id %>" method="post">
+                            <button class="bg-red-500 hover:bg-red-600 text-white rounded py-2 px-2 font-semibold transition-colors">Remove from favourite</button>
+                        </form>
+                    </ul>
+                    <% }); %>
+                </div> 
+            </main> 
+</body>
+
+    </html>
+    <!-- Very important: ejs file ke comments me ejs tag likhne par error aata hai kyunki ejs engine comments me likhe ejs tag ko bhi process karne lagta hai, so don't write ejs tag in comments -->
