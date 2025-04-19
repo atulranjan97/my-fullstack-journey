@@ -1,6 +1,5 @@
 // Import the MongoDB driver package that allows us to interact with MongoDB databases
 const mongodb = require('mongodb');
-const { get } = require('../routers/storeRouter');
 
 // Get the MongoClient class from the mongodb package
 // MongoClient is used to establish connections with MongoDB databases
@@ -26,7 +25,7 @@ const mongoConnect = (callback) => {
     MongoClient.connect(url)
         .then((client) => {
             // Log the connected client object for debugging
-            console.log(client);
+            // console.log(client);
 
             // Store a reference to the "airbnb" database in the _db variable
             // client.db() gets a Database object for the specified database name

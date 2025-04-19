@@ -2,28 +2,14 @@ import { createContext, useReducer, useState } from "react";
 import initialTodoItems from "./initialTodoItems";
 
 const TodoItemsContext = createContext();
-
-const todoItemsReducer = (currentItems, action) => {
-  switch (action.type) {
-    case 'ADD_ITEM': {
-      const todoText = action.payload.todoText; 
-      const todoDate = action.payload.todoDate; 
-      return [...currentItems, { id: todoText, todoText, todoDate }]
-    }
-    case 'DELETE_ITEM':
-    //   return currentItems.filter((item) => item.id !== todoId);
-      return currentItems.filter((item) => item.id !== action.payload.todoId);
-
-    default:
-      break;
-  }
-
-  return currentItems;
-}
+import TodoItemsReducer from "./TodoItemsReducer"
 
 export const TodoItemsProvider = ({ children }) => {
-  const [todoItems, dispatch] = useReducer(todoItemsReducer, initialTodoItems);     // `initialTodoItems` is an array of objects.
+  const [todoItems, dispatch] = useReducer(TodoItemsReducer, initialTodoItems);     // `initialTodoItems` is an array of objects.
+  // we define `TodoItemsReducer` function in seperate file for better seperation of concerns.
   // console.log(todoItems);
+
+  // In 90% of the cases jab aapko chhote-chhote state rakhne hai toh `useState` better hoga, `useReducer` generally aap tab use kar rahe honge jab aap context api use kar rahein ho.
 
 
   const addTodoItem = (todoText, todoDate) => {

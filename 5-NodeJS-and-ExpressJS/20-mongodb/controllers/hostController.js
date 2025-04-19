@@ -22,6 +22,7 @@ exports.postAddHome = (req, res, next) => {
         // }
 
         res.render('host/home-added', {pageTitle: 'Home Hosted'});
+        res.redirect('/host/host-homes');
     });
     // agar err type ka object aya hai toh iska matlab registered homes thik se save nahi ho payein hai, file operation me kuch-na-kuch error aa gayi hai, usko directly redirect kardo homepage('/') par.
     // Agar error nahi aayi hai and sbkuch successfully hua hai toh `home-added` page ko render kar diya with data.
@@ -30,21 +31,18 @@ exports.postAddHome = (req, res, next) => {
 exports.postEditHome = (req, res, next) => {
     console.log('\nReceived POST request on "/edit-home"');
     const {id, houseName, price, location, rating, photoUrl, description} = req.body;
-    const newHome = new Home(houseName, price, location, rating, photoUrl, description);
-    newHome.id = id;
+    const newHome = new Home(houseName, price, location, rating, photoUrl, description, id);
     
-    newHome.save(err => {
+    newHome.save().then(err => {
         if (err) {
             console.log('Error while updating home', err);
-        } else {
-            // res.render('host/host-homes', {homes: registeredHomes, pageTitle: 'Host Homes'});
-            res.redirect('/host/host-homes');
-        }
+        } 
+        res.redirect('/host/host-homes');
     });
 }
 
 exports.getHostHomes = (req, res, next) => {
-    Home.fetchAll().then(([registeredHomes]) => {
+    Home.fetchAll().then(registeredHomes => {
         res.render('host/host-homes', {homes: registeredHomes, pageTitle: 'Host Homes'});
     })
 }
@@ -62,7 +60,7 @@ exports.getEditHome = (req, res, next) => {
         return res.redirect('/host/host-homes');
     }
 
-    Home.findById(homeId, home => {
+    Home.findById(homeId).then(home => {
         if (!home) {
             console.log('Home not found for editing');
             return res.redirect('/host/host-homes');

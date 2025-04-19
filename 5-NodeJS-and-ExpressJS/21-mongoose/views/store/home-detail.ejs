@@ -1,0 +1,56 @@
+<!-- Include partials using EJS(Embedded JavaScript) template syntax -->
+<%- include('../partials/meta-tags') %>
+    <!-- 
+    EJS tag that outputs the unescaped content of the included file.
+    Tells EJS to include the contents of the `meta-tags` file located in the `partials` directory. 
+
+    Expected behavior:
+        -> EJS will look for a file named `meta-tags.ejs` (or similar extension) in a `partials` subdirectory relative to your current template.
+        -> The contents of that file will be inserted exactly as-is (unescaped) into your template.
+-->
+    </head>
+
+    <body class="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+        <%- include('../partials/nav', {isActive: ''}) %>
+            <!-- Tells EJS to include the contents of the `nav` file located in the `partials` directory.  -->
+            <main>
+                <div class="max-w-7xl mx-auto bg-white rounded-2xl shadow-lg p-8 mt-8">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="md:w-1/2">
+                            <img src="<%= home.photoUrl %>" alt="home image" class="w-full h-[500px] object-cover rounded-xl shadow-lg">
+                        </div>
+                        
+                        <div class="md:w-1/2 space-y-6">
+                            <div class="flex justify-between items-center">
+                                <h1 class="text-4xl font-bold text-gray-800"><%= home.houseName %></h1>
+                                <span class="text-yellow-500 text-2xl">⭐ <%= home.rating %></span>
+                            </div>
+
+                            <div class="text-xl text-gray-600">
+                                <p><i class="fas fa-map-marker-alt"></i> <%= home.location %></p>
+                            </div>
+
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Pricing Details</h2>
+                                <div class="text-xl">
+                                    <p class="font-bold text-red-600">₹<%= home.price %></p>
+                                    <p class="text-gray-600">for 5 nights</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <h2 class="text-2xl font-semibold text-gray-800">Description</h2>
+                                <p class="text-gray-600 leading-relaxed">
+                                    Experience luxury and comfort in this beautiful home. Perfect for families and groups looking for a memorable stay.
+                                </p>
+                            </div>
+                            <!-- <%- include('../partials/add-to-favourite') %> -->
+                            <%- include('../partials/add-to-favourite', {home: home}) %>
+                            </div>
+                        </div>
+                    </div>
+            </main>
+    </body>
+
+    </html>
+    <!-- NOTE: we have made this detail page UI with the help of cursor AI to save some time -->

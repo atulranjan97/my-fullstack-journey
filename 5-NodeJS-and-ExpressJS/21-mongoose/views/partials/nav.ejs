@@ -1,0 +1,28 @@
+<% const logoUrl = '/images/logo/airbnb-logo'; %>
+<!-- Since `express.static` serves from public directory  -->
+
+<header class="bg-blue-500 py-4 px-10">
+    <nav class="gap-6 text-white flex items-center">
+            <a href="/" class="">
+                <img src="<%= logoUrl%>.png" alt="Airbnb Logo" class="w-22">
+            </a>
+
+            <a href="/homes" class=" hover:text-white/80 transition-colors <%= isActive === 'homes' ? 'border-b-2 border-white' : '' %>">
+                Homes
+            </a>
+
+            <a href="/favourites" class="hover:text-white/80 transition-colors <%= isActive === 'favourites' ? 'border-b-2 border-white' : '' %>">
+                Favourites
+            </a>
+
+            <div class="ml-auto flex gap-6">
+                <a href="/host/host-homes" class="hover:text-white/80 transition-colors <%= isActive === 'host-homes' ? 'border-b-2 border-white' : '' %>">
+                    Host Homes
+                </a>
+
+                <a href="/host/add-home" class="hover:text-white/80 transition-colors <%= isActive === 'add-home' ? 'border-b-2 border-white' : '' %>">
+                    Add Home
+                </a>
+            </div>
+    </nav>
+</header>

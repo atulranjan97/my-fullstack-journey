@@ -11,36 +11,39 @@ module.exports = class Home {
         this.description = description;
     }
 
-    save() {
-        // Method 1: Direct String Interpolation (UNSAFE)
-        //    return airbnbDb.execute(`INSERT INTO homes(houseName, price, location, rating, photoUrl, description) VALUE ('${this.houseName}', ${this.price}, '${this.location}', ${this.rating}, '${this.photoUrl}', '${this.description}')`) 
+    save(homeId) {
+        if (homeId) {
+            // Method 1: Direct String Interpolation (UNSAFE)
+            //    return airbnbDb.execute(`INSERT INTO homes(houseName, price, location, rating, photoUrl, description) VALUE ('${this.houseName}', ${this.price}, '${this.location}', ${this.rating}, '${this.photoUrl}', '${this.description}')`) 
 
-        // Method 2: Parameterized Query (SAFE)
-        return airbnbDb.execute(`INSERT INTO homes(houseName, price, location, rating, photoUrl, description) VALUE (?, ?, ?, ?, ?, ?)`, [this.houseName, this.price, this.location, this.rating, this.photoUrl, this.description]) 
-        // This is the recommended way to write SQL queries because:
-        // 1. Prevents SQL Injection attacks:
-        //    - SQL injection is when malicious users insert SQL code through input fields
-        //    - For example, if houseName input was "'); DROP TABLE homes; --"
-        //    - Method 1 would execute that as SQL code and could delete your table!
-        //    - Method 2 treats all inputs as plain values, never as SQL code
-        //
-        // 2. Cleaner and easier to read:
-        //    - Uses ? as placeholders instead of messy string concatenation
-        //    - Values are passed separately in an array
-        //    - MySQL driver automatically handles proper escaping of values
-        //
-        // 3. Better performance:
-        //    - Database can reuse the query plan since query structure stays same
-        //    - Only the values change, not the whole query string
-        //
-        // The ? marks are replaced in order by the values in the array:
-        // 1st ? = this.houseName
-        // 2nd ? = this.price
-        // And so on...
+            // Method 2: Parameterized Query (SAFE)
+            return airbnbDb.execute(`INSERT INTO homes(houseName, price, location, rating, photoUrl, description) VALUE (?, ?, ?, ?, ?, ?)`, [this.houseName, this.price, this.location, this.rating, this.photoUrl, this.description]) 
+            // This is the recommended way to write SQL queries because:
+            // 1. Prevents SQL Injection attacks:
+            //    - SQL injection is when malicious users insert SQL code through input fields
+            //    - For example, if houseName input was "'); DROP TABLE homes; --"
+            //    - Method 1 would execute that as SQL code and could delete your table!
+            //    - Method 2 treats all inputs as plain values, never as SQL code
+            //
+            // 2. Cleaner and easier to read:
+            //    - Uses ? as placeholders instead of messy string concatenation
+            //    - Values are passed separately in an array
+            //    - MySQL driver automatically handles proper escaping of values
+            //
+            // 3. Better performance:
+            //    - Database can reuse the query plan since query structure stays same
+            //    - Only the values change, not the whole query string
+            //
+            // The ? marks are replaced in order by the values in the array:
+            // 1st ? = this.houseName
+            // 2nd ? = this.price
+            // And so on...
 
-        // no need to insert id, kyunki db id ko auto generate karta hai humare liye.
-        // SQL injection: matlab aap data ki form me SQL ki query ko inject kar rahien hai kisi ke program me.
-
+            // no need to insert id, kyunki db id ko auto generate karta hai humare liye.
+            // SQL injection: matlab aap data ki form me SQL ki query ko inject kar rahien hai kisi ke program me.
+        } else {
+            return airbnbDb.execute(`UPDATE homes SET houseName = ?, price = ?, location = ?, rating = ?, photoUrl = ?, description = ?) WHERE id = ?`, [this.houseName, this.price, this.location, this.rating, this.photoUrl, this.description] )
+        }
     }   
 
 

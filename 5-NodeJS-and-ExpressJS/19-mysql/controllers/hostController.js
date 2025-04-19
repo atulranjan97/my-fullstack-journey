@@ -41,6 +41,15 @@ exports.postEditHome = (req, res, next) => {
             res.redirect('/host/host-homes');
         }
     });
+
+    newHome.save(this.id).then(() => {
+        if (err) {
+            console.log('Error while updating home', err);
+        } else {
+            // res.render('host/host-homes', {homes: registeredHomes, pageTitle: 'Host Homes'});
+            res.redirect('/host/host-homes');
+        }
+    })
 }
 
 exports.getHostHomes = (req, res, next) => {
