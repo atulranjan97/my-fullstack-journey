@@ -52,8 +52,8 @@ function handleClick() {
 container.addEventListener('click', handleClick);     // Output: container
 // here, `this` inside function `handleClick` would referring to `container` object as it is being called from `addEventListener` method of `container` object 
 
-button2.addEventListener('click', handleClick);       // Output: btn1 container
+button2.addEventListener('click', handleClick);       // Output: btn2 container
 // `this` inside function `handleClick` would start referring to `button2` object as it is being called from `addEventListener` method of `button2` object 
 
-button3.addEventListener('click', handleClick);       // Output: btn1 container
+button3.addEventListener('click', handleClick);       // Output: btn3 container
 

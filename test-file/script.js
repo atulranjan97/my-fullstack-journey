@@ -12,18 +12,14 @@ function createUser(name, age, isAdmin = false) {
       console.log(
         `Hello, my name is ${this.fame} and I am ${this.age} years old.`
       );
-    },
-  };
-}
-
-const users = [
-  createUser("Alice", 28),
+    const users = [ createUser("Alice", 28),
   createUser("Bob", 34, true),
   createUser("Charlie", 22),
   createUser("Diana", 40, true),
   createUser("Eve", 19),
 ];
 
+// filterAdmins takes an array of user objects and returns a new array containing only the objects that have isAdmin set to true
 function filterAdmins(users) {
   return users.filter((user) => user.isAdmin);
 }

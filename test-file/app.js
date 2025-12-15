@@ -11,6 +11,11 @@ const requestHandler = (req, res) => {
     res.setHeader('Content-Type', 'text/html'); // Set the response header to return HTML content
 
     // Handling the home page request
+    /*
+        ! this is a warning comment.
+        ? this is a question comment.
+        * ? this    
+    */
     if (req.url === "/") {
         res.write(`
             <!DOCTYPE html>

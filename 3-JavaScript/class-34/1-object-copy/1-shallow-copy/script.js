@@ -10,7 +10,7 @@ const original = {
   };
   
 // Shallow copy
-// const shallowCopy = { ...original };
+// const shallowCopy = { ...original };   // spread operator is used here which is covered in later classes
 const shallowCopy = Object.assign({}, original);
 
 

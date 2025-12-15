@@ -1,0 +1,55 @@
+<!-- Include partials using EJS(Embedded JavaScript) template syntax -->
+<%- include('../partials/meta-tags') %>
+    <!-- 
+    EJS tag that outputs the unescaped content of the included file.
+    Tells EJS to include the contents of the `meta-tags` file located in the `partials` directory. 
+
+    Expected behavior:
+        -> EJS will look for a file named `meta-tags.ejs` (or similar extension) in a `partials` subdirectory relative to your current template.
+        -> The contents of that file will be inserted exactly as-is (unescaped) into your template.
+-->
+    </head>
+
+    <body class="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+        <%- include('../partials/nav', {isActive: 'homes'}) %>
+            <!-- Tells EJS to include the contents of the `nav` file located in the `partials` directory.  -->
+            <main>
+                <div class="flex justify-center flex-col">
+                    <h1 class="text-5xl text-center font-extrabold text-blue-500 mb-12 mt-8 tracking-tight">
+                        <% if (homes.length) {%> Here are all the homes <% } else {%> Home list is empty <% } %> 
+                    </h1>
+                    <% if (homes.length) {%>
+                        <!-- <div class="mt-8 flex flex-wrap justify-center gap-x-3 gap-y-4"> -->
+                        <div class="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:w-350">
+                            <% homes.forEach(home=> { %>
+                                <ul class="bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+                                    <li class="mb-4">
+                                        <img src="<%= home.photoUrl %>" alt="home image" class="w-full h-90 md:h-72 object-cover rounded-lg">
+                                    </li>
+                                    <li class="text-gray-800 font-bold flex justify-between">
+                                        <%= home.houseName %> 
+                                        <span class="text-yellow-500">⭐ <%= home.rating %></span>
+                                    </li>
+                                    <li class="text-gray-500 mt-3"> <%= home.location %> </li>
+
+                                    <li class="flex justify-between items-center mt-2">
+                                        <span class="text-gray-800">
+                                            <span class="underline font-semibold"> ₹<%= home.price %> </span>
+                                            for 5 nights 
+                                        </span>
+                                    </li>
+                                    <a href="/homes/<%= home._id %>" 
+                                        class="bg-sky-600 hover:bg-sky-800 text-white font-semibold w-fit rounded inline-block px-2 py-1 my-2">
+                                    Details
+                                    </a>
+                                    <%- include('../partials/add-to-favourite', {home: home}) %>
+                                </ul>
+                            <% }); %>
+                        </div>
+                    <% } %>
+                </div>
+            </main>
+    </body>
+
+    </html>
+    <!-- Very important: ejs file ke comments me ejs tag likhne par error aata hai kyunki ejs engine comments me likhe ejs tag ko bhi process karne lagta hai, so don't write ejs tag in comments -->

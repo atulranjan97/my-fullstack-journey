@@ -1,0 +1,46 @@
+<% const logoUrl = '/images/logo/airbnb-logo'; %>
+<!-- Since `express.static` serves from public directory  -->
+
+<header class="bg-blue-500 py-4 px-10">
+    <nav class="gap-6 text-white flex items-center">
+            <a href="/" class="">
+                <img src="<%= logoUrl%>.png" alt="Airbnb Logo" class="w-22">
+            </a>
+
+            <a href="/homes" class=" hover:text-white/80 transition-colors <%= isActive === 'homes' ? 'border-b-2 border-white' : '' %>">
+                Homes
+            </a>
+
+            <% if (isLoggedIn) { %>
+                <a href="/favourites" class="hover:text-white/80 transition-colors <%= isActive === 'favourites' ? 'border-b-2 border-white' : '' %>">
+                    Favourites
+                </a>
+            <% } %>
+
+            <div class="ml-auto flex gap-6 items-center">
+                <% if (isLoggedIn) { %>
+                    <a href="/host/host-homes" class="hover:text-white/80 transition-colors <%= isActive === 'host-homes' ? 'border-b-2 border-white' : '' %>">
+                        Host Homes
+                    </a>
+
+                    <a href="/host/add-home" class="hover:text-white/80 transition-colors <%= isActive === 'add-home' ? 'border-b-2 border-white' : '' %>">
+                        Add Home
+                    </a>
+
+                    <form action="/logout" method="post"> 
+                        <input type="submit" value="Logout" class="bg-red-600 hover:bg-red-700 font-bold px-2 py-1 rounded-md transition-colors" />
+                    </form>
+                <% } else { %>
+                    <a href="/login" class="bg-green-600 hover:bg-green-700 px-3 py-1 rounded-md font-bold transition-colors <%= isActive === 'login' ? 'border-b-2 border-white' : '' %>">
+                        Login
+                    </a>
+                <% }  %>
+            </div>
+    </nav>
+</header>
+
+<!-- 
+    humne logout button ko link na banake ek form ke through button banaya hai, aisa isliye kiya kyunki agar koi bhi link/button aisa hai jisse internal state change hoti hai to usko humko post request banana zaruri hai, logout ko hum link bana sakte hai <a> tag ki help se and code fir bhi chal jayega but hume ideally post request banane ke liye form banana zaruri hai jab bhi hum koi aisa change kar rahien hai jisse state me change ho raha hai.
+
+    login se state change nahi ho raha tha, login se sirf login page aa raha hai, but logout se actually hum logout ho jayenge.
+-->

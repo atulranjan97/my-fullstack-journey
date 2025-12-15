@@ -38,11 +38,12 @@ const PORT = 3000;
 // MongoDB connection URL with authentication credentials
 // Format: mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<database>?<options>
 // - username: atulranjan97 
-// - cluster: airbnb.nboh2yb
+// - cluster: atul-cluster.l17ingm
 // - database: airbnb
 // - options: retryWrites and w=majority for reliability
 // - appName: Identifies this application in MongoDB logs
-const MONGO_DB_URL = "mongodb+srv://atulranjan97:jin97kMongoDb*@airbnb.nboh2yb.mongodb.net/airbnb?retryWrites=true&w=majority&appName=Airbnb";
+const MONGO_DB_URL = "mongodb+srv://atulranjan97:jin97kMongoDb*@atul-cluster.l17ingm.mongodb.net/airbnb?retryWrites=true&w=majority&appName=atul-cluster";
+// we need to add our cluster name to the mongodb uri when using mongoose 
 
 // Connect to MongoDB using Mongoose
 // mongoose.connect() returns a promise that resolves when connection is established
@@ -57,5 +58,3 @@ mongoose.connect(MONGO_DB_URL).then(() => {
     console.log(`Server running at: http://localhost:${PORT} \n`);
   });
 });
-
-// mongodb+srv://atulranjan97:jin97kMongoDb*@airbnb.nboh2yb.mongodb.net/?retryWrites=true&w=majority&appName=Airbnb 

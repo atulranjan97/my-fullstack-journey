@@ -18,6 +18,7 @@ console.log('!!false is', !!false);
 
 
 // Example
+let num = 5;
 if (num > 0 && num % 2 === 0) {
     console.log('Positive and Even number');
 } else if (num > 0) {

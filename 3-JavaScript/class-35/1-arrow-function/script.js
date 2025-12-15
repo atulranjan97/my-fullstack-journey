@@ -6,11 +6,22 @@ function add1(num1, num2) {
 console.log(add1(4, 6));
 
 
-// Anonymous function
+
+// Anonymous function Assigned to a Variable
 const add2 = function(num1, num2) {
     return num1 + num2;
 }
 console.log(add2(4, 9));
+    /*
+        Here:
+            * The function has no declared name in its definition (function() ← no name).
+            * But JavaScript assigns an inferred name based on the variable (add2).
+    */
+
+    // So:
+        console.log(add2.name);     // "add2"
+        //  The function’s `.name` property now shows "add2", but it’s still technically an anonymous function expression (the name wasn’t written in the function declaration).
+        // When you assign an anonymous function to a variable, it remains anonymous in definition, but JavaScript automatically assigns the variable’s name to its `.name` property for convenience (not as a true declared name).
 
 
 

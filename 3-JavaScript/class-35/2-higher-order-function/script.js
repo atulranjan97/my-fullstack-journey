@@ -1,4 +1,4 @@
-// Higher order function: function that takes another function as a parameter or returns a function.
+// Higher order function: function that takes another function as a argument or returns a function as its result, or both.
 
 // Functions that return a function
 const createDouble = () => {
@@ -24,3 +24,13 @@ const twice = createDouble();
 console.log(twice(5));
 // is same as
 console.log(createDouble()(4));
+
+/* Common Built-in HOFs in JS
+    * map()
+    * filter()
+    * reduce()
+    * forEach()
+    * setTimeout()
+
+    All of these take functions as arguments (callbacks).
+*/

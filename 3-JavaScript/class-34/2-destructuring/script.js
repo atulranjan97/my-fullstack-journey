@@ -75,7 +75,7 @@ let product3 = {
     itemName: 'Electo t-shirt',
     price2,
     displayPrice: function () {
-        return `Rs. ${this.price.toFixed(2)}`;
+        return `Rs. ${this.price2.toFixed(2)}`;
     },
 };
 // is same as
@@ -84,7 +84,7 @@ let product4 = {
     itemName: 'Electo t-shirt',
     price2,         // shorthand property: {price: price} simplifies to just price
     displayPrice() {
-        return `Rs. ${this.price.toFixed(2)}`;
+        return `Rs. ${this.price2.toFixed(2)}`;
     },
     // Shorthand Method: Define methods directly inside the object without the function keyword
 };

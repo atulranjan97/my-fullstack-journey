@@ -3,6 +3,9 @@
 /*
 Local storage is a web storage API provided by modern web browsers that allows developers to store data on the client side. This data is stored in the browser and persists even after the user closes the browser or navigates away from the webpage.
 
+The Web Storage API is a feature in modern web browsers that allows websites to store data directly in the user's browser — persistently or temporarily, depending on the type.
+In programming, API simply means Application Programming Interface — a set of functions or methods that you can use to interact with something.
+
 Key Features of Local Storage
     1. Storage Limit: Typically, local storage allows up to **5MB** of data per origin (domain + protocol + port).
     2. Persistent Data: The data persists even after the browser is closed or the user navigates to a different page.

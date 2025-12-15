@@ -18,6 +18,7 @@ exports.getHomes = (req, res, next) => {
     });
 }
 
+
 exports.getHomeDetails = (req, res, next) => {
     const homeId = req.params.homeId;
     Home.findById(homeId).then(home => {
@@ -29,19 +30,27 @@ exports.getHomeDetails = (req, res, next) => {
         res.render('store/home-detail', {home: home,pageTitle: 'Home detail'});
     })}
 
-exports.getFavourites = (req, res, next) => {
-    Favourite.find().then(favouriteIds => {
-        console.log('favouriteIds: ', favouriteIds);
-        Home.find().then(registeredHomes => {
-            favouriteIds = favouriteIds.map(favouriteId => favouriteId.homeId.toString());
-            // console.log('favouriteIds: ', favouriteIds);
-            // console.log('registeredHomes: ', registeredHomes);
 
-            const favouriteHomes = registeredHomes.filter(home => favouriteIds.includes(home._id.toString()))
-            res.render('store/favourites', {homes: favouriteHomes, pageTitle: 'Favourites'});
-        })
+exports.getFavourites = (req, res, next) => {
+    Favourite.find().populate("homeId").then(favouriteIdHomes => {
+    // In the getFavourites function, we will fetch all favourite documents from the favourites collection
+    // We will use the populate method to replace the homeId field in each document with the actual home document
+    // That is, we will fetch the home document corresponding to each homeId and replace homeId with the fetched home
+    // This is done using the populate method which takes a string argument specifying the field to populate
+    // The populate method returns a promise that resolves to the populated documents
+    // We then map over the populated documents and extract the home documents
+    // We will pass these home documents to the favourites view
+        console.log('(Inside getFavourites) favouriteIdHomes: ', favouriteIdHomes);
+        const favouriteHomes = favouriteIdHomes.map(favouriteIdHome => favouriteIdHome.homeId);
+        console.log('(Inside getFavourites) favouriteHomes: ', favouriteHomes)
+        // favouriteIdHomes is an array of objects where each object has a homeId field that is populated with a home document
+        // We will map over this array and extract the home documents
+        // favouriteHomes is an array of home documents
+        res.render('store/favourites', {homes: favouriteHomes, pageTitle: 'Favourites'});
+        // We will pass this array to the favourites view
     })
 }
+
 
 exports.postAddFavourites = (req, res, next) => {
     // console.log('Came to add favourites: ',req.body);
@@ -55,7 +64,8 @@ exports.postAddFavourites = (req, res, next) => {
     // 4. Mongoose will validate that the object matches the schema structure
     // 5. It's more explicit and self-documenting than passing just the value
     
-    fav.save().then(() => {
+    fav.save()
+    .then(() => {
         res.redirect('/favourites');
     })
     .catch(err => {
@@ -63,6 +73,7 @@ exports.postAddFavourites = (req, res, next) => {
         res.redirect('/favourites');
     });
 }
+
 
 exports.postRemoveFavourites = (req, res, next) => {
     const homeId = req.params.homeId;
@@ -72,7 +83,8 @@ exports.postRemoveFavourites = (req, res, next) => {
     // The issue is we're using findByIdAndDelete with homeId
     // But we need to find the Favourite document where homeId matches
     // Not where the Favourite document's _id matches
-    Favourite.findOneAndDelete({homeId: homeId}).then(() => {
+    Favourite.findOneAndDelete({homeId})    // {homeId: homeId} is same as {homeId}
+    .then(() => {
         res.redirect('/favourites');
     })
     .catch(err => {
@@ -80,4 +92,4 @@ exports.postRemoveFavourites = (req, res, next) => {
         res.redirect('/favourites');
     });
 }
-// 17:44
+// 34.00

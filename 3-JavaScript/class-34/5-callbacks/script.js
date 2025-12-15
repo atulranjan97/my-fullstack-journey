@@ -6,7 +6,7 @@ function hello(name) {
 }
 
 function capitalize(name) {
-    let upperCase = name.toUpperCase(name);
+    let upperCase = name.toUpperCase();
     console.log(upperCase);
 }
 

@@ -1,0 +1,8 @@
+<% if (isLoggedIn) { %>
+    <form action="/favourites" method="post">
+        <input type="hidden" name="id" value="<%= home._id %>">
+        <button class="bg-slate-500 hover:bg-slate-600 text-white rounded py-2 px-2 font-semibold transition-colors">
+            Add to Favourite
+        </button>
+    </form>
+<% } %>

@@ -31,9 +31,11 @@ class AccountHolder {
 };
 
 let atul = new AccountHolder('Atul', 'Ranjan');
+console.log(atul);
 console.log(atul.accountBalance);
 atul.getAccountBalance();
 
+// atul.accountBalance += 2000;
 atul.credit(1000);
 atul.getAccountBalance();
 

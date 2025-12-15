@@ -3,11 +3,11 @@ console.log('Learning objects');
 
 // Declaring an object
 let student = {};   // Empty object
-console.log(product);
-console.log(typeof product);    // Output: object
+console.log(student);
+console.log(typeof student);    // Output: object
 
 let product = {
-    company: 'Nike',                // valid variable name according to JS
+    company: 'Nike',                // valid key name according to JS
     'item-name': 'Running Shoes',   // key with special character is only allowed if written as a string 
     price: 2500,                    
     avgRating: 4.5,                 
@@ -18,15 +18,15 @@ let product = {
 
 // Dot Notation
 console.log(product.company);
-// console.log(product.item-name);   // can't access this property using dot notation as property name(ie. `item-name`) contains special character
+// console.log(product.item-name);   // can't access this property using dot notation because the name(ie. `item-name`) contains special character
 
 // Bracket Notation
-console.log(product[avgRating]);
+console.log(product['avgRating']);  // always write the key in string format when using bracket notation doesn't matter if it's a valid key or not.
 
 // When to use Bracket Notation?
-    // 1. Useful for properties with special characters.
+    // 1. Useful for properties with special characters in its key naming.
         console.log(product['item-name']);
-    // 2. Most of the time hum jo object access kar rahe hote hai humko nahi pata hota ki uske ander kaun-kaunsi 'keys' hai because vo (server/ backend/ network call/ function etc) se mil rahi hoti hai, agar is case me dot notation ka use karenge to exact property(ie, key) ka naam pata hona chahiye tabhi hum dot laga kar access kar sakte hai. 
+    // 2. Most of the time hum jo object access kar rahe hote hai humko nahi pata hota ki uske ander kaun-kaunsi 'keys' hai and vo valid naming convention ko follow kar bhi rahi hai ya nahi because vo (server/ backend/ network call/ function etc) se mil rahi hoti hai, agar is case me dot notation ka use karenge to exact property(ie, key) ka naam pata hona chahiye tabhi hum dot laga kar access kar sakte hai. 
     let key = 'company';    // assume ki yeh key(ie, company) kisi function call ya kahin aur se aaya hai jise humne apne key naam ke variable me store kiya hai
     console.log(product[key]);
     // now we can write this key directly in our code using bracket notation
@@ -34,7 +34,23 @@ console.log(product[avgRating]);
 
 // Modifying the object
 product.discount = 50;      // we can add a new key-value pair in existing object 
-product.price = 3000;       // we can update value of a key
-delete product.numberOfRatings;     // we can delete any key-value pair using delete keyword
+product.price = 3000;       // we can update value of a existing key
+// delete product.numberOfRatings;     // we can delete any key-value pair using delete keyword
 console.log(product);
 
+
+
+const book1 = {
+    title: 'Book1',
+    author: 'John Doe',
+    year: '2016',
+    getSummary: function() {
+        return `${this.title} was written by ${this.author} in ${this.year}`;
+    }
+};
+
+// To get all the keys of an object
+console.log(Object.keys(book1));
+
+// To get all the values of an object
+console.log(Object.values(book1));

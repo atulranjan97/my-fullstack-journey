@@ -1,5 +1,17 @@
 console.log('Different methods of array');
 
+// ---------Array methods---------
+    // 1. isArray()
+    // 2. length
+    // 3. push(num1), pop(), shift(), unshift(num1, num2 ...)
+    // 4. splice(startIndex, deleteCount, element1, element2, ..., elementN)
+    // 5. toString()
+    // 6. sort()
+    // 7. valueOf()
+    // 8. indexOf()
+    // 9. find()
+    // 10. slice()
+
 // Array.isArray();     (checks if variable is an array)
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -50,7 +62,7 @@ console.log('Array length:', arr.length);       // Output: Array length: 9
     
 
     // 5. sort
-            // sorts the elements of the array in place, meaning that the original array is now ordered.
+            // sorts the elements of the array in place, meaning that the original array is now ordered. Returns the sorted array (the same array, not a copy).
             let arr1 = [1, 12, 45, 11, 9, 0];
             arr1.sort();
             // sorted array ko return nahi karega, jis array ke liye sort ko call kiya hai usi ko sort kar dega
@@ -64,41 +76,40 @@ console.log('Array length:', arr.length);       // Output: Array length: 9
 
     
     // 6. valueOf
-                // returns the array itself as the object, not a primitive value
+            // returns the array itself as the object, not a primitive value
                 console.log(arr.valueOf());  // Output: [1, 2, 3, 4, 5, 6, 7, 8, 9] (array itself)
 
             
     // 7. indexOf
             // return index of the element in array
 
-            // Find the index of number 3
-            const index = arr.indexOf(5);
-            console.log('Index of 5:', index);      // Output: 6
+                const index = arr.indexOf(5);
+                console.log('Index of 5:', index);      // Output: 6
 
-            index = arr.indexOf(13);
-            console.log('Index of 13:', index);      // Output: -1
-            // -1 represent absence of element in array
+                index = arr.indexOf(13);
+                console.log('Index of 13:', index);      // Output: -1
+                // -1 represent absence of element in array
 
         
     // 8. find (we will learn this in arrow function lecture)
 
         
-        // 9. slice()
-                //  the `slice()` method is used to extract a portion of an array or a string without modifying the original. It creates a shallow copy of the selected elements or characters.
+    // 9. slice()
+            //  the `slice()` method is used to extract a portion of an array or a string without modifying the original. It creates a shallow copy of the selected elements or characters.
 
-                // Syntax: array.slice(start, end);
+            // Syntax: array.slice(start, end);
 
-                // `start`: The starting index (inclusive). Defaults to 0 if not specified.
-                // `end`: The ending index (exclusive). Defaults to the array length if not specified.
-                // 1. Immutable: slice() does not change the original array or string.
-                // 2. Negative Indexes: Start or end can be negative, counting from the end.
-                // 3. Returns a Copy: Creates a new array or string for the extracted portion.
+            // `start`: The starting index (inclusive). Defaults to 0 if not specified.
+            // `end`: The ending index (exclusive). Defaults to the array length if not specified.
+            // 1. Immutable: slice() does not change the original array or string.
+            // 2. Negative Indexes: Start or end can be negative, counting from the end.
+            // 3. Returns a Copy: Creates a new array or string for the extracted portion.
 
-                let arr2 = [1, 2, 3, 4, 5];
-                console.log(arr2.slice(1, 3)); // Output: [2, 3] (elements at index 1 and 2)
-                console.log(arr2.slice(2));    // Output: [3, 4, 5] (from index 2 to the end)
-                console.log(arr2.slice(-2));   // Output: [4, 5] (last two elements)
-                console.log(arr2);             // Original array remains: [1, 2, 3, 4, 5]
+            let arr2 = [1, 2, 3, 4, 5];
+            console.log(arr2.slice(1, 3)); // Output: [2, 3] (elements at index 1 and 2)
+            console.log(arr2.slice(2));    // Output: [3, 4, 5] (from index 2 to the end)
+            console.log(arr2.slice(-2));   // Output: [4, 5] (last two elements)
+            console.log(arr2);             // Original array remains: [1, 2, 3, 4, 5]
 
 
 

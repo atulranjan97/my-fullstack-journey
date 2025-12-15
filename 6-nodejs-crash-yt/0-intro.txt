@@ -1,0 +1,18 @@
+1. Nodejs is a js runtime and a runtime is a program or an environment that runs other programs, so we can build js application and run them right on your computer or on a server.
+2. Nodejs is built on c++ and it uses V8 JS engine that google chrome uses.
+3. Mostly used for developing server side and network apps/apis.
+4. It essentially allows us to use js to write server side code and do a lot of the same thing 
+5. Traditionally js was only used on the client side in the web browser to do things like form validation, animation and stuff like that but with nodejs, js has really become a truely powerfull fullstack language and you can do a lot of the same things you can do with the other server side languages.
+6. There are other js runtime such as dino and bunjs 
+
+How Node.js works
+ Nodejs is non-blocking which means that it doesn't wait around for I/O operations like network calls, file system operations, database operations. Instead of blocking the execution of code while waiting for these things to complete, nodejs uses events and callbacks and this allows it to handle thousand of connections at the same time and this is why nodejs is so fast and efficient.
+
+ In node.js there's a single main thread that executes your js code and you can think of the thread as (a path of the execution) set of instructions that your computer executes and in a single-threaded environment there's only one set of instructions that are executed at a time, this is different from multi-threaded environment where you have multiple thread that can execute different parts of your code simultaneously, so node.js uses something called the event loop which is a mechanism that allows node to perform non-blocking I/O operations and when you make a network request for example, node.js doesn't wait for that request to complete instead it continues to execute the rest of your code and when that request does complete, it triggers a callback which is then added to the event queue and event loop picks up the callback and then executes it.
+
+ node.js comes with npm which is a node package manager which you can you to install third party packages
+
+
+To initilize npm package
+    npm init and then fill the details or keep pressing enter
+    this will create you package with package.json file

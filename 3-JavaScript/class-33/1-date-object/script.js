@@ -25,7 +25,7 @@ console.log('Date of the month:', currentDate.getDate());                   // O
 
  
 // getDay(): Day of the week
-// Get the current day of the week (0 = Sunday, ... , 6 = Saturday )        
+// Get the current day of the week (0 = Sunday, ... , 7 = Saturday )        
 console.log('Day of the Week:', currentDate.getDay());                      // Output: Day of the Week: 5
 
 

@@ -1,7 +1,3 @@
-// Import ObjectId from mongodb package to work with MongoDB's unique identifiers
-// ObjectId is a special type that MongoDB uses for the _id field of documents
-const { ObjectId } = require("mongodb");
-
 // Import getDb function that provides connection to our MongoDB database
 const { getDb } = require("../util/database-util");
 
@@ -20,7 +16,7 @@ module.exports = class Favourite {
         // Get database connection
         const db = getDb();
         
-        // First check if this home is already marked as favorite
+        // First check if this home is already marked as favourite
         // findOne returns the first document that matches the filter {homeId: this.homeId}
         // If no match found, returns null
         return db.collection('favourites').findOne({homeId: this.homeId})

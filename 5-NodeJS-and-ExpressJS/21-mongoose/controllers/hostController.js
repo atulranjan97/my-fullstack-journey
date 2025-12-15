@@ -111,6 +111,7 @@ exports.postDeleteHome = (req, res, next) => {
     // Use mongoose's findByIdAndDelete to remove the home
     // After deletion, redirect back to host-homes page
     Home.findByIdAndDelete(homeId).then(() => {
+        console.log('Home deleted successfully by the host');
         res.redirect('/host/host-homes');
     });
 }

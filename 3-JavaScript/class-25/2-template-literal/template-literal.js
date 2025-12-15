@@ -29,3 +29,10 @@ let a = 5;
 let b = 10;
 let result = `The sum of a and b is ${a+b}.`;
 // Supports embedding any valid JavaScript expression, including arithmatic expression, function calls, and ternary operations.
+
+
+/*
+    "Template literals in JavaScript are string literals enclosed by backticks ( ` ` ) instead of quotes. They let you embed expressions with ${}, support multi-line strings, and allow string interpolation without using + for concatenation."
+
+    "Template literals are backtick strings in JS that allow interpolation with ${}, multi-line strings, and more flexible string formatting."
+*/

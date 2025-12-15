@@ -29,3 +29,8 @@
     // appendChild()
     // removeChild()
     // replaceChild()
+
+
+    // In browsers, `window` is the global object; 
+    // In Node.js, `global` is the global object. 
+    // Both provide access to environment-specific APIs, but Node does not have DOM/browser-related objects.

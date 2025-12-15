@@ -7,7 +7,7 @@ function learningScope() {
     console.log('x:', x);
     
     
-    // let  (declares a block-scoped variable, won't allow hoisting)
+    // let  (declares a block-scoped variable, hoisting happens here as well but cannot access the variable before declaration because of temporal deadzone)
     console.log('y:', y);   // cannot access this 'y' before initialization
     let y = 5;
     console.log('y:', y);
