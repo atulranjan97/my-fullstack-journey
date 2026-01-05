@@ -1,0 +1,45 @@
+What is express?
+    1. Minimal and flexible web framework for Node.js
+    2. Used for building server-side web applications and APIs
+    3. The most popular framework for Node.
+    4. Simplifies the process of handling HTTP requests and responses
+    5. Express is very fast and unopinionated framework
+
+    In Node.js crash course, we started to build an API from scratch just using the HTTP module and we saw how difficult and how low level it was.
+    Express gives us a ton of tools to work with to make building APIs and working with HTTP much easier.
+
+Web framework are of two types:
+    1. Opinionated: Opinionated framework is one that has a lot of rules and conventions that you need to follow, so there's basically recommended way of doing things and its very structured, its gonna guide in you in a certain direction, they usually comes with bell and whistles out of the box (things like authentication, CLIs, database, ORMs) 
+        -> Suggest ways to do things
+        -> usually offers a lot of bell and whistles
+        -> Strict folder structure
+    Eg: Ruby on rails, django, laravel
+
+    2. Unopinionated framework: are extremely flexible and there's not really a right way to do things. You can structure you application however you want and use whatever libaries you want, you can use whatever database you want. It's very minimalistic and it's up to you to decide how you wanna structure you application. There's not as many rules to follow but you also don't get as many features or bells and whistles out of the box but you do get the necessities and ofcourse you can install others packages for the functionality that you need.
+        -> Different ways to do the same thing
+        -> Includes the bare necessities
+        -> Structure folder how you want
+    Eg: Express, flask etc
+
+    So there's definitely pros and cons to both, Its really features versus freedom depends on one what means more to you for that project.
+
+Prerequisite:
+ -> JavaScript fundamentals (Functions, loops, objects, classes etc)
+ -> HTTP Basics (Method, status codes etc)
+ -> How JSON APIs work
+ -> Basic understanding of Node.js 
+ -> NPM (Node Package Manager)
+
+ Topics (What we will cover):
+  1. Routing
+  2. Request & Response
+  3. Custom Middleware
+  4. CRUD Operations
+  5. Template Engines
+  6. Error Handling
+  7. 3rd Party NPM Packages
+  8. Controllers
+  9. Fetching from Frontend
+  10. Environment variable
+
+

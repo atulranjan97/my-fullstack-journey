@@ -1,3 +1,5 @@
+// Exporting multiple functions
+
 function sum(...nums) {
     return nums.reduce((curr, acc) => curr + acc);
 }
@@ -7,17 +9,20 @@ function product(...nums) {
 }
 
 
-/*
-    module.exports = sum;
+/*  we can't export multiple function one by one using module.exports like shown below
+
+    module.exports = sum; 
     module.exports = product
 
-    we can't export multiple function one by one using module.exports like shown above
+    // module.exports me jo final value assign hui hai vahi return hoti hai. Is file me module.exports me `sum` assign hua hai then next line me sum ko product se replace kar diya gaya hai to is vajah se ab module.exports me `product` assigned hai is vajah se product as final value return ho jayegi. 
+
 */
 
-// we make a single object and put both these functions into it and then export that object.
-module.exports = {
-    sum,
-    product
-};
+
+//  Exporting an object with multiple properties
+    module.exports = {
+        sum,
+        product
+    };
 
 // multiple chize hum kyun nahi export kar sakte hai, kyunki hum require ka use karke import karte hai and require ek function hai aur function jab call hota hai to ek value return karta hai aur function ek baar me ek hi value return kar sakta hai

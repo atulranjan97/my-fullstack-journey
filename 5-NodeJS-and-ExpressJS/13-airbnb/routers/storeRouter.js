@@ -7,6 +7,7 @@ const express = require('express');
 const rootDir = require('../util/path-util');
 
 const storeRouter = express.Router();
+// express.Router() is used to split routes into separate, clean modules.
 
 
 storeRouter.get("/", (req, res, next) => {

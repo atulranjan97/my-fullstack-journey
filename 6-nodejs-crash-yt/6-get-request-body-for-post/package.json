@@ -1,0 +1,15 @@
+{
+  "name": "3-npm-script-and-npm-modules",
+  "version": "1.0.0",
+  "description": "npm scripts and npm modules",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon --env-file=.env server.js"
+  },
+  "author": "Atul Ranjan",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}

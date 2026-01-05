@@ -6,11 +6,12 @@ function celciusToFahrenheit(celcius) {
     return (celcius * 9) / 5 + 32;
 }
 
-// the system we are using here to export is commonjs, it's like the native node.js module system
+// This file is a commonjs module and to export something from commonjs module we have to use module.exports
+// In node.js every file is a commonjs module by default
 // default export using commonjs syntax
 // module.exports = generateRandomNumber; 
 
-// importing multiple (commonjs)
+// importing multiple items(commonjs)
 module.exports = {
     generateRandomNumber,
     celciusToFahrenheit,

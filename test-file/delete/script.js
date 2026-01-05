@@ -1,6 +1,33 @@
-// console.log(this);
-// console.log(Object.getOwnPropertyNames(global));
+if (cond1) {
+    // statement1;
+    // statement1;
+} else if (cond2) {
+    // statement1;
+    // statement2;
+} else if (cond3) {
+    // statement1;
+    // statement2;
+} else {
+    // statement1;
+    // statement2;
+}
 
-// console.log(globalThis);
 
-console.log(this);
+
+if (cond1) {
+    // statement1;
+    // statement1;
+} else {
+    if (cond2) {
+    // statement1;
+    // statement2;
+    } else { 
+        if (cond3) {
+            // statement1;
+            // statement2;
+        } else {
+            // statement1;
+            // statement2;
+        }
+    }
+}

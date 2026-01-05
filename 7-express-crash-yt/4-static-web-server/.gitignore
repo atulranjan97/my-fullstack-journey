@@ -1,0 +1,4 @@
+# Whatever you put in here it will not be pushed to your git repository 
+node_modules/
+.env
+# we have api keys in .env file and we don't want to share it

@@ -1,4 +1,6 @@
 import http from 'http';
+// http is node.js core module provided be node.js by default and we just have to import it 
+
 const PORT = 8000;
 
 // 1.

@@ -42,15 +42,16 @@ const requestHandler = (req, res) => {
     
         req.on('end', () => {
             const body = Buffer.concat(buffer).toString();
-            console.log('body: ', body);      // product=pants&budget=700
+            console.log('body: ', body);    // product=pants&budget=700
 
-            const urlParams = new URLSearchParams(body);
+            const urlParams = new URLSearchParams(body); // returns a special type of object containing query string data in key-value pairs which you cannot access the way you access normal js object properties because its not a normal js object
 
-            console.log('urlParams.entries() :', urlParams.entries());      
             const bodyJson = {};
             for (const [key, value] of urlParams.entries()) {
                 bodyJson[key] = value;
             }
+            // urlParams.entries() returns an iterator which contains key-value pairs. This iterator is a special object that generates values one at a time when requested and don’t store everything in memory.
+
             console.log('bodyJson: ', bodyJson);      // {product: 'pants', budget: '700'}
 
             fs.writeFileSync('buy.txt', JSON.stringify(bodyJson));  

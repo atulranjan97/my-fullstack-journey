@@ -7,6 +7,17 @@ app.use(bodyParser.urlencoded());
 // `urlencoded` is a method of bodyParser thar parse body for us    
 // `urlencoded` actually returns us a callback function which then executes and parse the body for us.
 // har request pehle tumhare through jayegi aur jis bhi request me tumko body mil jaye, us body ke liye pehle wait kar lena, mai to sirf is baat me interested hu ki jab mere tak request aaye na tab tak body nikal chuke ho
+// What this line does?
+    // Reads URL-encoded form data
+    // Converts it into a JavaScript object
+    // Attaches it to req.body
+
+// POST request
+    // Data is sent in the request body 
+    // Not part of the URL
+    // Hidden from the address bar
+    // so the browser sends post req to the url '/buy-product'
+    // body(hidden from url): product=value&budget=value
 
 app.use((req, res, next) => {
     console.log('Request received',` req.url:`, req.url, ` req.method:`,req.method, `  req.body:`, req.body);
@@ -30,7 +41,7 @@ app.get('/', (req, res, next) => {
                 <input type="number" placeholder="Enter your budget" name="budget">
                 <input type="submit">
             </form>
-            <!--when client click submit button after filling up the details, a POST request will be sent to path '/buy-product' with client data (product:pants, budget:900)-->
+            <!--when client click submit button after filling up the details, a POST request will be sent to path '/buy-product' with client dataj product=value&budget=value-->
         </body>
         </html>
     `);
@@ -41,7 +52,7 @@ app.post('/buy-product', (req, res, next) => {
     console.log(JSON.stringify(req.body))
     // `fs.writeFileSync` is a synchronous operation, meaning it blocks the event loop. If a lot of requests come in, this could slow down the server. Using an asynchronous `fs.writeFile()` would be better. 
     fs.writeFile('buy.json', JSON.stringify(req.body), (err) => {
-        res.statusCode = 302;   
+        res.statusCode = 302;  // 302 mean temporary redirect 
         res.setHeader('Location', '/products');     
         res.end();  
         console.log('Sending Response'); 

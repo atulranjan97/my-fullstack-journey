@@ -29,7 +29,7 @@ exports.getHomeDetails = (req, res, next) => {
             return res.redirect('/homes');
         }
         // console.log('Came to detail page', homeId, home);
-        res.render('store/home-detail', {home: home,pageTitle: 'Home detail'});
+        res.render('store/home-detail', {home: home, pageTitle: 'Home detail'});
     })
 }
 
