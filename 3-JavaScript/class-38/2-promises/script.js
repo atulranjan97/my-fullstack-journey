@@ -4,7 +4,7 @@
 // promise reject bhi humesha reason ke sath hoga 
 // jab hum promises ke sath kaam karenge toh hum callback pass nahi karenge, abhi tak kya  hota tha jisko bhi baad me koi kaam execute karna hai vo caller se expect karta tha ki aap mujhe callback de dijiye, is baar ulta hoga, yani vo ye bolega ki mai aapko promise de raha hu jab kaam pura ho jayega toh is promise ko check kar lena, tab ye promise fullfill ya reject ho chuka hoga, fullfill ho chuka hoga toh ek value ke sath fullfill hoga, reject ho gaya hoga toh ek reason ke sath reject hoga.
 
-// actually promise create karna sabse difficult hai, in 99% of the cases jab aap normal code likh rahe honge to aap promise create nahi karenge, promise to hume create karke system de raha hoga alag-alag cases me eg. fetchApi or any api , aap mostly inko use karte hai, promise create vo karenge, aap unko use karenge, so promise creation generally kam karna hota hai, mostly kisi ka promise aya toh usko use kaise karna hai ye dekhna hota hai
+// actually promise create karna sabse difficult hai, in 99% of the cases jab aap normal code likh rahe honge to aap promise create nahi karenge, promise to hume create karke system de raha hoga alag-alag cases me eg. fetchApi or any database operation , aap mostly inko use karte hai, promise create vo karenge, aap unko use karenge, so promise creation generally kam karna hota hai, mostly kisi ka promise aya toh usko use kaise karna hai ye dekhna hota hai
 
 // agar promise successful hoga to 
 

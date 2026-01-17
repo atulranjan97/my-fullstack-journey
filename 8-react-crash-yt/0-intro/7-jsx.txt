@@ -1,0 +1,8 @@
+JSX(JavaScript Syntax Extension)
+
+A component can have state associated with it which is just data and it can also take in props
+Now the other part of the components is the output and the output is JSX and this is basically HTML like Syntax within your JS and that's what actually returns from a React component
+
+What's great about jsx is that it's dynamic, it's basically what html would be if it were a programming language, you can have variables, expression, loops, conditionals and basically do anything within your jsx
+
+There are some differences when it comes to HTML as you can't use class in jsx because that's a reserved word in JS so instead we use className, Also if you have a label with for attribute that's going to be changed to htmlFor, so there are some slight differences but most part it's just HTML 

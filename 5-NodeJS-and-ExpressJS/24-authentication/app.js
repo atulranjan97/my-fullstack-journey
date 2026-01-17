@@ -22,7 +22,7 @@ const MongoDbStore = mongodb_session(session);
 /* Why does it need the `session` parameter?
     The `connect-mongodb-session` package needs access to the `express-session` module to integrate properly. It's like saying "Hey, I need to know which session system you're using so I can work with it."
 */
-const MONGO_DB_URL = "mongodb+srv://atulranjan97:jin97kMongoDb*@atul-cluster.l17ingm.mongodb.net/airbnb?retryWrites=true&w=majority&appName=atul-cluster";
+const MONGO_DB_URL = process.env.MONGO_URI;
 
 // NOW MongoDBStore is the actual class you can use
 const sessionStore = new MongoDbStore ({
@@ -81,7 +81,7 @@ app.use(authRouter);
 app.use(errorController.get404);
 
 
-const PORT = 3000;
+const PORT = process.env.PORT;
 
 
 

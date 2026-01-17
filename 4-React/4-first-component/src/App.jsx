@@ -1,7 +1,7 @@
 import './App.css'
 import { Button } from './components/SubmitButton'
 import { DangerButton, SuccessButton } from './components/Buttons'
-import Heading from './components/heading'
+// import Heading from './components/heading'
 import Paragraph from './components/Paragraph'
 import DynamicComponent from './components/DynamicComponent'
 import StudentList from './components/StudentList'
@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       {/* we learn how to create custom class component */}
-      <Heading />
+      {/* <Heading /> */}
 
       {/* we learn how to create custom functional component */}
       <Paragraph />

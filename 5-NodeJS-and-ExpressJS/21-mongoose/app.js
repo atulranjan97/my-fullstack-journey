@@ -32,18 +32,8 @@ app.use(errorController.get404);
 
 const mongoose = require('mongoose');
 
-const PORT = 3000;
-
-
-// MongoDB connection URL with authentication credentials
-// Format: mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<database>?<options>
-// - username: atulranjan97 
-// - cluster: atul-cluster.l17ingm
-// - database: airbnb
-// - options: retryWrites and w=majority for reliability
-// - appName: Identifies this application in MongoDB logs
-const MONGO_DB_URL = "mongodb+srv://atulranjan97:jin97kMongoDb*@atul-cluster.l17ingm.mongodb.net/airbnb?retryWrites=true&w=majority&appName=atul-cluster";
-// we need to add our cluster name to the mongodb uri when using mongoose 
+const PORT = process.env.PORT;
+const MONGO_DB_URL = process.env.MONGO_URI;
 
 // Connect to MongoDB using Mongoose
 // mongoose.connect() returns a promise that resolves when connection is established

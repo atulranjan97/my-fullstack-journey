@@ -1,0 +1,12 @@
+Hooks
+
+React hooks are function that enable functional components to use state and other react features without writing a class because like we said the react components used to be classes and they used to have something called life-cycle methods which were methods that ran specific times during the component rendering process and functional components don't have life-cycle methods because they are not a class so hooks allow us to do the same stuff that we could do within class components such as set state, such as perform effects like data fetching on load and things like that
+
+basically right now at this point in your learning the two main hooks that you need to know are useState and useEffect, the others aren't really essential for you to know atleast right now, in fact three of them are being phased out in React 19 as you can see all hooks that starts with the word use so you can also create your own custom hooks to use within your components(you can create a hook that basically does anything)
+
+- useState
+- useEffect
+- useRef
+- useReducer
+
+useContext, useMemo & useCallback will be phased out in React 19

@@ -5,14 +5,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tailwind": "npx @tailwindcss/cli -i ./public/styles/input.css -o ./public/styles/output.css --watch",
-    "start": "nodemon app.js & npm run tailwind"
+    "start": "node --watch --env-file=.env app.js & npm run tailwind"
   },
   "author": "Atul Ranjan",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "concurrently": "^9.1.2",
-    "nodemon": "^3.1.9"
+    "concurrently": "^9.1.2"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.2",

@@ -39,10 +39,8 @@ app.use('/host', hostRouter);
 
 app.use(errorController.get404);
 
-
-
 // Define the port number that our server will listen on
-const PORT = 3000;
+const PORT = process.env.PORT;
 
 // mongoConnect is a function that establishes connection with MongoDB database
 // It takes a callback function that will only execute after successful database connection

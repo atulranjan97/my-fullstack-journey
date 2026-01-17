@@ -1,0 +1,7 @@
+Why React?
+
+Back in the day the web was very static, you would click on a link and it would take you to another page, the entire page would refresh, this was the state of the web for a long time. Then came along AJAX and this allowed us to make request to the server and get data without having to refresh the page and this was kind of a game changer in terms of the user interfaces, so it allowed us to build single page applications where we can have a very dynamic user experience but as this type of applications and interfaces grows it can become very hard to maintain and this where react and frontend framework come in, We can build dynamic UIs in a way that's easy to maintain and scale and if you've tried to build a large scale UI with vanilla JS you know that it's quite a task and the code gets very unorganized and messy unless you build you own framework or something like that. so react and other frameworks make this much easier
+
+Under the hood react used something called the Virtual DOM. The Virtual DOM is a light-weight copy of the actual dom and when the state of the component changes, the virtual dom changes first and then react will compare the two, the Virtual DOM and the actual DOM and it will update the parts that need to be updated, so this is traditionally how react works under the hood
+
+However with the upcoming version 19 react will have a compiler that to brad traversy understanding will replace the Virtual DOM and it'll make thing faster and it'll also automate some of the tedious tasks making react easier to work with overall.

@@ -1,0 +1,8 @@
+Components
+
+A component is reusable piece of code that can be used to build elements on a page. Components can kind of be thought of as custom HTML elements and components can be broken down into smaller ones and this is called composition and this is a great way to build UI because it allows you to breakdown complex interface into smaller manageable pieces and this makes your code easier to maintain and scale.
+
+Components can be classes or functions, However classes are kind of the older way of doing things in react, nowadays you're not gonna see class based components, they're all functional so we'll be using functional components in this course
+
+Components can also take in props which are basically like arguments or attributes and also they can hold their own state or their own data
+

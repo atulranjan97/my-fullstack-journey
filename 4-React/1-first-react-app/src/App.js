@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
-// here we learn how to create react app using a tool called CRA(create-react- app) 
+// here we learn how to create react app using a tool called CRA(create-react-app) 
 // this tool is outdated, now we build react application using `vite`.
 function App() {
   return (

@@ -40,9 +40,7 @@ exports.getFavourites = (req, res, next) => {
     // The populate method returns a promise that resolves to the populated documents
     // We then map over the populated documents and extract the home documents
     // We will pass these home documents to the favourites view
-        console.log('(Inside getFavourites) favouriteIdHomes: ', favouriteIdHomes);
         const favouriteHomes = favouriteIdHomes.map(favouriteIdHome => favouriteIdHome.homeId);
-        console.log('(Inside getFavourites) favouriteHomes: ', favouriteHomes)
         // favouriteIdHomes is an array of objects where each object has a homeId field that is populated with a home document
         // We will map over this array and extract the home documents
         // favouriteHomes is an array of home documents
@@ -77,7 +75,6 @@ exports.postAddFavourites = (req, res, next) => {
 
 exports.postRemoveFavourites = (req, res, next) => {
     const homeId = req.params.homeId;
-    console.log('Came to remove favourites for homeId: ', homeId);
 
     // we can't use findByIdAndDelete here
     // The issue is we're using findByIdAndDelete with homeId

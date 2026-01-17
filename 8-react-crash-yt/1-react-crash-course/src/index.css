@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+    /* Font family */
+    --font-sans: "Roboto", sans-serif, system-ui;
+    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", serif; 
+    
+    /* Grid templates */
+    --grid-cols-70-30: 70% 28%;
+}
+
+/* This is how you use it:
+
+    <div class="font-sans">
+    Roboto text
+    </div>
+
+    <div className="grid grid-cols-[var(--grid-cols-70-30)] gap-4">
+    <div>Main</div>
+    <div>Sidebar</div>
+    </div>
+*/

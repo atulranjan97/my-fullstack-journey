@@ -1,0 +1,159 @@
+Every react component is gonna return JSX, but you can only return a single element
+You can have as much stuff in that element as you want but you can only return one
+
+
+
+const App = () => {
+    return (
+        <div className='text-5xl'>App</div>
+        <p>Hello</p>
+    )
+};
+Wrong and gives us an error saying 'JSX expression must have one parent element' because we're returning multiple elements ie,. a div and a p
+
+so to avoid the error we need to wrap it inside a single element
+const App = () => {
+    return (
+        <div>
+            <div className='text-5xl'>App</div>
+            <p>Hello</p>
+        </div> 
+    )
+};
+
+Now you might not want the actual div here so what you can do is use what's called a fragment and it's just an empty HTML tag
+const App = () => {
+    return (
+        <>
+            <div className='text-5xl'>App</div>
+            <p>Hello</p>
+        </> 
+    )
+};
+It still works but now it doesn't have a surrounding div in the actual DOM
+
+
+
+
+---Dynamic variable---
+
+const App = () => {
+    const name = 'John';
+
+    const x = 10;
+    const y = 20;
+
+    return (
+        <>
+            <div className='text-5xl'>App</div>
+            <p>We can add JS code in our JSX by surrounding it in curly braces</p>
+            <p>we can add JS variable by surrounding it in curly braces, {name} </p>
+            <p>
+                we can also add JS expression -> The sum of {x} and {y} is {x + y}
+            </p>
+        </> 
+    )
+};
+
+
+We can also use loops and we can render something called a list
+const App = () => {
+    const names = ['Jin', 'Paul', 'Hwoarang', 'Law', 'King', 'Kazuya', 'Lei', 'Eddy']
+    return (
+        <>
+            <div className='text-5xl'>App</div>
+            {names.map((name) => {
+                <ul>
+                    <li>{name}</li> 
+                </ul>
+            })}
+        </> 
+    )
+};
+Now there is a error in the above code, if you create a list element inside the map then it has to have a unique key prop, usually array would be coming from database with unique id but we hardcoded the array so what we can do is get the index by passing in a second argument here
+
+const App = () => {
+    const names = ['Jin', 'Paul', 'Hwoarang', 'Law', 'King', 'Kazuya', 'Lei', 'Eddy']
+    return (
+        <>
+            <div className='text-5xl'>App</div>
+            {name.map((name, index) => {
+                <ul>
+                    <li key={index}>{name}</li> 
+                </ul>
+            })}
+        </> 
+    )
+};
+
+---We can also use conditionals within JSX---
+    Now we can't use something like if statement within JSX with curly braces because it has to be basically one line expression
+
+    One thing you could do is 
+
+        const App = () => {
+            const loggedIn = true;
+
+            if (loggedIn) {
+                return <h1>Hello Member</h1>
+            }
+        };
+    
+    But usually you're going to want to have the conditionals somewhere in here so in that case what we could the following
+
+        const App = () => {
+            const names = ['Jin', 'Paul', 'Hwoarang', 'Law', 'King', 'Kazuya', 'Lei', 'Eddy']
+            return (
+                const loggedIn = true;
+                <>
+                    <div className='text-5xl'>App</div>
+                    {name.map((name, index) => {
+                        <ul>
+                            <li key={index}>{name}</li> 
+                        </ul>
+                    })}
+
+                    {loggedIn ? <h1>Hello Member</h1> : <h1>Hello Guest</h1>}
+
+                    /*There are two ways if you just want to show hello member if they're logged in*/
+                    /*1. using ternary operator*/
+                    {loggedIn ? <h1>Hello Member</h1> : '' }
+
+                    /*2. using && */
+                    {loggedIn && <h1>Hello Member</h1>}
+                    /* so if loggedIn is true then it will return the <h1>Hello Member</h1>*/
+
+                </> 
+            )
+        };
+
+
+--styling--
+    there are couple of ways through which you can do styling
+    1. you can have css file and add className
+
+    2. inline style(you can do that within you jsx)
+        const App = () => {
+            return (
+                <>
+                    <p style={{ color: 'red', fontSize: '24px' }}> Inline styling can be done using style attribute and we need to pass in double curly braces if you're adding inline style, you have the same property as CSS but one difference you're not gonna write font-size like you would do in CSS, you're gonna do fontSize in camelCase</p>
+                </> 
+            )
+        };
+
+
+        you can also put the styles in variable as well like shown below
+        const App = () => {
+            return (
+                const styles = {
+                    color: 'red',
+                    fontSize: '55px',
+                };
+
+                <>
+                    <p style={styles}>Hello</p>
+                </> 
+            )
+        };
+
+

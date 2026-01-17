@@ -10,8 +10,8 @@ const App = () => {
       {/* Uncomment only one component at a time because each one contains a topic in itself */}
         {/* <ElementObject /> */}
         {/* <UseRefHook /> */}
-        <InternalWorkingUseRef />
-        {/* <StateVsRef /> */}
+        {/* <InternalWorkingUseRef /> */}
+        <StateVsRef />
     </>
   )
 }

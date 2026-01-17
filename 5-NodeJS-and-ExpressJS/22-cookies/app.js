@@ -53,10 +53,8 @@ app.use(authRouter);
 app.use(errorController.get404);
 
 
-const PORT = 3000;
-
-
-const MONGO_DB_URL = "mongodb+srv://atulranjan97:jin97kMongoDb*@atul-cluster.l17ingm.mongodb.net/airbnb?retryWrites=true&w=majority&appName=atul-cluster";
+const PORT = process.env.PORT;
+const MONGO_DB_URL = process.env.MONGO_URI;
 
 mongoose.connect(MONGO_DB_URL).then(() => {
   app.listen(PORT, () => {

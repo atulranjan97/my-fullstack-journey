@@ -1,0 +1,7 @@
+Vite
+
+To getting started with React we're gonna be using a tool called Vite along with the react plug-in
+
+Now, create-react-app was the most popular option to build a SPA with react and it's been around for a long time but it's no longer recommended as it's bit bloated and slower and I guess it's not supported anymore, so Vite is the newer solution that's faster and has a better developer experience, it's built on top of something called ESBuild, which is very fast JS bundler and it also has built-in development server with hot module replacement so it's a great solution of building SPAs with React and other frameworks as well
+
+1. npm create vite@latest react-crash-course

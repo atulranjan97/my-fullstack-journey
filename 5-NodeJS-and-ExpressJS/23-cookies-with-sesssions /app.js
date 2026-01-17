@@ -18,7 +18,7 @@ const { authRouter } = require('./routers/authRouter');
 
 
 const MongoDbStore = mongodb_session(session);
-const MONGO_DB_URL = "mongodb+srv://atulranjan97:jin97kMongoDb*@atul-cluster.l17ingm.mongodb.net/airbnb?retryWrites=true&w=majority&appName=atul-cluster";
+const MONGO_DB_URL = process.env.MONGO_URI;
 
 const sessionStore = new MongoDbStore ({
   uri: MONGO_DB_URL,
@@ -64,7 +64,7 @@ app.use(authRouter);
 app.use(errorController.get404);
 
 
-const PORT = 3000;
+const PORT = process.env.PORT;
 
 
 

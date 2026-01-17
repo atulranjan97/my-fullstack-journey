@@ -5,13 +5,7 @@ const mongodb = require('mongodb');
 // MongoClient is used to establish connections with MongoDB databases
 const MongoClient = mongodb.MongoClient;
 
-// MongoDB connection URL containing:
-// - Username: atulranjan97
-// - Password: jin97kMongoDb*
-// - Cluster name: atul-cluster
-// - Database name: atul-cluster (not l17ingm - that's part of the cluster URL)
-// - Additional options like retryWrites and w=majority for reliability
-const url = "mongodb+srv://atulranjan97:jin97kMongoDb*@atul-cluster.l17ingm.mongodb.net/?retryWrites=true&w=majority&appName=atul-cluster";
+const url = process.env.MONGO_URI;
 
 let _db; 
 // The underscore prefix (_) is a convention in JavaScript to indicate that a variable is intended for internal/private use

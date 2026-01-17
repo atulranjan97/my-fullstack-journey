@@ -1,0 +1,8 @@
+What is React?
+    - React is a JS library/framework for building user interfaces. It was created by Facebook and community of individual developers and companies.
+    - Websites/UIs are looked at in terms of components.
+    - React is currently the most popular out of the major front-end framewors.
+
+React is actually a UI library to be specific and not a framework and the difference is that a framework is a complete solution, so angular for instance is a full-featured framework because it includes a router, an http client, state manangement library and much more and the reason that react often referred to as a framework because it operates like a one and it's in direct competition with frameworks like angular and in fact it's actually the most popular out of the major front-end frameworks which are react, vue.js, angular and swelt and it often use with other library such as react-router to create a full featured solution
+
+Also the ecosystem of react is huge so it can be used for wide variety of applications such as single page apps, server side rendered applications and static websites.

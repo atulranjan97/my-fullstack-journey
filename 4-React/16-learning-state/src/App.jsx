@@ -1,5 +1,5 @@
 import { useState } from "react";
-import List from "./components/list"
+import List from "./components/List"
 
 // Remove `<StrictMode> </StrictMode>` from `main.jsx` 
 
@@ -36,6 +36,7 @@ function App() {
  console.log("SetFighterArr:", setFighterArr)
   
   const onChangeHandler = (event) => {
+    console.log(event);
     if (event.key === "Enter") {
       console.log(fighterArr);
       console.log(event.target.value);
@@ -56,6 +57,7 @@ function App() {
 
       <input type="text" placeholder="New Student Name" onKeyDown={onChangeHandler} />
       {/* Notice how onKeyDown={onChangeHandler} has no parentheses at the end! Do not call the event handler function: you only need to pass it down. React will call your event handler when the user clicks the button. */}
+      {/* `onKeyDown` is a React event handler that runs when a user presses a key on the keyboard while an element is focused. */}
       {/* The `onKeyDown` event in React triggers when a key is pressed down on the keyboard. It’s used to detect and handle key presses before the key is released. */}
     </>
   )

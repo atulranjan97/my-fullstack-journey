@@ -1,0 +1,3 @@
+React 19 is right around the corner and it does add some new features, many of those features are under the hood meaning that the core concepts of react when it comes to writing the code and the fundamentals, those aren't gonna change as far as what we're doing here so the biggest change to react 19 is that they are adding the compiler which will convert react code into regular JS, potentially doubling performance so it'll work in similar way to frameworks like swelt
+
+We're going to be using version 18 in this crash course as 19 isn't release yet but all the core concepts that we're gonna talk about are the same. So it doesn't matter if you're using 18 or 19.

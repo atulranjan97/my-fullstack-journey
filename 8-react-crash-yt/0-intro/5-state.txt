@@ -1,0 +1,14 @@
+State
+
+State represents the data that a component manages internally. It allows components to store and manage their own data which can change over time and it'll change in response to user interactions or other factors
+
+Now state is typically used for data that expected to change such as form input data, fetched data from APIs or UI-related data like whether a model is open/close
+
+To define state in a functional component you can use a hook that we'll talk in this course
+You'll use useState hook which is a built-in react hook and this will return an array with two elements, the current value and the function to update that state
+
+There is also something called global state, which relates to the app as a whole and not just a single components so this would be something like a data that you fetch from a database, you probably wanna share that with multiple components, so there's a way to handle this, everything from just keeping you global state in your main component and passing it down to child components to the react context API (which is beyond the scope of this tutorial) but it is an option within react
+
+You can also use a third-party state manangement system like Redux
+
+

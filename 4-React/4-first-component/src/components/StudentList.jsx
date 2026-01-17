@@ -10,6 +10,8 @@ const StudentList = () => {
         /*
             students.map(student => <li>{student}</li>)          // `map` function returns an array of modified elements
 
+            [ <li>Jin Kazama</li>, <li>Paul Phoenix</li>, <li>Hwoarang</li>, <li>Kazuya Mishima</li>, <li>Eddy Gordo</li>, <li>Yoshimitsu</li>, <li>King</li>, <li>Law</li>, <li>Brayan Fury</li> ]
+
             once execution of the above statement finished, the statement will be replaced by below line 
 
             <li>Jin Kazama</li><li>Paul Phoenix</li><li>Hwoarang</li><li>Kazuya Mishima</li><li>Eddy Gordo</li><li>Yoshimitsu</li><li>King</li><li>Law</li><li>Brayan Fury</li>
